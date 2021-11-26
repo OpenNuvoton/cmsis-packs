@@ -12807,7 +12807,7 @@ Low voltage reset and Brown-out Detector.
       <subFamily DsubFamily="M460">
         <processor  Dcore="Cortex-M4"  Dclock="200000000"  Dfpu="FPU"/>
         <compile    header="Device/M460/Include/m460.h"/>
-        <description>The NuMicro M460 series is a 32-bit microcontroller based on Arm Cortex-M4F core, with DSP instruction set and single-precision floating-point unit (FPU), targeted for IoT, Industrial, and consumer applications. The M460 series runs up to 200 MHz, and features 1.8V to 3.6V wide operating voltage, -40¢XC to 105¢XC wide operating temperature, a variety of packages choice, and excellent high immunity characteristics by ESD HBM 4 KV and EFT 4.4 KV.</description>
+        <description>The NuMicro M460 series is a 32-bit microcontroller based on Arm Cortex-M4F core, with DSP instruction set and single-precision floating-point unit (FPU), targeted for IoT, Industrial, and consumer applications. The M460 series runs up to 200 MHz, and features 1.8V to 3.6V wide operating voltage, -40C to 105C wide operating temperature, a variety of packages choice, and excellent high immunity characteristics by ESD HBM 4 KV and EFT 4.4 KV.</description>
         <!-- *************************  Device 'M467SJHAE'  ***************************** -->
         <device Dname="M467SJHAE">
           <debug      svd   ="SVD/Nuvoton/M460.svd"/>
