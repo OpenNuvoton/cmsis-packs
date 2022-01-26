@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.4" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Nuvoton</vendor>
+  <name>NuMicroM7_DFP</name>
+  <description>Nuvoton ARM Cortex-M NuMicro M7 Family Device Support</description>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/</url>
+  <supportContact></supportContact>
+  <!-- optional license file -->
+  <!-- 
+  <license>
+  </license>
+  -->
+
+  <releases>
+    <release version="1.0.2" date="2022-01-26">
+     - Change download url
+    </release>
+    <release version="1.0.1" date="2021-07-29">
+     - Fixed boot sequence
+     - Added device description
+    </release>
+    <release version="1.0.0" date="2021-06-24">
+      Initial Version
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Nuvoton</keyword>
+    <keyword>NuMicro M7 Family</keyword>
+    <keyword>KM1M7A</keyword>
+    <keyword>KM1M7AF0x</keyword>
+    <keyword>KM1M7AF00N</keyword>
+    <keyword>KM1M7AF00M</keyword>
+    <keyword>KM1M7AF00K</keyword>
+    <keyword>KM1M7AF02N</keyword>
+    <keyword>KM1M7AF02M</keyword>
+    <keyword>KM1M7AF02K</keyword>
+    <keyword>KM1M7AF5x</keyword>
+    <keyword>KM1M7AF50N</keyword>
+    <keyword>KM1M7AF50M</keyword>
+    <keyword>KM1M7AF50K</keyword>
+    <keyword>KM1M7AF52N</keyword>
+    <keyword>KM1M7AF52M</keyword>
+    <keyword>KM1M7AF52K</keyword>
+    <keyword>KM1M7B</keyword>
+    <keyword>KM1M7BF0x</keyword>
+    <keyword>KM1M7BF00N</keyword>
+    <keyword>KM1M7BF00M</keyword>
+    <keyword>KM1M7BF00K</keyword>
+    <keyword>KM1M7BF02N</keyword>
+    <keyword>KM1M7BF02M</keyword>
+    <keyword>KM1M7BF02K</keyword>
+  </keywords>
+
+  <!-- devices section (mandatory for Device Family Packs) -->
+  <devices>
+    <family Dfamily="NuMicro M7 Family" Dvendor="Nuvoton:18">
+      <processor Dcore="Cortex-M7" DcoreVersion="r1p1" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="160000000"/>
+      <subFamily DsubFamily="KM1M7A">
+        <description>KM1M7 Series MCU is a 32-bit MCU with Arm Cortex M7, which have a good balance between high speed processing ability and low power consumption.
+High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
+Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
+They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        </description>
+
+        <!-- ****************  Keycode File  **************** -->
+        <debugvars configfile="Device\Option\Keyfile.dbgconf" version="1.0">
+          __var KeyfileEnable = 0;
+
+          __var Keycode0   = 0xFFFFFFFF;
+          __var Keycode1   = 0xFFFFFFFF;
+          __var Keycode2   = 0xFFFFFFFF;
+          __var Keycode3   = 0xFFFFFFFF;
+        </debugvars>
+
+        <!-- ****************  Sequence for connect sequence  **************** -->
+        <sequences>
+          <sequence name="ResetHardwareAssert">
+            <block>
+              DAP_Delay(1000000);
+            </block>
+          </sequence>
+
+          <sequence name="DebugDeviceUnlock">
+            <block>
+              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
+              sequence("DisableWDT");
+            </block>
+
+            <block>
+              sequence("UnlockDAP");
+            </block>
+
+            <block>
+              <!-- DebugCoreStart ARM Original -->
+              <!-- Debug enable                -->
+              <!--   - DHCSR.C_DEBUGEN = 1     -->
+              Write32(0xE000EDF0, 0xA05F0001);
+            </block>
+
+            <block>
+              <!-- ResetCatchSet ARM Original -->
+              <!-- Enable Reset Vector Catch. -->
+              <!--   - DEMCR.VC_CORERESET = 1 -->
+              __var rdata = 0;
+              rdata = Read32(0xE000EDFC);
+              Write32(0xE000EDFC, (rdata | 0x00000001));
+            </block>
+
+            <block>
+              <!-- Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit -->
+              Read32(0xE000EDF0);
+            </block>
+
+            <block>
+              __var nReset      = 0x80;
+              __var canReadPins = 0;
+
+              // Assert nRESET line and check if nRESET is readable
+              canReadPins = (DAP_SWJ_Pins(nReset, nReset, 0) != 0xFFFFFFFF);
+            </block>
+
+            <!-- Wait max. 1s for nRESET to recover from reset if readable-->
+            <control if="canReadPins" while="(DAP_SWJ_Pins(nReset, nReset, 0) &amp; nReset) == 0" timeout="1000000"/>
+
+            <!-- Wait 100ms for recovery if nRESET not readable -->
+            <control if="!canReadPins" while="1" timeout="100000"/>
+
+            <block>
+              DAP_Delay(1000000);
+            </block>
+          </sequence>
+
+          <sequence name="DisableWDT">
+            <block>
+              __var rdata = 0;
+
+              rdata = Read32(0xF0102010);
+              rdata = rdata | 0x672C0004;
+              Write32(0xF0102010, rdata);
+            </block>
+          </sequence>
+
+          <sequence name="UnlockDAP">
+            <control if="KeyfileEnable == 1">
+              <block>
+                Write32(0xF0102000, Keycode0);
+                Write32(0xF0102004, Keycode1);
+                Write32(0xF0102008, Keycode2);
+                Write32(0xF010200C, Keycode3);
+              </block>
+            </control>
+          </sequence>
+        </sequences>
+
+        <!-- ****************  Device "KM1M7AF00N"  **************** -->
+        <device Dname = "KM1M7AF00N">
+          <compile header="Device/Include/KM1M7AF00x.h"/>
+          <compile header="Device/Include/KM1M7AF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF00M"  **************** -->
+        <device Dname = "KM1M7AF00M">
+          <compile header="Device/Include/KM1M7AF00x.h"/>
+          <compile header="Device/Include/KM1M7AF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF00K"  **************** -->
+        <device Dname = "KM1M7AF00K">
+          <compile header="Device/Include/KM1M7AF00x.h"/>
+          <compile header="Device/Include/KM1M7AF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF02N"  **************** -->
+        <device Dname = "KM1M7AF02N">
+          <compile header="Device/Include/KM1M7AF02x.h"/>
+          <compile header="Device/Include/KM1M7AF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF02M"  **************** -->
+        <device Dname = "KM1M7AF02M">
+          <compile header="Device/Include/KM1M7AF02x.h"/>
+          <compile header="Device/Include/KM1M7AF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF02K"  **************** -->
+        <device Dname = "KM1M7AF02K">
+          <compile header="Device/Include/KM1M7AF02x.h"/>
+          <compile header="Device/Include/KM1M7AF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF50N"  **************** -->
+        <device Dname = "KM1M7AF50N">
+          <compile header="Device/Include/KM1M7AF50x.h"/>
+          <compile header="Device/Include/KM1M7AF50x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF50x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF50M"  **************** -->
+        <device Dname = "KM1M7AF50M">
+          <compile header="Device/Include/KM1M7AF50x.h"/>
+          <compile header="Device/Include/KM1M7AF50x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF50x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF50K"  **************** -->
+        <device Dname = "KM1M7AF50K">
+          <compile header="Device/Include/KM1M7AF50x.h"/>
+          <compile header="Device/Include/KM1M7AF50x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF50x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF52N"  **************** -->
+        <device Dname = "KM1M7AF52N">
+          <compile header="Device/Include/KM1M7AF52x.h"/>
+          <compile header="Device/Include/KM1M7AF52x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF52x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF52M"  **************** -->
+        <device Dname = "KM1M7AF52M">
+          <compile header="Device/Include/KM1M7AF52x.h"/>
+          <compile header="Device/Include/KM1M7AF52x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF52x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7AF52K"  **************** -->
+        <device Dname = "KM1M7AF52K">
+          <compile header="Device/Include/KM1M7AF52x.h"/>
+          <compile header="Device/Include/KM1M7AF52x_regdef.h"/>
+          <debug svd="SVD/KM1M7AF52x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7AFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7AFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+      </subFamily>
+
+      <subFamily DsubFamily="KM1M7B">
+        <processor Dcore="Cortex-M7" DcoreVersion="r1p1" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="160000000"/>
+        <description>KM1M7 Series MCU is a 32-bit MCU with Arm Cortex M7, which have a good balance between high speed processing ability and low power consumption.
+High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
+Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
+They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        </description>
+
+        <!-- ****************  Keycode File  **************** -->
+        <debugvars configfile="Device\Option\Keyfile.dbgconf" version="1.0">
+          __var KeyfileEnable = 0;
+
+          __var Keycode0   = 0xFFFFFFFF;
+          __var Keycode1   = 0xFFFFFFFF;
+          __var Keycode2   = 0xFFFFFFFF;
+          __var Keycode3   = 0xFFFFFFFF;
+        </debugvars>
+
+        <!-- ****************  Sequence for connect sequence  **************** -->
+        <sequences>
+          <sequence name="ResetHardwareAssert">
+            <block>
+              DAP_Delay(1000000);
+            </block>
+          </sequence>
+
+          <sequence name="DebugDeviceUnlock">
+            <block>
+              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
+              sequence("DisableWDT");
+            </block>
+
+            <block>
+              sequence("UnlockDAP");
+            </block>
+
+            <block>
+              <!-- DebugCoreStart ARM Original -->
+              <!-- Debug enable                -->
+              <!--   - DHCSR.C_DEBUGEN = 1     -->
+              Write32(0xE000EDF0, 0xA05F0001);
+            </block>
+
+            <block>
+              <!-- ResetCatchSet ARM Original -->
+              <!-- Enable Reset Vector Catch. -->
+              <!--   - DEMCR.VC_CORERESET = 1 -->
+              __var rdata = 0;
+              rdata = Read32(0xE000EDFC);
+              Write32(0xE000EDFC, (rdata | 0x00000001));
+            </block>
+
+            <block>
+              <!-- Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit -->
+              Read32(0xE000EDF0);
+            </block>
+
+            <block>
+              __var nReset      = 0x80;
+              __var canReadPins = 0;
+
+              // Assert nRESET line and check if nRESET is readable
+              canReadPins = (DAP_SWJ_Pins(nReset, nReset, 0) != 0xFFFFFFFF);
+            </block>
+
+            <!-- Wait max. 1s for nRESET to recover from reset if readable-->
+            <control if="canReadPins" while="(DAP_SWJ_Pins(nReset, nReset, 0) &amp; nReset) == 0" timeout="1000000"/>
+
+            <!-- Wait 100ms for recovery if nRESET not readable -->
+            <control if="!canReadPins" while="1" timeout="100000"/>
+
+            <block>
+              DAP_Delay(1000000);
+            </block>
+          </sequence>
+
+          <sequence name="DisableWDT">
+            <block>
+              __var rdata = 0;
+
+              rdata = Read32(0xF0102010);
+              rdata = rdata | 0x672C0004;
+              Write32(0xF0102010, rdata);
+            </block>
+          </sequence>
+
+          <sequence name="UnlockDAP">
+            <control if="KeyfileEnable == 1">
+              <block>
+                Write32(0xF0102000, Keycode0);
+                Write32(0xF0102004, Keycode1);
+                Write32(0xF0102008, Keycode2);
+                Write32(0xF010200C, Keycode3);
+              </block>
+            </control>
+          </sequence>
+        </sequences>
+
+        <!-- ****************  Device "KM1M7BF00N"  **************** -->
+        <device Dname = "KM1M7BF00N">
+          <compile header="Device/Include/KM1M7BF00x.h"/>
+          <compile header="Device/Include/KM1M7BF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7BF00M"  **************** -->
+        <device Dname = "KM1M7BF00M">
+          <compile header="Device/Include/KM1M7BF00x.h"/>
+          <compile header="Device/Include/KM1M7BF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7BF00K"  **************** -->
+        <device Dname = "KM1M7BF00K">
+          <compile header="Device/Include/KM1M7BF00x.h"/>
+          <compile header="Device/Include/KM1M7BF00x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF00x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7BF02N"  **************** -->
+        <device Dname = "KM1M7BF02N">
+          <compile header="Device/Include/KM1M7BF02x.h"/>
+          <compile header="Device/Include/KM1M7BF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7BF02M"  **************** -->
+        <device Dname = "KM1M7BF02M">
+          <compile header="Device/Include/KM1M7BF02x.h"/>
+          <compile header="Device/Include/KM1M7BF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+
+        <!-- ****************  Device "KM1M7BF02K"  **************** -->
+        <device Dname = "KM1M7BF02K">
+          <compile header="Device/Include/KM1M7BF02x.h"/>
+          <compile header="Device/Include/KM1M7BF02x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF02x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+
+        </device>
+      </subFamily>
+
+    </family>
+  </devices>
+</package>

@@ -7,7 +7,5 @@
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicro_DFP" version="1.3.14"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuVoice_ISD_DFP" version="1.0.10"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicroM7_DFP" version="1.0.2"/>
-	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicro_M051_BSP" version="1.0.1" deprecated="2021-03-31"/>
-	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicro_M2351_BSP" version="1.0.2" deprecated="2021-03-31"/>
   </pindex>
 </index>
