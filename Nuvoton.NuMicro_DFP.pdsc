@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
   <vendor>Nuvoton</vendor>
-  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/</url>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
   <name>NuMicro_DFP</name>
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.3.16" date="2022-05-04">
+      1. Add M460 part no.
+    </release>
     <release version="1.3.15" date="2022-04-15">
       1. Update M460 header and svd files
       2. Update M460, M031, M030G, M0A21 and M2354 flash algorithm files
@@ -12512,7 +12515,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="20"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="64"/>
@@ -12533,7 +12536,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="20"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="64"/>
@@ -12554,7 +12557,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="20"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="64"/>
@@ -12575,7 +12578,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="20"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="64"/>
@@ -12596,7 +12599,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="128"/>
@@ -12617,7 +12620,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="128"/>
@@ -12638,7 +12641,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="128"/>
@@ -12659,7 +12662,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="128"/>
@@ -12680,7 +12683,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="144"/>
@@ -12701,7 +12704,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="176"/>
@@ -12722,7 +12725,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="144"/>
@@ -12743,7 +12746,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="4"/>
           <feature type="I2S"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="28"  m="12"/>
           <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="176"/>
@@ -12763,7 +12766,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFP"       n="128"/>
         </device>
@@ -12781,7 +12784,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="SPI"       n="4"/>
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFP"       n="128"/>
         </device>
@@ -12800,7 +12803,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFP"       n="100"/>
         </device>
@@ -12819,7 +12822,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFP"       n="64"/>
         </device>
@@ -12837,7 +12840,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="SPI"       n="4"/>
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFP"       n="64"/>
         </device>
@@ -12856,7 +12859,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFN"       n="64"/>
         </device>
@@ -12874,7 +12877,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="SPI"       n="4"/>
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
           <feature type="QFN"       n="64"/>
         </device>
@@ -12893,7 +12896,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="12"  m="12"/>
           <feature type="QFP"       n="48"/>
         </device>
@@ -12911,7 +12914,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="SPI"       n="4"/>
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="12"  m="12"/>
           <feature type="QFP"       n="48"/>
         </device>
@@ -12930,7 +12933,7 @@ Low voltage reset and Brown-out Detector.
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
           <feature type="CAN"       n="2"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="12"  m="12"/>
           <feature type="QFN"       n="48"/>
         </device>
@@ -12948,9 +12951,95 @@ Low voltage reset and Brown-out Detector.
           <feature type="SPI"       n="4"/>
           <feature type="I2C"       n="5"/>
           <feature type="USBD"          n="1"/>
-          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="PWM"       n="24"  m="16"/>
           <feature type="ADC"       n="12"  m="12"/>
           <feature type="QFN"       n="48"/>
+        </device>
+
+       <!-- *************************  Device 'M460KGCAE'  ***************************** -->
+        <device Dname="M460KGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"  		n="100"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="8"/>
+          <feature type="SPI"  		n="11"/>
+          <feature type="I2C"  		n="5"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="PWM"  		n="24"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="QFP"  		n="128"/>
+        </device>
+
+        <!-- *************************  Device 'M460SGCAE'  ***************************** -->
+        <device Dname="M460SGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"  		n="44"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="8"/>
+          <feature type="SPI"  		n="11"/>
+          <feature type="I2C"  		n="5"/>
+          <feature type="PWM"  		n="24"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M460AGCAE'  ***************************** -->
+        <device Dname="M460AGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"  		n="44"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="8"/>
+          <feature type="SPI"  		n="11"/>
+          <feature type="I2C"  		n="5"/>
+          <feature type="PWM"  		n="24"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="QFN"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M460LGCAE'  ***************************** -->
+        <device Dname="M460LGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"  		n="33"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="8"/>
+          <feature type="SPI"  		n="7"/>
+          <feature type="I2C"  		n="5"/>
+          <feature type="PWM"  		n="24"	m="16"/>
+          <feature type="ADC"  		n="12"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M460YGCAE'  ***************************** -->
+        <device Dname="M460YGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"  		n="33"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="8"/>
+          <feature type="SPI"  		n="7"/>
+          <feature type="I2C"  		n="5"/>
+          <feature type="PWM"  		n="24"	m="16"/>
+          <feature type="ADC"  		n="12"	m="12"/>
+          <feature type="QFN"  		n="48"/>
         </device>
       </subFamily>
 
@@ -14633,7 +14722,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     </condition>
     <condition id="M4NuMicro M460 Device">
       <description>Nuvoton M4NuMicro M460 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M46[347][SHKJVALY][IJG][HC]A[NE]"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M46[0347][SHKJVALY][IJG][HC]A[NE]"/>
       <accept Dvendor="Nuvoton:18"  Dname="M46[37]H3[SKJH]JHAN"/>
     </condition>
     <condition id="M4NuMicro M471M_R1_S Device">
