@@ -4,7 +4,7 @@
   <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/</url>
   <timestamp>2022-05-04T12:00:10.7300074+00:00</timestamp>
   <pindex>
-    <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicro_DFP" version="1.3.16"/>
+    <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicro_DFP" version="1.3.17"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuVoice_ISD_DFP" version="1.0.10"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicroM7_DFP" version="1.0.3"/>
 	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m460_bsp/" vendor="Nuvoton" name="NuMicro_M460_BSP" version="1.0.1"/>
