@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M NuVoice, ISD and NPCx Family Device Support</description>
 
   <releases>
+	<release version="1.0.11" date="2022-06-08">
+      Add N572H064, N574F1K5.
+	</release>
     <release version="1.0.10" date="2022-01-26">
       Change download url.
 	</release>
@@ -863,6 +866,23 @@
 				<feature type="PWM"         n="12"   m="16"/>
 				<feature type="ADC"         n="5"   m="10"/>
 			</device>
+			
+			<!-- *************************  Device 'N574F1K5'  ***************************** -->
+				<device Dname="N574F1K5">
+				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
+				<debug      svd   ="SVD/Nuvoton/N574F512_v1.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/N574_AP_1K5.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
+				<feature type="IOs"         n="40"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="AnalogOther" n="1"/>
+				<feature type="PWM"         n="12"   m="16"/>
+				<feature type="ADC"         n="5"   m="10"/>
+			</device>
 
 			<!-- *************************  Device 'N574F256'  ***************************** -->
 				<device Dname="N574F256">
@@ -995,6 +1015,20 @@
           <memory     id="IROM1"    start="0x00000000"  size="0x12000"     startup="1"   default="1"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/N572Fxxx.FLM"        start="0x00000000"  size="0x12000"                   default="1"/>
+        <feature type="IOs"  		n="32"/>
+        <feature type="Timer"  		n="3"	m="16"/>
+        <feature type="SPI"  		n="2"/>
+        <feature type="PWM"  		n="4"	m="16"/>
+        <feature type="ADC"  		n="8"	m="12"/>
+		</device>
+		
+		<!-- *************************  Device 'N572H064'  ***************************** -->
+        <device Dname="N572H064">
+		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
+          <debug      svd   ="SVD/Nuvoton/N572F072_v3.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1800"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/N572H064.FLM"        start="0x00000000"  size="0x12000"                   default="1"/>
         <feature type="IOs"  		n="32"/>
         <feature type="Timer"  		n="3"	m="16"/>
         <feature type="SPI"  		n="2"/>
