@@ -6,6 +6,12 @@
   <description>Nuvoton ARM Cortex-M NuVoice, ISD and NPCx Family Device Support</description>
 
   <releases>
+	<release version="1.0.13" date="2022-10-31">
+      Modify the Registry naming and unsupported Register of N574F1K5 and N574F512.
+	</release>
+	<release version="1.0.12" date="2022-07-15">
+      Modify the start address of LDROM of N574F1K5 and the size of LDROM of N570H064.
+	</release>
 	<release version="1.0.11" date="2022-06-08">
       Add N572H064, N574F1K5.
 	</release>
@@ -870,11 +876,11 @@
 			<!-- *************************  Device 'N574F1K5'  ***************************** -->
 				<device Dname="N574F1K5">
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
-				<debug      svd   ="SVD/Nuvoton/N574F512_v1.svd"/>
+				<debug      svd   ="SVD/Nuvoton/N574F1K5_v1.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/N574_AP_1K5.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
+				<algorithm  name  ="Flash/N5741K5_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/N5741K5_AP_1_5M.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -981,6 +987,7 @@
           <debug      svd   ="SVD/Nuvoton/N570H064.svd"/> <!--Fixed-->
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x1800"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/N570_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
           <algorithm  name  ="Flash/N570_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
         <feature type="IOs"  		n="28"/>
         <feature type="Timer"  		n="3"	m="16"/>
