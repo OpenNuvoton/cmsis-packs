@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.3.21" date="2023-07-17">
+      1. Add M256KG6AE, M256SG6AE, M253ZE3BE, M253LE3BE, M253LD3BE, M463K3GCAC.
+    </release>
     <release version="1.3.20" date="2023-05-30">
       1. Add M2L31 series.
     </release>
@@ -10009,6 +10012,24 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="QFP"       n="64"/>
         </device>
 
+        <!-- *************************  Device 'M256SG6AE'  ***************************** -->
+        <device Dname="M256SG6AE">
+          <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="0"/>
+          <feature type="IOs"       n="53"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="4"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="DAC"       n="2"   m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
         <!-- *************************  Device 'M256KE3AE'  ***************************** -->
         <device Dname="M256KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
@@ -10023,6 +10044,24 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="I2C"       n="1"/>
           <feature type="PWM"       n="6"   m="16"/>
           <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="128"/>
+        </device>
+
+        <!-- *************************  Device 'M256KG6AE'  ***************************** -->
+        <device Dname="M256KG6AE">
+          <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="0"/>
+          <feature type="IOs"       n="86"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="4"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="DAC"       n="2"   m="12"/>
           <feature type="QFP"       n="128"/>
         </device>
 
@@ -10147,6 +10186,63 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
 
         <!-- *************************  Device 'M253LD3AE'  ***************************** -->
         <device Dname="M253LD3AE">
+          <debug      svd   ="SVD/Nuvoton/M253.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="0"/>
+          <feature type="IOs"       n="37"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="5"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+		
+        <!-- *************************  Device 'M253ZE3BE'  ***************************** -->
+        <device Dname="M253ZE3BE">
+          <debug      svd   ="SVD/Nuvoton/M253.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="0"/>
+          <feature type="IOs"       n="22"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="5"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
+        <!-- *************************  Device 'M253LE3BE'  ***************************** -->
+        <device Dname="M253LE3BE">
+          <debug      svd   ="SVD/Nuvoton/M253.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="0"/>
+          <feature type="IOs"       n="37"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="5"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M253LD3BE'  ***************************** -->
+        <device Dname="M253LD3BE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
@@ -13146,6 +13242,25 @@ Low voltage reset and Brown-out Detector.
           <feature type="QFP"       n="128"/>
         </device>
 
+        <!-- *************************  Device 'M463K3GCAC'  ***************************** -->
+        <device Dname="M463K3GCAC">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"       n="100"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="8"/>
+          <feature type="SPI"       n="4"/>
+          <feature type="I2C"       n="5"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="128"/>
+        </device>
+
         <!-- *************************  Device 'M463VGCAE'  ***************************** -->
         <device Dname="M463VGCAE">
           <debug      svd   ="SVD/Nuvoton/M460.svd"/>
@@ -14579,6 +14694,27 @@ Low voltage reset and Brown-out Detector.
           <feature type="QFN"       n="33"/>
         </device>
 
+        <!-- *************************  Device 'M485YIDAE'  ***************************** -->
+        <device Dname="M485YIDAE">
+          <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+          <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="0"/>
+          <feature type="IOs"       n="41"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="6"/>
+          <feature type="SPI"       n="3"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="AnalogOther"   n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="DAC"       n="2"   m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
         <!-- *************************  Device 'M485LIDAE'  ***************************** -->
         <device Dname="M485LIDAE">
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
@@ -14941,7 +15077,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     </condition>
     <condition id="M23NuMicro M253 Device">
       <description>Nuvoton M23NuMicro M253 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M253[ZL][DE]3AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M253[ZL][DE]3[AB]E"/>
     </condition>
     <condition id="M23NuMicro M251 Device">
       <description>Nuvoton M23NuMicro M251 Series devices</description>
@@ -14964,6 +15100,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept Dvendor="Nuvoton:18"  Dname="M46[0347][SHKJVALY][IJG][HC]A[NE]"/>
       <accept Dvendor="Nuvoton:18"  Dname="M467[SHKJ]2JHAE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M46[37]H3[SKJH]JHA[NE]"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M463K3GCAC"/>
     </condition>
     <condition id="M4NuMicro M471M_R1_S Device">
       <description>Nuvoton M4NuMicro M471M_R1_S Series devices</description>
@@ -14980,7 +15117,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     </condition>
     <condition id="M4NuMicro M480 Device">
       <description>Nuvoton M4NuMicro M480 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M48[123457][KSLZJVO][IG][DA]AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M48[123457][KSLZJVOY][IG][DA]AE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M484[KS][IG][DA]AE2U"/>
       <accept Dvendor="Nuvoton:18"  Dname="M48[123][ZLSK][EIG][8C]AE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M48[13][SK][IG][8C]AE2A"/>
