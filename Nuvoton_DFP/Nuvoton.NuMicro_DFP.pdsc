@@ -6,7 +6,7 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
-    <release version="1.3.21" date="2023-07-17">
+    <release version="1.3.21" date="2023-08-14">
       1. Add M256KG6AE, M256SG6AE, M253ZE3BE, M253LE3BE, M253LD3BE, M463K2GCAC.
     </release>
     <release version="1.3.20" date="2023-05-30">
