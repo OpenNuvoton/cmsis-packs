@@ -13,6 +13,11 @@
   -->
 
   <releases>
+    <release version="1.0.1" date="2023-09-19">
+      - Fixed connection processing when setting security
+      - Fixed SYSRESETREQ processing
+      - Update KM1M0D header and svd files
+    </release>
     <release version="1.0.0" date="2023-08-24">
       Initial Version
     </release>
@@ -64,7 +69,40 @@ They can contribute to the power management system which needs high-efficiency, 
             </block>
           </sequence>
 
+          <sequence name="ResetSystem">
+            <block>
+              // Change PLL to OFF before system reset
+              __var ckctr = 0;
+              // CKCTR.HRCEN = 1(bit0), CKCTR.Reserved = 1(bit2)
+              ckctr = Read32(0x40001000);
+              Write32(0x40001000, (ckctr | 0xA53C0005));
+
+              // CKSEL.SYSCLK=HRC(0x0),CKSEL.LPCLK=LRCCLK(0x0),CKSEL.HPCLK=HRCCLK(0x0)
+              Write32(0x40001004, 0xA53C0000);
+            </block>
+            <block>
+              // System Control Space (SCS) offset as defined in Armv6-M/Armv7-M.
+              __var SCS_Addr   = 0xE000E000;
+              __var AIRCR_Addr = SCS_Addr + 0xD0C;
+              __var DHCSR_Addr = SCS_Addr + 0xDF0;
+            
+              // Execute SYSRESETREQ via AIRCR
+              Write32(AIRCR_Addr, 0x05FA0004);
+            </block>
+            <!-- Reset Recovery: Wait for DHCSR.S_RESET_ST bit to clear on read -->
+            <control while="(Read32(DHCSR_Addr) &amp; 0x02000000)" timeout="500000"/>
+          </sequence>
+
           <sequence name="DebugDeviceUnlock">
+            <block>
+              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
+              sequence("DisableWDT");
+            </block>
+
+            <block>
+              sequence("UnlockDAP");
+            </block>
+
             <block>
               <!-- DebugCoreStart ARM Original -->
               <!-- Debug enable                -->
@@ -102,15 +140,6 @@ They can contribute to the power management system which needs high-efficiency, 
 
             <block>
               DAP_Delay(1000000);
-            </block>
-
-            <block>
-              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
-              sequence("DisableWDT");
-            </block>
-
-            <block>
-              sequence("UnlockDAP");
             </block>
           </sequence>
 

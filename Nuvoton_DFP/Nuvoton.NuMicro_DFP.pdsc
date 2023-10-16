@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.3.22" date="2023-10-11">
+      1. Add M0A86SD2AE, M463L2GCAC, M463S2GCAC, M481LGCAEU, NUC1262YE4AE, NDA102TD2, NDA102UD2 and M2003 series.
+    </release>
     <release version="1.3.21" date="2023-08-14">
       1. Add M256KG6AE, M256SG6AE, M253ZE3BE, M253LE3BE, M253LD3BE, M463K2GCAC.
     </release>
@@ -2191,6 +2194,31 @@ The Cortex-M0 is ARM embedded processor with 32-bit performance and cost-effecti
           <feature type="ADC"       n="17"  m="12"/>
           <feature type="DAC"       n="1"   m="12"/>
           <feature type="SOP"       n="20"/>
+        </device>
+      </subFamily>
+
+      <!-- *************************  Subfamily 'M0A86'  ***************************** -->
+      <subFamily DsubFamily="M0A86">
+        <processor  Dcore="Cortex-M0"  Dclock="50000000"/>
+        <compile    header="Device/M0A86/Include/M0A86.h"/>
+        <description>The NuMicro M0A86 is embedded with the Cortex-M0 core running up to 50 MHz and features 68K bytes flash, 8K bytes SRAM, and 4 Kbytes loader ROM for the ISP.</description>
+        <!-- *************************  Device 'M0A86SD2AE'  ***************************** -->
+        <device Dname="M0A86SD2AE">
+          <debug      svd   ="SVD/Nuvoton/M0A86.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x11000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M0A86_AP_68.FLM"        start="0x00000000"  size="0x11000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M0A86_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="0"/>
+          <feature type="IOs"       n="56"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="6"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="LIN"       n="3"/>
+          <feature type="CAN"       n="1"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="QFP"       n="64"/>
         </device>
       </subFamily>
 
@@ -9130,6 +9158,41 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
         <processor  Dcore="Cortex-M23"  Dclock="48000000"/>
         <compile    header="Device/M251/Include/M251.h"/>
         <description>The NuMicro NDA102xD_xE series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'NDA102UD2'  ***************************** -->
+        <device Dname="NDA102UD2">
+          <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="23"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="PWM"       n="11"  m="16"/>
+          <feature type="ADC"       n="9"   m="12"/>
+          <feature type="SOP"       n="28"/>
+        </device>
+		
+        <!-- *************************  Device 'NDA102TD2'  ***************************** -->
+        <device Dname="NDA102TD2">
+          <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="26"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="AnalogOther"   n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
         <!-- *************************  Device 'NDA102SD2'  ***************************** -->
         <device Dname="NDA102SD2">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
@@ -9175,6 +9238,24 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
         <processor  Dcore="Cortex-M23"  Dclock="72000000"/>
         <compile    header="Device/NUC1262/Include/NUC1262.h"/>
         <description>The NuMicro NUC1262 series microcontroller based on the Arm Cortex-M23 core operates at up to 72 MHz.</description>
+        <!-- *************************  Device 'NUC1262YE4AE'  ***************************** -->
+        <device Dname="NUC1262YE4AE">
+          <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+          <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="0"/>
+          <feature type="IOs"       n="38"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
         <!-- *************************  Device 'NUC1262NE4AE'  ***************************** -->
         <device Dname="NUC1262NE4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
@@ -9182,6 +9263,14 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="0"/>
+          <feature type="IOs"       n="38"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
           <feature type="QFN"       n="48"/>
         </device>
 
@@ -9192,6 +9281,14 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="0"/>
+          <feature type="IOs"       n="38"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
           <feature type="QFP"       n="48"/>
         </device>
 
@@ -9202,11 +9299,19 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"                   default="1"/>
+          <feature type="IOs"       n="50"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
           <feature type="QFP"  		n="64"/>
         </device>
       </subFamily>
-	  
-	        <!-- *************************  Subfamily 'NUC1263'  ***************************** -->
+       
+      <!-- *************************  Subfamily 'NUC1263'  ***************************** -->
       <subFamily DsubFamily="NUC1263">
         <processor  Dcore="Cortex-M23"  Dclock="72000000"/>
         <compile    header="Device/NUC1263/Include/NUC1263.h"/>
@@ -9218,6 +9323,15 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
+          <feature type="IOs"       n="36"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="3"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="I2S"       n="3"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"   m="12"/>
+          <feature type="DAC"       n="4"   m="12"/>
           <feature type="QFN"  		n="48"/>
         </device>
 
@@ -9228,6 +9342,15 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
+          <feature type="IOs"       n="36"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="3"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="I2S"       n="3"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"   m="12"/>
+          <feature type="DAC"       n="4"   m="12"/>
           <feature type="QFP"  		n="48"/>
         </device>
 
@@ -9238,6 +9361,15 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
+          <feature type="IOs"       n="36"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="3"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="I2S"       n="3"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"   m="12"/>
+          <feature type="DAC"       n="4"   m="12"/>
           <feature type="QFP"       n="64"/>
         </device>
 		
@@ -9248,7 +9380,55 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
+          <feature type="IOs"       n="22"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="3"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="I2S"       n="3"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"   m="12"/>
+          <feature type="DAC"       n="4"   m="12"/>
           <feature type="QFP"       n="64"/>
+        </device>
+
+      </subFamily>
+
+      <!-- *************************  Subfamily 'M2003'  ***************************** -->
+      <subFamily DsubFamily="M2003">
+        <processor  Dcore="Cortex-M23"  Dclock="24000000"/>
+        <compile    header="Device/M2003/Include/M2003.h"/>
+        <description>The NuMicro M2003 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'M2003FC1AE'  ***************************** -->
+        <device Dname="M2003FC1AE">
+<!--          <debug      svd   ="SVD/Nuvoton/M2003.svd"/> -->
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="SOP"       n="20"/>
+        </device>
+
+        <!-- *************************  Device 'M2003XC1AE'  ***************************** -->
+        <device Dname="M2003XC1AE">
+<!--          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>  -->
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="QFN"       n="20"/>
         </device>
 		
       </subFamily>
@@ -13299,8 +13479,46 @@ Low voltage reset and Brown-out Detector.
           <feature type="QFP"       n="64"/>
         </device>
 
+        <!-- *************************  Device 'M463S2GCAC'  ***************************** -->
+        <device Dname="M463S2GCAC">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"       n="44"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="8"/>
+          <feature type="SPI"       n="4"/>
+          <feature type="I2C"       n="5"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
         <!-- *************************  Device 'M463LGCAE'  ***************************** -->
         <device Dname="M463LGCAE">
+          <debug      svd   ="SVD/Nuvoton/M460.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M460_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M460_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"       n="33"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="8"/>
+          <feature type="SPI"       n="4"/>
+          <feature type="I2C"       n="5"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M463L2GCAC'  ***************************** -->
+        <device Dname="M463L2GCAC">
           <debug      svd   ="SVD/Nuvoton/M460.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
@@ -13867,6 +14085,27 @@ Low voltage reset and Brown-out Detector.
           <feature type="UART"          n="8"/>
           <feature type="SPI"       n="2"/>
           <feature type="I2C"       n="3"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="AnalogOther"   n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="DAC"       n="1"   m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M481LGCAEU'  ***************************** -->
+        <device Dname="M481LGCAEU">
+          <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="1"/>
+          <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x10000"  default="0"/>
+          <feature type="IOs"       n="41"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="8"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="3"/>
+          <feature type="CAN"       n="2"/>
           <feature type="I2S"       n="1"/>
           <feature type="AnalogOther"   n="2"/>
           <feature type="PWM"       n="24"  m="16"/>
@@ -15037,6 +15276,10 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept  Dvendor="Nuvoton:18"  Dname="M0A2[13][EO][BC]1AC"/>
       <accept  Dvendor="Nuvoton:18"  Dname="M0A23[EO]C1ACU"/>
     </condition>
+    <condition id="M0NuMicro M0A86 Device">
+      <description>Nuvoton M0NuMicro M0A86 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="M0A86SD2AE"/>
+    </condition>
     <condition id="M0NuMicro M071M Device">
       <description>Nuvoton M0NuMicro M071M Series devices</description>
       <accept  Dvendor="Nuvoton:18"  Dname="M071M[CD]2AE"/>
@@ -15100,7 +15343,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept Dvendor="Nuvoton:18"  Dname="M46[0347][SHKJVALY][IJG][HC]A[NE]"/>
       <accept Dvendor="Nuvoton:18"  Dname="M467[SHKJ]2JHAE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M46[37]H3[SKJH]JHA[NE]"/>
-      <accept Dvendor="Nuvoton:18"  Dname="M463K2GCAC"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M463[KLS]2GCAC"/>
     </condition>
     <condition id="M4NuMicro M471M_R1_S Device">
       <description>Nuvoton M4NuMicro M471M_R1_S Series devices</description>
@@ -15122,6 +15365,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept Dvendor="Nuvoton:18"  Dname="M48[123][ZLSK][EIG][8C]AE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M48[13][SK][IG][8C]AE2A"/>
       <accept Dvendor="Nuvoton:18"  Dname="M487KMCAN"/>
+	  <accept Dvendor="Nuvoton:18"  Dname="M481LGCAEU"/>
     </condition>
     <condition id="M0NuMicro M0518 Device">
       <description>Nuvoton M0NuMicro M0518 Series devices</description>
@@ -15134,6 +15378,10 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     <condition id="M0NuMicro M0564 Device">
       <description>Nuvoton M0NuMicro M0564 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M0564[LSV][EG]4AE"/>
+    </condition>
+    <condition id="M23NuMicro M2003 Device">
+      <description>Nuvoton M23NuMicro M2003 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="M2003[FX]C1AE"/>
     </condition>
     <condition id="M23NuMicro M2351 Device">
       <description>Nuvoton M23NuMicro M2351 Series devices</description>
@@ -15200,7 +15448,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     </condition>
     <condition id="M23NuMicro NDA102xD_xE Device">
       <description>Nuvoton M23NuMicro NDA102xD_xE Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="NDA102[STE]D2"/>
+      <accept Dvendor="Nuvoton:18"  Dname="NDA102[STUE]D2"/>
       <accept Dvendor="Nuvoton:18"  Dname="NDA102SE3"/>
     </condition>
     <condition id="M0NuMicro TF5100 Device">
@@ -15332,7 +15580,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     </condition>
     <condition id="M23NuMicro NUC1262 Device">
       <description>Nuvoton M23NuMicro NUC1262 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="NUC1262[NLS]E4AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="NUC1262[YNLS]E4AE"/>
     </condition>
     <condition id="M23NuMicro NUC1263 Device">
       <description>Nuvoton M23NuMicro NUC1263 Series devices</description>
@@ -15384,6 +15632,24 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="source"  name="Device/M0A21/Source/system_M0A21.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M0A21/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M0NuMicro M0A86 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M0A86 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/M0A86/StdDriver/inc/"/>
+        <file category="include" name="Device/M0A86/Include/"/>
+        <file category="header"  name="Device/M0A86/Include/M0A86.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/M0A86/Source/ARM/startup_M0A86.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M0A86/Source/system_M0A86.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/M0A86/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M0NuMicro M071M Device">
@@ -15514,6 +15780,26 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="source"  name="Device/M058S/Source/system_M058S.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M058S/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M2003 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/M2003/StdDriver/inc/"/>
+        <file category="include" name="Device/M2003/Include/"/>
+        <file category="header"  name="Device/M2003/Include/M2003.h"/>
+        <file category="header"  name="Device/M2003/Include/NuMicro.h"/>
+        <file category="header"  name="Device/M2003/Include/system_M2003.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/M2003/Source/ARM/startup_M2003.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M2003/Source/system_M2003.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/M2003/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro M251 Device">
