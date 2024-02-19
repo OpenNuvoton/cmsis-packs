@@ -13,6 +13,10 @@
   -->
 
   <releases>
+    <release version="1.0.2" date="2023-02-28">
+      I-Flash size fix
+      Update startup files
+    </release>
     <release version="1.0.1" date="2022-11-01">
       Update SVD file and include file
     </release>
@@ -151,65 +155,57 @@ They can contribute to the power management system which needs high-efficiency, 
 
         <!-- ****************  Device "KM1M4BF04K"  **************** -->
         <device Dname = "KM1M4BF04K">
-          <compile header="Device/KM1M4BF/Include/KM1M4BF04.h"/>
-          <compile header="Device/KM1M4BF/Include/KM1M4BF04_regdef.h"/>
           <debug svd="SVD/KM1M4BF04.svd"/>
+          <compile header="Device/KM1M4BF/Include/KM1M4B.h"/>
 
-          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
-    <!--  <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/> -->
+          <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/>
           <memory id="IROM2" start="0x10800000" size="0x08000" startup="0" default="0"/>
           <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
           <memory id="IRAM2" start="0x00800000" size="0x04000" init="0"    default="0"/>
 
-          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x42000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
           <algorithm name="Flash/KM1M4B_D.FLM" start="0x10800000" size="0x08000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
         <!-- ****************  Device "KM1M4BF04G"  **************** -->
         <device Dname = "KM1M4BF04G">
-          <compile header="Device/KM1M4BF/Include/KM1M4BF04.h"/>
-          <compile header="Device/KM1M4BF/Include/KM1M4BF04_regdef.h"/>
           <debug svd="SVD/KM1M4BF04.svd"/>
+          <compile header="Device/KM1M4BF/Include/KM1M4B.h"/>
 
-          <memory id="IROM1" start="0x00000000" size="0x20000" startup="1" default="1"/>
-    <!--  <memory id="IROM1" start="0x00000000" size="0x22000" startup="1" default="1"/> -->
+          <memory id="IROM1" start="0x00000000" size="0x22000" startup="1" default="1"/>
           <memory id="IROM2" start="0x10800000" size="0x02000" startup="0" default="0"/>
           <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
           <memory id="IRAM2" start="0x00800000" size="0x04000" init="0"    default="0"/>
 
-          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x20000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x22000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
           <algorithm name="Flash/KM1M4B_D.FLM" start="0x10800000" size="0x02000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
         <!-- ****************  Device "KM1M4BF54K"  **************** -->
         <device Dname = "KM1M4BF54K">
-          <compile header="Device/KM1M4BF/Include/KM1M4BF54.h"/>
-          <compile header="Device/KM1M4BF/Include/KM1M4BF54_regdef.h"/>
           <debug svd="SVD/KM1M4BF54.svd"/>
+          <compile header="Device/KM1M4BF/Include/KM1M4B.h"/>
 
-          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
-    <!--  <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/> -->
+          <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/>
           <memory id="IROM2" start="0x10800000" size="0x08000" startup="0" default="0"/>
           <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
           <memory id="IRAM2" start="0x00800000" size="0x04000" init="0"    default="0"/>
 
-          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x42000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
           <algorithm name="Flash/KM1M4B_D.FLM" start="0x10800000" size="0x08000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
         <!-- ****************  Device "KM1M4BF54G"  **************** -->
         <device Dname = "KM1M4BF54G">
-          <compile header="Device/KM1M4BF/Include/KM1M4BF54.h"/>
-          <compile header="Device/KM1M4BF/Include/KM1M4BF54_regdef.h"/>
           <debug svd="SVD/KM1M4BF54.svd"/>
+          <compile header="Device/KM1M4BF/Include/KM1M4B.h"/>
 
-          <memory id="IROM1" start="0x00000000" size="0x20000" startup="1" default="1"/>
-    <!--  <memory id="IROM1" start="0x00000000" size="0x22000" startup="1" default="1"/> -->
+          <memory id="IROM1" start="0x00000000" size="0x22000" startup="1" default="1"/>
           <memory id="IROM2" start="0x10800000" size="0x02000" startup="0" default="0"/>
           <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
           <memory id="IRAM2" start="0x00800000" size="0x04000" init="0"    default="0"/>
 
-          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x20000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B_I.FLM" start="0x00000000" size="0x22000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
           <algorithm name="Flash/KM1M4B_D.FLM" start="0x10800000" size="0x02000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
@@ -230,56 +226,14 @@ They can contribute to the power management system which needs high-efficiency, 
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05][2345][KG]"/>
     </condition>
 
-<!--
-    <condition id="NuMicro M4 Device(KM1M4BF02)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF02)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF02[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF03)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF03)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF03[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF04)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF04)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF04[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF05)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF05)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF05[KG]"/>
-    </condition>
-
-    <condition id="NuMicro M4 Device(KM1M4BF52)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF52)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF52[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF53)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF53)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF53[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF54)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF54)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF54[KG]"/>
-    </condition>
-
     <condition id="NuMicro M4 Device K">
-      <description>System Startup for Nuvoton M4 Series(KM1M4B) Device K</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05][2345]K"/>
+      <description>System Startup for Nuvoton M4 Series(KM1M4) Device K</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05]4K"/>
     </condition>
     <condition id="NuMicro M4 Device G">
-      <description>System Startup for Nuvoton M4 Series(KM1M4B) Device G</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05][2345]G"/>
+      <description>System Startup for Nuvoton M4 Series(KM1M4) Device G</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05]4G"/>
     </condition>
--->
-
-    <condition id="NuMicro M4 Device(KM1M4BF04)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF04)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF04[KG]"/>
-    </condition>
-    <condition id="NuMicro M4 Device(KM1M4BF54)">
-      <description>System Startup for Nuvoton M4 Series(KM1M4BF54)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF54[KG]"/>
-    </condition>
-
 
  </conditions>
 
@@ -292,18 +246,22 @@ They can contribute to the power management system which needs high-efficiency, 
       </RTE_Components_h>
       <files>
         <!-- header path -->
+        <file category="include" name="Device/KM1M4BF/StdDriver/inc/"/>
         <file category="include" name="Device/KM1M4BF/Include/"/>
-        <file category="header"  name="Device/KM1M4BF/Include/KM1M4BF04.h" condition="NuMicro M4 Device(KM1M4BF04)"/>
-        <file category="header"  name="Device/KM1M4BF/Include/KM1M4BF04_regdef.h" condition="NuMicro M4 Device(KM1M4BF04)"/>
-        <file category="header"  name="Device/KM1M4BF/Include/KM1M4BF54.h" condition="NuMicro M4 Device(KM1M4BF54)"/>
-        <file category="header"  name="Device/KM1M4BF/Include/KM1M4BF54_regdef.h" condition="NuMicro M4 Device(KM1M4BF54)"/>
-
+        <file category="header"  name="Device/KM1M4BF/Include/KM1M4B.h"/>
+        <file category="header"  name="Device/KM1M4BF/Include/NuMicro.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/KM1M4BF/Source/ARM/startup_ARMCM4.s" attr="config" version="1.00" condition="Compiler ARM"/>
-        <file category="source"  name="Device/KM1M4BF/Source/system_ARMCM4.c" attr="config" version="0.01" />
+        <file category="sourceAsm"  name="Device/KM1M4BF/Source/ARM/startup_KM1M4B.s" attr="config" version="1.00" condition="Compiler ARM"/>
+        <file category="source"  name="Device/KM1M4BF/Source/system_KM1M4B.c" attr="config" version="1.00"/>
         <!-- startup/StdDriver files -->
+        <file category="source"  name="Device/KM1M4BF/StdDriver/src/clk.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M4BF/StdDriver/src/gpio.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M4BF/StdDriver/src/uart.c" attr="config" version="1.00"/>
         <!-- startup/retarget files -->
+        <file category="sourceC" name="Device/KM1M4BF/StdDriver/src/retarget.c" attr="config" version="1.00"/>
         <!-- startup/scatter files -->
+        <file category="linkerScript" name="Device/KM1M4BF/Source/ARM/KM1M4BFxxK.sct"   version="1.00" attr="config" condition="NuMicro M4 Device K"/>
+        <file category="linkerScript" name="Device/KM1M4BF/Source/ARM/KM1M4BFxxG.sct"   version="1.00" attr="config" condition="NuMicro M4 Device G"/>
       </files>
     </component>
   </components>

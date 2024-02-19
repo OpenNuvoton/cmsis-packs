@@ -13,6 +13,10 @@
   -->
 
   <releases>
+    <release version="1.0.2" date="2023-11-06">
+     - Added KM1M0G family
+     - Update KM1M0D startup and include files
+    </release>
     <release version="1.0.1" date="2023-09-19">
       - Fixed connection processing when setting security
       - Fixed SYSRESETREQ processing
@@ -33,6 +37,16 @@
     <keyword>KM1M0DF03N</keyword>
     <keyword>KM1M0DF04N</keyword>
     <keyword>KM1M0DF13N</keyword>
+    <keyword>KM1M0GF</keyword>
+    <keyword>KM1M0DF01K</keyword>
+    <keyword>KM1M0DF01Z</keyword>
+    <keyword>KM1M0DF02K</keyword>
+    <keyword>KM1M0DF02Z</keyword>
+    <keyword>KM1M0DF03K</keyword>
+    <keyword>KM1M0DF03Z</keyword>
+    <keyword>KM1M0DF11Z</keyword>
+    <keyword>KM1M0DF12Z</keyword>
+    <keyword>KM1M0DF13Z</keyword>
   </keywords>
 
   <!-- devices section (mandatory for Device Family Packs) -->
@@ -168,9 +182,7 @@ They can contribute to the power management system which needs high-efficiency, 
         <!-- ****************  Device "KM1M0DF02N"  **************** -->
         <device Dname = "KM1M0DF02N">
           <debug svd="SVD/KM1M0DF02.svd"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF02.h"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF02_regdef.h"/>
-          <compile header="Device/KM1M0DF/Include/system_ARMCM0plus.h"/>
+          <compile header="Device/KM1M0DF/Include/KM1M0D.h"/>
 
           <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
           <memory id="IROM2" start="0x00100000" size="0x0C000" startup="0" default="0"/>
@@ -184,9 +196,7 @@ They can contribute to the power management system which needs high-efficiency, 
         <!-- ****************  Device "KM1M0DF03N"  **************** -->
         <device Dname = "KM1M0DF03N">
           <debug svd="SVD/KM1M0DF03.svd"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF03.h"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF03_regdef.h"/>
-          <compile header="Device/KM1M0DF/Include/system_ARMCM0plus.h"/>
+          <compile header="Device/KM1M0DF/Include/KM1M0D.h"/>
 
           <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
           <memory id="IROM2" start="0x00100000" size="0x0C000" startup="0" default="0"/>
@@ -200,9 +210,7 @@ They can contribute to the power management system which needs high-efficiency, 
         <!-- ****************  Device "KM1M0DF04N"  **************** -->
         <device Dname = "KM1M0DF04N">
           <debug svd="SVD/KM1M0DF04.svd"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF04.h"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF04_regdef.h"/>
-          <compile header="Device/KM1M0DF/Include/system_ARMCM0plus.h"/>
+          <compile header="Device/KM1M0DF/Include/KM1M0D.h"/>
 
           <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
           <memory id="IROM2" start="0x00100000" size="0x0C000" startup="0" default="0"/>
@@ -216,9 +224,7 @@ They can contribute to the power management system which needs high-efficiency, 
         <!-- ****************  Device "KM1M0DF13N"  **************** -->
         <device Dname = "KM1M0DF13N">
           <debug svd="SVD/KM1M0DF13.svd"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF13.h"/>
-          <compile header="Device/KM1M0DF/Include/KM1M0DF13_regdef.h"/>
-          <compile header="Device/KM1M0DF/Include/system_ARMCM0plus.h"/>
+          <compile header="Device/KM1M0DF/Include/KM1M0D.h"/>
 
           <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
           <memory id="IROM2" start="0x00100000" size="0x0C000" startup="0" default="0"/>
@@ -227,6 +233,236 @@ They can contribute to the power management system which needs high-efficiency, 
 
           <algorithm name="Flash/KM1M0D_I.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm name="Flash/KM1M0D_D.FLM" start="0x00100000" size="0x0C000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+      </subFamily>
+
+      <subFamily DsubFamily="KM1M0G">
+        <description>KM1M0G Series MCU is a 32-bit MCU with Arm Cortex M0+, which have a good balance between high speed processing ability and low power consumption.
+High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
+Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
+They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        </description>
+
+        <!-- ****************  Keycode File  **************** -->
+        <debugvars configfile="Device/KM1M0DF/Option/Keyfile.dbgconf" version="1.0">
+          __var KeyfileEnable = 0;
+
+          __var Keycode0   = 0xFFFFFFFF;
+          __var Keycode1   = 0xFFFFFFFF;
+          __var Keycode2   = 0xFFFFFFFF;
+          __var Keycode3   = 0xFFFFFFFF;
+        </debugvars>
+
+        <!-- ****************  Sequence for connect sequence  **************** -->
+        <sequences>
+          <sequence name="ResetHardwareAssert">
+            <block>
+               __var nReset = 0x80;
+              // De-assert nRESET line to activate the hardware reset
+              DAP_SWJ_Pins(0, nReset, 0);
+            </block>
+            <block>
+              DAP_Delay(100000);
+            </block>
+          </sequence>
+
+          <sequence name="DebugDeviceUnlock">
+            <block>
+              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
+              sequence("DisableWDT");
+            </block>
+
+            <block>
+              sequence("UnlockDAP");
+            </block>
+
+            <block>
+              <!-- DebugCoreStart ARM Original -->
+              <!-- Debug enable                -->
+              <!--   - DHCSR.C_DEBUGEN = 1     -->
+              Write32(0xE000EDF0, 0xA05F0001);
+            </block>
+
+            <block>
+              <!-- ResetCatchSet ARM Original -->
+              <!-- Enable Reset Vector Catch. -->
+              <!--   - DEMCR.VC_CORERESET = 1 -->
+              __var rdata = 0;
+              rdata = Read32(0xE000EDFC);
+              Write32(0xE000EDFC, (rdata | 0x00000001));
+            </block>
+
+            <block>
+              <!-- Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit -->
+              Read32(0xE000EDF0);
+            </block>
+
+            <block>
+              __var nReset      = 0x80;
+              __var canReadPins = 0;
+
+              // Assert nRESET line and check if nRESET is readable
+              canReadPins = (DAP_SWJ_Pins(nReset, nReset, 0) != 0xFFFFFFFF);
+            </block>
+
+            <!-- Wait max. 1s for nRESET to recover from reset if readable-->
+            <control if="canReadPins" while="(DAP_SWJ_Pins(nReset, nReset, 0) &amp; nReset) == 0" timeout="1000000"/>
+
+            <!-- Wait 100ms for recovery if nRESET not readable -->
+            <control if="!canReadPins" while="1" timeout="100000"/>
+
+            <block>
+              DAP_Delay(1000000);
+            </block>
+          </sequence>
+
+          <sequence name="DisableWDT">
+            <block>
+              __var rdata = 0;
+
+              rdata = Read32(0xF0102010);
+              rdata = rdata | 0x672C0004;
+              Write32(0xF0102010, rdata);
+            </block>
+          </sequence>
+
+          <sequence name="UnlockDAP">
+            <control if="KeyfileEnable == 1">
+              <block>
+                Write32(0xF0102000, Keycode0);
+                Write32(0xF0102004, Keycode1);
+                Write32(0xF0102008, Keycode2);
+                Write32(0xF010200C, Keycode3);
+              </block>
+            </control>
+          </sequence>
+        </sequences>
+
+        <!-- ****************  Device "KM1M0GF01K"  **************** -->
+        <device Dname = "KM1M0GF01K">
+          <debug svd="SVD/KM1M0GF01.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF01.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF01_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF01Z"  **************** -->
+        <device Dname = "KM1M0GF01Z">
+          <debug svd="SVD/KM1M0GF01.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF01.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF01_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF02K"  **************** -->
+        <device Dname = "KM1M0GF02K">
+          <debug svd="SVD/KM1M0GF02.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF02.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF02_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF02Z"  **************** -->
+        <device Dname = "KM1M0GF02Z">
+          <debug svd="SVD/KM1M0GF02.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF02.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF02_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF03K"  **************** -->
+        <device Dname = "KM1M0GF03K">
+          <debug svd="SVD/KM1M0GF03.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF03.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF03_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x04000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF03Z"  **************** -->
+        <device Dname = "KM1M0GF03Z">
+          <debug svd="SVD/KM1M0GF03.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF03.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF03_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF11Z"  **************** -->
+        <device Dname = "KM1M0GF11Z">
+          <debug svd="SVD/KM1M0GF11.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF11.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF11_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF12Z"  **************** -->
+        <device Dname = "KM1M0GF12Z">
+          <debug svd="SVD/KM1M0GF12.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF12.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF12_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M0GF13Z"  **************** -->
+        <device Dname = "KM1M0GF13Z">
+          <debug svd="SVD/KM1M0GF13.svd"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF13.h"/>
+          <compile header="Device/KM1M0GF/Include/KM1M0GF13_regdef.h"/>
+          <compile header="Device/KM1M0GF/Include/system_ARMCM0plus.h"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x30000000" size="0x00C00" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M0G_I.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
       </subFamily>
@@ -240,39 +476,55 @@ They can contribute to the power management system which needs high-efficiency, 
       <require Tcompiler="ARMCC"/>
     </condition>
 
+    <!-- ****************  Device "KM1M0DF"  **************** -->
     <condition id="NuMicro M0+ Device(KM1M0DF)">
       <description>System Startup for Nuvoton M0 Series(KM1M0DF)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF[01][234]N"/>
     </condition>
 
-    <condition id="NuMicro M0+ Device(KM1M0DF02)">
-      <description>System Startup for Nuvoton M0 Series(KM1M0DF02)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF02N"/>
-    </condition>
-
-    <condition id="NuMicro M0+ Device(KM1M0DF03)">
-      <description>System Startup for Nuvoton M0 Series(KM1M0DF03)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF03N"/>
-    </condition>
-
-    <condition id="NuMicro M0+ Device(KM1M0DF04)">
-      <description>System Startup for Nuvoton M0 Series(KM1M0DF04)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF04N"/>
-    </condition>
-
-    <condition id="NuMicro M0+ Device(KM1M0DF13)">
-      <description>System Startup for Nuvoton M0 Series(KM1M0DF13)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF13N"/>
-    </condition>
-
-
-<!--
     <condition id="NuMicro M0+ Device N">
       <description>System Startup for Nuvoton M0 Series(KM1M0D) Device N</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M0DF[01][234]N"/>
     </condition>
--->
 
+    <!-- ****************  Device "KM1M0GF"  **************** -->
+    <condition id="NuMicro M0+ Device(KM1M0GF)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF[01][123][KZ]"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF01)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF01)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF01K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF01Z"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF02)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF02)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF02K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF02Z"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF03)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF03)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF03K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF03Z"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF11)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF11)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF11Z"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF12)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF12)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF12Z"/>
+    </condition>
+
+    <condition id="NuMicro M0+ Device(KM1M0GF13)">
+      <description>System Startup for Nuvoton M0 Series(KM1M0GF13)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M0GF13Z"/>
+    </condition>
  </conditions>
 
  <components>
@@ -284,24 +536,55 @@ They can contribute to the power management system which needs high-efficiency, 
       </RTE_Components_h>
       <files>
         <!-- header path -->
+        <file category="include" name="Device/KM1M0DF/StdDriver/inc/"/>
         <file category="include" name="Device/KM1M0DF/Include/"/>
-        <file category="header"  name="Device/KM1M0DF/Include/system_ARMCM0plus.h" />
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF02.h" condition="NuMicro M0+ Device(KM1M0DF02)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF02_regdef.h" condition="NuMicro M0+ Device(KM1M0DF02)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF03.h" condition="NuMicro M0+ Device(KM1M0DF03)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF03_regdef.h" condition="NuMicro M0+ Device(KM1M0DF03)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF04.h" condition="NuMicro M0+ Device(KM1M0DF04)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF04_regdef.h" condition="NuMicro M0+ Device(KM1M0DF04)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF13.h" condition="NuMicro M0+ Device(KM1M0DF13)"/>
-        <file category="header"  name="Device/KM1M0DF/Include/KM1M0DF13_regdef.h" condition="NuMicro M0+ Device(KM1M0DF13)"/>
+        <file category="header"  name="Device/KM1M0DF/Include/KM1M0D.h"/>
+        <file category="header"  name="Device/KM1M0DF/Include/NuMicro.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/KM1M0DF/Source/ARM/startup_ARMCM0plus.s" attr="config" version="1.00" condition="Compiler ARM"/>
-        <file category="source"  name="Device/KM1M0DF/Source/system_ARMCM0plus.c" attr="config" version="0.01" />
+        <file category="sourceAsm"  name="Device/KM1M0DF/Source/ARM/startup_KM1M0D.s" attr="config" version="1.00" condition="Compiler ARM"/>
+        <file category="source"  name="Device/KM1M0DF/Source/system_KM1M0D.c" attr="config" version="1.00"/>
+        <!-- startup/StdDriver files -->
+        <file category="source"  name="Device/KM1M0DF/StdDriver/src/clk.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M0DF/StdDriver/src/gpio.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M0DF/StdDriver/src/uart.c" attr="config" version="1.00"/>
+        <!-- startup/retarget files -->
+        <file category="sourceC" name="Device/KM1M0DF/StdDriver/src/retarget.c" attr="config" version="1.00"/>
+        <!-- startup/scatter files -->
+        <file category="linkerScript" name="Device/KM1M0DF/Source/ARM/KM1M0DFxxN.sct"   version="1.00" attr="config" condition="NuMicro M0+ Device N"/>
+      </files>
+    </component>
+
+   <component Cclass="Device" Cgroup="Startup" Cversion="1.00" condition="NuMicro M0+ Device(KM1M0GF)">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M0+ Series(KM1M0G)</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/KM1M0GF/Include/"/>
+        <file category="header"  name="Device/KM1M0GF/Include/system_ARMCM0plus.h" />
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02.h" condition="NuMicro M0+ Device(KM1M0GF01)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02_regdef.h" condition="NuMicro M0+ Device(KM1M0GF01)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02.h" condition="NuMicro M0+ Device(KM1M0GF02)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02_regdef.h" condition="NuMicro M0+ Device(KM1M0GF02)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF03.h" condition="NuMicro M0+ Device(KM1M0GF03)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF03_regdef.h" condition="NuMicro M0+ Device(KM1M0GF03)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02.h" condition="NuMicro M0+ Device(KM1M0GF11)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02_regdef.h" condition="NuMicro M0+ Device(KM1M0GF11)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02.h" condition="NuMicro M0+ Device(KM1M0GF12)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF02_regdef.h" condition="NuMicro M0+ Device(KM1M0GF12)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF13.h" condition="NuMicro M0+ Device(KM1M0GF13)"/>
+        <file category="header"  name="Device/KM1M0GF/Include/KM1M0GF13_regdef.h" condition="NuMicro M0+ Device(KM1M0GF13)"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/KM1M0GF/Source/ARM/startup_ARMCM0plus.s" attr="config" version="1.00" condition="Compiler ARM"/>
+        <file category="source"  name="Device/KM1M0GF/Source/system_ARMCM0plus.c" attr="config" version="0.01" />
         <!-- startup/StdDriver files -->
         <!-- startup/retarget files -->
         <!-- startup/scatter files -->
       </files>
     </component>
+
   </components>
 
 </package>
