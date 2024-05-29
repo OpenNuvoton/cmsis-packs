@@ -14,6 +14,9 @@
   -->
 
   <releases>
+    <release version="1.1.3" date="2024-02-29">
+     - Added KM1M7BF03/04
+    </release>
     <release version="1.1.2" date="2024-01-18">
      - Update KM1M7C SVD file and include file
     </release>
@@ -62,6 +65,12 @@
     <keyword>KM1M7BF02N</keyword>
     <keyword>KM1M7BF02M</keyword>
     <keyword>KM1M7BF02K</keyword>
+    <keyword>KM1M7BF03N</keyword>
+    <keyword>KM1M7BF03M</keyword>
+    <keyword>KM1M7BF03K</keyword>
+    <keyword>KM1M7BF04N</keyword>
+    <keyword>KM1M7BF04M</keyword>
+    <keyword>KM1M7BF04K</keyword>
     <keyword>KM1M7C</keyword>
     <keyword>KM1M7CF0x</keyword>
     <keyword>KM1M7CF03N</keyword>
@@ -108,7 +117,12 @@ They can contribute to the power management system which needs high-efficiency, 
         <sequences>
           <sequence name="ResetHardwareAssert">
             <block>
-              DAP_Delay(1000000);
+               __var nReset = 0x80;
+              // De-assert nRESET line to activate the hardware reset
+              DAP_SWJ_Pins(0, nReset, 0);
+            </block>
+            <block>
+              DAP_Delay(100000);
             </block>
           </sequence>
 
@@ -374,7 +388,7 @@ They can contribute to the power management system which needs high-efficiency, 
         </description>
 
         <!-- ****************  Keycode File  **************** -->
-        <debugvars configfile="Device/KM1M7AF/Option/Keyfile.dbgconf" version="1.0">
+        <debugvars configfile="Device/KM1M7BF/Option/Keyfile.dbgconf" version="1.0">
           __var KeyfileEnable = 0;
 
           __var Keycode0   = 0xFFFFFFFF;
@@ -387,7 +401,12 @@ They can contribute to the power management system which needs high-efficiency, 
         <sequences>
           <sequence name="ResetHardwareAssert">
             <block>
-              DAP_Delay(1000000);
+               __var nReset = 0x80;
+              // De-assert nRESET line to activate the hardware reset
+              DAP_SWJ_Pins(0, nReset, 0);
+            </block>
+            <block>
+              DAP_Delay(100000);
             </block>
           </sequence>
 
@@ -558,6 +577,97 @@ They can contribute to the power management system which needs high-efficiency, 
            <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
 
         </device>
+
+        <!-- ****************  Device "KM1M7BF03N"  **************** -->
+        <device Dname = "KM1M7BF03N">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF03x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7BF03M"  **************** -->
+        <device Dname = "KM1M7BF03M">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF03x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7BF03K"  **************** -->
+        <device Dname = "KM1M7BF03K">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF03x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF03x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7BF04N"  **************** -->
+        <device Dname = "KM1M7BF04N">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF04x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7BF04M"  **************** -->
+        <device Dname = "KM1M7BF04M">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF04x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x60000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x0C000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x60000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7BF04K"  **************** -->
+        <device Dname = "KM1M7BF04K">
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x.h"/>
+          <compile header="Device/KM1M7BF/Include/KM1M7BF04x_regdef.h"/>
+          <debug svd="SVD/KM1M7BF04x.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+           <algorithm name="Flash/KM1M7BFxxx_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+           <algorithm name="Flash/KM1M7BFxxx_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
       </subFamily>
 
       <subFamily DsubFamily="KM1M7C">
@@ -948,7 +1058,7 @@ They can contribute to the power management system which needs high-efficiency, 
 
     <condition id="NuMicro M7 Device(KM1M7BF)">
       <description>System Startup for Nuvoton M7 Series(KM1M7BF)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[02][KMN]"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234][KMN]"/>
     </condition>
 
     <condition id="NuMicro M7 Device(KM1M7CF)">
@@ -965,22 +1075,30 @@ They can contribute to the power management system which needs high-efficiency, 
       <description>System Startup for Nuvoton M7 Series(KM1M7BF02)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF02[KMN]"/>
     </condition>
+    <condition id="NuMicro M7 Device(KM1M7BF03)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7BF03)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF03[KMN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7BF04)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7BF04)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF04[KMN]"/>
+    </condition>
 
     <condition id="NuMicro M7 Device K">
       <description>System Startup for Nuvoton M7 Series(KM1M7) Device K</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02]K"/>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[02]K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234]K"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456]K"/>
     </condition>
     <condition id="NuMicro M7 Device M">
       <description>System Startup for Nuvoton M7 Series(KM1M7) Device M</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02]M"/>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[02]M"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234]M"/>
     </condition>
     <condition id="NuMicro M7 Device N">
       <description>System Startup for Nuvoton M7 Series(KM1M7) Device N</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02]N"/>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[02]N"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234]N"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456]N"/>
     </condition>
 
@@ -1028,6 +1146,10 @@ They can contribute to the power management system which needs high-efficiency, 
         <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF00x_regdef.h" condition="NuMicro M7 Device(KM1M7BF00)"/>
         <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF02x.h" condition="NuMicro M7 Device(KM1M7BF02)"/>
         <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF02x_regdef.h" condition="NuMicro M7 Device(KM1M7BF02)"/>
+        <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF03x.h" condition="NuMicro M7 Device(KM1M7BF03)"/>
+        <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF03x_regdef.h" condition="NuMicro M7 Device(KM1M7BF03)"/>
+        <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF04x.h" condition="NuMicro M7 Device(KM1M7BF04)"/>
+        <file category="header"  name="Device/KM1M7BF/Include/KM1M7BF04x_regdef.h" condition="NuMicro M7 Device(KM1M7BF04)"/>
         <!-- startup/system files -->
         <file category="sourceAsm"  name="Device/KM1M7BF/Source/ARM/startup_ARMCM7.s" attr="config" version="1.00" condition="Compiler ARM"/>
         <file category="source"  name="Device/KM1M7BF/Source/system_ARMCM7.c" attr="config" version="0.01" />

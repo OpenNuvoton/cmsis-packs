@@ -6,6 +6,10 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.3.24" date="2024-05-24">
+      1. Add M2A23, M2L31 128K.
+	  2. Update apid for M55M1.
+    </release>
     <release version="1.3.23" date="2024-01-03">
       1. Add NUC1263SD4CE, NUC1263LD4CE, NUC1263ND4CE, NUC1263ZD4CE, M433SE8AE, M433LE8AE, M55M1H2LJAE.
     </release>
@@ -10982,6 +10986,252 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
         </device>
       </subFamily>
 
+      <!-- *************************  Subfamily 'M2A23'  ***************************** -->
+      <subFamily DsubFamily="M2A23">
+        <processor  Dcore="Cortex-M23" Dclock="72000000"/>
+        <compile    header="Device/M2A23/Include/m2a23.h"/>
+        <description>The NuMicro M2A23 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'M2A23YG5AC'  ***************************** -->
+        <device Dname="M2A23YG5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23LG5AC'  ***************************** -->
+        <device Dname="M2A23LG5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23SG5AC'  ***************************** -->
+        <device Dname="M2A23SG5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="55"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+		
+        <!-- *************************  Device 'M2A23NG5ACU'  ***************************** -->
+        <device Dname="M2A23NG5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23LG5ACU'  ***************************** -->
+        <device Dname="M2A23LG5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23SG5ACU'  ***************************** -->
+        <device Dname="M2A23SG5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="55"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+		
+        <!-- *************************  Device 'M2A23YE5AC'  ***************************** -->
+        <device Dname="M2A23YE5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23LE5AC'  ***************************** -->
+        <device Dname="M2A23LE5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23SE5AC'  ***************************** -->
+        <device Dname="M2A23SE5AC">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="55"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+		
+        <!-- *************************  Device 'M2A23NE5ACU'  ***************************** -->
+        <device Dname="M2A23NE5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="10"  m="12"/>
+          <feature type="QFN"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23LE5ACU'  ***************************** -->
+        <device Dname="M2A23LE5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="42"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2A23SE5ACU'  ***************************** -->
+        <device Dname="M2A23SE5ACU">
+          <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="55"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="USBD"          n="1"/>
+          <feature type="CAN"       n="2"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="PWM"       n="6"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+      </subFamily>
+
      <!-- *************************  Subfamily 'M2L31'  ***************************** -->
       <subFamily DsubFamily="M2L31">
         <processor  Dcore="Cortex-M23" Dfpu="NO_FPU" Dmpu="MPU" Dendian="Configurable" Dclock="72000000"/>
@@ -11004,9 +11254,134 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="CAN"  		n="2"/>
           <feature type="I2S"  		n="4"/>
           <feature type="PWM"  		n="12"	m="16"/>
-          <feature type="ADC"  		n="12"	m="12"/>
+          <feature type="ADC"  		n="16"	m="12"/>
           <feature type="DAC"  		n="2"	m="12"/>
           <feature type="QFN"  		n="48"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31YG4AE'  ***************************** -->
+        <device Dname="M2L31YG4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31YE4AE'  ***************************** -->
+        <device Dname="M2L31YE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31YD4AE'  ***************************** -->
+        <device Dname="M2L31YD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31ZE4AE'  ***************************** -->
+        <device Dname="M2L31ZE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="26"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="10"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="32"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31ZD4AE'  ***************************** -->
+        <device Dname="M2L31ZD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="26"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="10"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="32"/>
+        </device>
+
+       <!-- *************************  Device 'M2L31XD4AE'  ***************************** -->
+        <device Dname="M2L31XD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="18"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="5"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="6"	m="12"/>
+          <feature type="CSP"  		n="25"/>
         </device>
 
         <!-- *************************  Device 'M2L31YIDAE'  ***************************** -->
@@ -11048,6 +11423,7 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="PWM"  		n="12"	m="16"/>
           <feature type="ADC"  		n="12"	m="12"/>
           <feature type="DAC"  		n="2"	m="12"/>
+          <feature type="CSP"       n="49"/>
         </device>
 
         <!-- *************************  Device 'M2L31CIDAE'  ***************************** -->
@@ -11068,6 +11444,7 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="PWM"  		n="12"	m="16"/>
           <feature type="ADC"  		n="12"	m="12"/>
           <feature type="DAC"  		n="2"	m="12"/>
+          <feature type="CSP"       n="49"/>
         </device>
 
         <!-- *************************  Device 'M2L31LGDAE'  ***************************** -->
@@ -11086,8 +11463,68 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="CAN"  		n="2"/>
           <feature type="I2S"  		n="4"/>
           <feature type="PWM"  		n="12"	m="16"/>
-          <feature type="ADC"  		n="12"	m="12"/>
+          <feature type="ADC"  		n="16"	m="12"/>
           <feature type="DAC"  		n="2"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LG4AE'  ***************************** -->
+        <device Dname="M2L31LG4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LE4AE'  ***************************** -->
+        <device Dname="M2L31LE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LD4AE'  ***************************** -->
+        <device Dname="M2L31LD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
           <feature type="QFP"  		n="48"/>
         </device>
 
@@ -11128,8 +11565,48 @@ high-efficiency operation, fast wake-up function and the lowest cost 32-bit micr
           <feature type="CAN"  		n="2"/>
           <feature type="I2S"  		n="4"/>
           <feature type="PWM"  		n="12"	m="16"/>
-          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="ADC"  		n="20"	m="12"/>
           <feature type="DAC"  		n="2"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31SG4AE'  ***************************** -->
+        <device Dname="M2L31SG4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="53"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="20"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31SE4AE'  ***************************** -->
+        <device Dname="M2L31SE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="0"/>
+          <feature type="IOs"  		n="53"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="20"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
           <feature type="QFP"  		n="64"/>
         </device>
 
@@ -15387,7 +15864,8 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <description>The NuMicro M55M1 series 32-bit microcontroller.</description>
         <!-- *************************  Device 'M55M1H2LJAE'  ***************************** -->
         <device Dname="M55M1H2LJAE">
-          <debug      svd   ="SVD/Nuvoton/M55M1.svd"/>
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
           <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
@@ -15468,9 +15946,14 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept Dvendor="Nuvoton:18"  Dname="M25[12][FEZLSK][BCDEG][236]AE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M25[468][MSK][DEG][236]AE"/>
     </condition>
+    <condition id="M23NuMicro M2A23 Device">
+      <description>Nuvoton M23NuMicro M2A23 Series devices</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="M2A23[YLS][GE]5AC"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="M2A23[NLS][GE]5ACU"/>
+    </condition>
     <condition id="M23NuMicro M2L31 Device">
       <description>Nuvoton M23NuMicro M2L31 Series devices</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="M2L31[YCLSK][IG]DAE"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="M2L31[YCLSKZX][IGED][D4]AE"/>
     </condition>
     <condition id="M4NuMicro M433 Device">
       <description>Nuvoton M4NuMicro M433 Series devices</description>
@@ -15989,6 +16472,26 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="source"  name="Device/M253/Source/system_M253.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M253/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M2A23 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/M2A23/StdDriver/inc/"/>
+        <file category="include" name="Device/M2A23/Include/"/>
+        <file category="header"  name="Device/M2A23/Include/m2a23.h"/>
+        <file category="header"  name="Device/M2A23/Include/NuMicro.h"/>
+        <file category="header"  name="Device/M2A23/Include/system_m2a23.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/M2A23/Source/ARM/startup_m2a23.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M2A23/Source/system_m2a23.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
