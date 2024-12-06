@@ -6,6 +6,11 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.3.25" date="2024-12-02">
+      1. Add M0564SSAE.
+      2. ARMCLANG.
+      3. Add MA35D1 RTP series.
+    </release>
     <release version="1.3.24" date="2024-05-24">
       1. Add M2A23, M2L31 128K.
 	  2. Update apid for M55M1.
@@ -5669,6 +5674,24 @@ a unique high-speed PWM with clock frequency up to 144 MHz for precision control
 
         <!-- *************************  Device 'M0564SG4AE'  ***************************** -->
         <device Dname="M0564SG4AE">
+          <debug      svd   ="SVD/Nuvoton/M0564AE_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M0564_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+          <algorithm  name  ="Flash/M0564_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="0"/>
+          <feature type="IOs"       n="53"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="3"/>
+          <feature type="SPI"       n="2"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="I2S"       n="2"/>
+          <feature type="PWM"       n="12"  m="16"/>
+          <feature type="ADC"       n="15"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M0564SSAE'  ***************************** -->
+        <device Dname="M0564SSAE">
           <debug      svd   ="SVD/Nuvoton/M0564AE_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
@@ -15854,6 +15877,72 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
           <feature type="QFN"       n="88"/>
         </device>
       </subFamily>
+
+     <!-- *************************  Subfamily 'MA35D1'  ***************************** -->
+      <subFamily DsubFamily="MA35D1">
+        <processor Dcore="Cortex-M4" Dfpu="FPU" Dmpu="MPU" Ddsp="DSP" Dclock="180000000"/>
+        <compile    header="Device/MA35D1_RTP/Include/ma35d1_rtp.h"/>
+        <description>The NuMicro MA35D1 series is a heterogeneous multi-core microprocessor targeted to high-end edge IIoT gateway.</description>
+        <!-- *************************  Device 'MA35D16F787C'  ***************************** -->
+        <device Dname="MA35D16F787C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="QFP"  n="216"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16F884'  ***************************** -->
+        <device Dname="MA35D16F884">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="QFP"  n="216"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16F887C'  ***************************** -->
+        <device Dname="MA35D16F887C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="QFP"  n="216"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16F984'  ***************************** -->
+        <device Dname="MA35D16F984">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="QFP"  n="216"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16F987C'  ***************************** -->
+        <device Dname="MA35D16F987C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="QFP"  n="216"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16A887C'  ***************************** -->
+        <device Dname="MA35D16A887C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="BGA"  n="312"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16AH87C'  ***************************** -->
+        <device Dname="MA35D16AH87C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="BGA"  n="312"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16AI87C'  ***************************** -->
+        <device Dname="MA35D16AI87C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="BGA"  n="312"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16AJ87C'  ***************************** -->
+        <device Dname="MA35D16AJ87C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="BGA"  n="312"/>
+        </device>
+
+        <!-- *************************  Device 'MA35D16A087C'  ***************************** -->
+        <device Dname="MA35D16A087C">
+          <memory  id="IRAM1"    start="0x00000000"  size="0x20000"     init   ="0"   default="1"/>
+          <feature type="BGA"  n="364"/>
+        </device>
+      </subFamily>
     </family>
 
     <family Dfamily="NuMicro M55 Family" Dvendor="Nuvoton:18">
@@ -15883,7 +15972,8 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     <!-- conditions are dependecy rules that can apply to a component or an individual file -->
     <condition id="Compiler ARM">
       <!-- conditions selecting ARM Compiler -->
-      <require Tcompiler="ARMCC"/>
+      <accept Tcompiler="ARMCLANG"/>
+	  <accept Tcompiler="ARMCC"/>
     </condition>
 
     <condition id="M0NuMicro M030G Device">
@@ -16006,6 +16096,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     <condition id="M0NuMicro M0564 Device">
       <description>Nuvoton M0NuMicro M0564 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M0564[LSV][EG]4AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M0564SSAE"/>
     </condition>
     <condition id="M23NuMicro M2003 Device">
       <description>Nuvoton M23NuMicro M2003 Series devices</description>
@@ -16201,6 +16292,11 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
       <accept Dvendor="Nuvoton:18"  Dname="NUC505[DY][SLO]13Y"/>
       <accept Dvendor="Nuvoton:18"  Dname="NUC505[DY][SL]A"/>
       <accept Dvendor="Nuvoton:18"  Dname="NUC505YLA2Y"/>
+    </condition>
+    <condition id="M4NuMicro MA35D1_RTP Device">
+      <description>Nuvoton M4NuMicro MA35D1_RTP devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="MA35D16[AF][0789HIJ]8[47]"/>
+      <accept Dvendor="Nuvoton:18"  Dname="MA35D16[AF][0789HIJ]8[47]C"/>
     </condition>
     <condition id="M0NuMicro NUC1261 Device">
       <description>Nuvoton M0NuMicro NUC1261 Series devices</description>
@@ -16448,7 +16544,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="header"  name="Device/M251/Include/NuMicro.h"/>
         <file category="header"  name="Device/M251/Include/system_M251.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/M251/Source/ARM/startup_M251.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M251/Source/ARM/startup_M251.c" attr="config" version="0.00.001"/>
         <file category="source"  name="Device/M251/Source/system_M251.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M251/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
@@ -16468,7 +16564,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="header"  name="Device/M253/Include/NuMicro.h"/>
         <file category="header"  name="Device/M253/Include/system_M253.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/M253/Source/ARM/startup_M253.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M253/Source/ARM/startup_M253.c" attr="config" version="0.00.001"/>
         <file category="source"  name="Device/M253/Source/system_M253.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M253/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
@@ -16488,7 +16584,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="header"  name="Device/M2A23/Include/NuMicro.h"/>
         <file category="header"  name="Device/M2A23/Include/system_m2a23.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/M2A23/Source/ARM/startup_m2a23.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="sourceAsm"  name="Device/M2A23/Source/ARM/startup_m2a23.S" attr="config" version="0.00.001" condition="Compiler ARM"/>
         <file category="source"  name="Device/M2A23/Source/system_m2a23.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M2A23/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
@@ -16561,7 +16657,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="include" name="Device/M460/Include/"/>
         <file category="header"  name="Device/M460/Include/m460.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/M460/Source/ARM/startup_m460.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="sourceAsm"  name="Device/M460/Source/ARM/startup_m460.S" attr="config" version="0.00.001" condition="Compiler ARM"/>
         <file category="source"  name="Device/M460/Source/system_m460.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M460/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
@@ -16970,7 +17066,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="header"  name="Device/M251/Include/NuMicro.h"/>
         <file category="header"  name="Device/M251/Include/system_M251.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/M251/Source/ARM/startup_M251.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/M251/Source/ARM/startup_M251.c" attr="config" version="0.00.001"/>
         <file category="source"  name="Device/M251/Source/system_M251.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M251/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
@@ -17284,7 +17380,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="include" name="Device/NUC121/Include/"/>
         <file category="header"  name="Device/NUC121/Include/NUC121.h"/>
         <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/NUC121/Source/ARM/startup_NUC121.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/NUC121/Source/ARM/startup_NUC121.c" attr="config" version="0.00.001"/>
         <file category="source"  name="Device/NUC121/Source/system_NUC121.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/NUC121/StdDriver/src/retarget.c" version="0.00.001"/>
@@ -17450,6 +17546,24 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="source"  name="Device/NUC505/Source/system_NUC505Series.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/NUC505/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M4NuMicro MA35D1_RTP Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton MA35D1_RTP</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/MA35D1_RTP/StdDriver/inc/"/>
+        <file category="include" name="Device/MA35D1_RTP/Include/"/>
+        <file category="header"  name="Device/MA35D1_RTP/Include/ma35d1_rtp.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/MA35D1_RTP/Source/ARM/startup_ma35d1_rtp.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/MA35D1_RTP/Source/system_ma35d1_rtp.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/MA35D1_RTP/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M0NuMicro NUC1261 Device">
