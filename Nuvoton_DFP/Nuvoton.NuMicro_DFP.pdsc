@@ -6,10 +6,9 @@
   <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
 
   <releases>
-    <release version="1.3.25" date="2024-12-02">
+    <release version="1.3.25" date="2024-12-09">
       1. Add M0564SSAE.
-      2. ARMCLANG.
-      3. Add MA35D1 RTP series.
+      2. Add MA35D1 RTP series.
     </release>
     <release version="1.3.24" date="2024-05-24">
       1. Add M2A23, M2L31 128K.
@@ -15972,8 +15971,7 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
     <!-- conditions are dependecy rules that can apply to a component or an individual file -->
     <condition id="Compiler ARM">
       <!-- conditions selecting ARM Compiler -->
-      <accept Tcompiler="ARMCLANG"/>
-	  <accept Tcompiler="ARMCC"/>
+      <accept Tcompiler="ARMCC"/>
     </condition>
 
     <condition id="M0NuMicro M030G Device">
