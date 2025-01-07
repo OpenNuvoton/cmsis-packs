@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Nuvoton</vendor>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
+  <name>NuMicroCM_DFP</name>
+  <description>Nuvoton ARM Cortex-M NuMicro Family Device Support</description>
+
+  <releases>
+    <release version="1.0.0" date="2024-12-12">
+      Initial Version.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Nuvoton</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Nuvoton</keyword>
+    <keyword>NuMicro</keyword>
+  </keywords>
+
+  <devices>
+    <!-- generated, do not modify this section! -->
+    <family Dfamily="NuMicro M23 Family" Dvendor="Nuvoton:18">
+      <!-- *************************  Subfamily 'CM2003'  ***************************** -->
+      <subFamily DsubFamily="CM2003">
+        <processor  Dcore="Cortex-M23"  Dclock="24000000"/>
+        <compile    header="Device/CM2003/Include/CM2003.h"/>
+        <description>The NuMicro CM2003 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'CM2003CF2AE'  ***************************** -->
+        <device Dname="CM2003CF2AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="SOP"       n="20"/>
+        </device>
+
+        <!-- *************************  Device 'CM2003CF3AE'  ***************************** -->
+        <device Dname="CM2003CF3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="0"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="QFN"       n="20"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
+    <condition id="Compiler ARM">
+      <!-- conditions selecting ARM Compiler -->
+      <accept Tcompiler="ARMCC"/>
+    </condition>
+
+    <condition id="M23NuMicro CM2003 Device">
+      <description>Nuvoton M23NuMicro CM2003 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2003CF[23]AE"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- *************************  Startup file  ***************************** -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton CM2003 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/CM2003/StdDriver/inc/"/>
+        <file category="include" name="Device/CM2003/Include/"/>
+        <file category="header"  name="Device/CM2003/Include/CM2003.h"/>
+        <file category="header"  name="Device/CM2003/Include/NuMicro.h"/>
+        <file category="header"  name="Device/CM2003/Include/system_CM2003.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/CM2003/Source/ARM/startup_CM2003.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/CM2003/Source/system_CM2003.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+  </components>
+</package>
