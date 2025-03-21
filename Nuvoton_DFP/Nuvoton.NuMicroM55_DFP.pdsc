@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Nuvoton</vendor>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
+  <name>NuMicroM55_DFP</name>
+  <description>Nuvoton ARM Cortex-M55 NuMicro Family Device Support</description>
+
+  <releases>
+    <release version="1.0.0" date="2025-03-10">
+      Initial Version.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Nuvoton</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Nuvoton</keyword>
+    <keyword>NuMicro</keyword>
+  </keywords>
+
+  <devices>
+    <!-- generated, do not modify this section! -->
+    <family Dfamily="NuMicro M55 Family" Dvendor="Nuvoton:18">
+      <!-- *************************  Subfamily 'M55M1'  ***************************** -->
+      <subFamily DsubFamily="M55M1">
+        <processor Dcore="Cortex-M55" Dfpu="DP_FPU" Dmpu="MPU" Dmve="FP_MVE" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="180000000"/>
+        <compile    header="Device/M55M1/Include/M55M1.h"/>
+        <description>The NuMicro M55M1 series 32-bit microcontroller.</description>
+        <!-- *************************  Device 'M55M1R2LJAE'  ***************************** -->
+        <device Dname="M55M1R2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="39"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="5"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="3"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M55M1H3R2LJAE'  ***************************** -->
+        <device Dname="M55M1H3R2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="39"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="5"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="3"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M55M1K2LJAE'  ***************************** -->
+        <device Dname="M55M1K2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="97"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="128"/>
+        </device>
+
+        <!-- *************************  Device 'M55M1H3K2LJAE'  ***************************** -->
+        <device Dname="M55M1H3K2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="95"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="128"/>
+        </device>
+
+        <!-- *************************  Device 'M55M1H2LJAE'  ***************************** -->
+        <device Dname="M55M1H2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="143"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="176"/>
+        </device>
+
+        <!-- *************************  Device 'M55M1H3H2LJAE'  ***************************** -->
+        <device Dname="M55M1H3H2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M55M1_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M55M1_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="130"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="176"/>
+        </device>
+      </subFamily>
+
+      <!-- *************************  Subfamily 'M5531'  ***************************** -->
+      <subFamily DsubFamily="M5531">
+        <processor Dcore="Cortex-M55" Dfpu="DP_FPU" Dmpu="MPU" Dmve="FP_MVE" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="180000000"/>
+        <compile    header="Device/M5531/Include/M5531.h"/>
+        <description>The NuMicro M5531 series 32-bit microcontroller.</description>
+        <!-- *************************  Device 'M5531R2LJAE'  ***************************** -->
+        <device Dname="M5531R2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M5531.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M5531_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="39"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="5"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="3"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M5531K2LJAE'  ***************************** -->
+        <device Dname="M5531K2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M5531.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M5531_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="95"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="128"/>
+        </device>
+
+        <!-- *************************  Device 'M5531H2LJAE'  ***************************** -->
+        <device Dname="M5531H2LJAE">
+          <accessportV2 __apid="0" address="0x00000000"/>
+          <debug      svd   ="SVD/Nuvoton/M5531.svd" __apid="0"/>
+          <memory     id="IROM1"    start="0x00100000"  size="0x200000"    startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x10100000"  size="0x200000"    startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20100000"  size="0x150000"     init   ="0"   default="1"/>
+          <memory     id="IRAM2"    start="0x30100000"  size="0x150000"     init   ="0"   default="0"/>
+          <algorithm  name  ="Flash/M5531_AP_2M.FLM"        start="0x00100000"  size="0x200000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+          <algorithm  name  ="Flash/M5531_NS_2M.FLM"         start="0x10100000"  size="0x200000"  RAMstart="0x30000000"  RAMsize="0x8000"  default="1"/>
+          <feature type="IOs"          n="143"/>
+          <feature type="Timer"        n="4"    m="32"/>
+          <feature type="UART"         n="10"/>
+          <feature type="SPI"          n="4"/>
+          <feature type="I2C"          n="4"/>
+          <feature type="USBD"         n="1"/>
+          <feature type="CAN"          n="2"/>
+          <feature type="I2S"          n="2"/>
+          <feature type="DAC"          n="2"    m="12"/>
+          <feature type="QFP"          n="176"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
+    <condition id="M55NuMicro M55M1 Device">
+      <description>Nuvoton M55NuMicro M55M1 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="M55M1H3[HKR]2LJAE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M55[M3]1[HKR]2LJAE"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- *************************  Startup file  ***************************** -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M55NuMicro M55M1 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M55M1 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/M55M1/StdDriver/inc/"/>
+        <file category="include" name="Device/M55M1/Include/"/>
+        <file category="header"  name="Device/M55M1/Include/M55M1.h"/>
+        <file category="header"  name="Device/M55M1/Include/NuMicro.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Device/M55M1/Source/startup_M55M1.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/M55M1/Source/system_M55M1.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/M55M1/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+  </components>
+</package>
