@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M55 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.1" date="2025-07-15">
+      Update svd file.
+    </release>
     <release version="1.0.0" date="2025-03-10">
       Initial Version.
     </release>
@@ -248,7 +251,11 @@
     <condition id="M55NuMicro M55M1 Device">
       <description>Nuvoton M55NuMicro M55M1 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M55M1H3[HKR]2LJAE"/>
-      <accept Dvendor="Nuvoton:18"  Dname="M55[M3]1[HKR]2LJAE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M55M1[HKR]2LJAE"/>
+    </condition>
+    <condition id="M55NuMicro M5531 Device">
+      <description>Nuvoton M55NuMicro M5531 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="M5531[HKR]2LJAE"/>
     </condition>
   </conditions>
 
@@ -271,6 +278,25 @@
         <file category="source"  name="Device/M55M1/Source/system_M55M1.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M55M1/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M55NuMicro M5531 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M5531 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/M5531/StdDriver/inc/"/>
+        <file category="include" name="Device/M5531/Include/"/>
+        <file category="header"  name="Device/M5531/Include/M5531.h"/>
+        <file category="header"  name="Device/M5531/Include/NuMicro.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Device/M5531/Source/startup_M5531.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/M5531/Source/system_M5531.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/M5531/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
   </components>
