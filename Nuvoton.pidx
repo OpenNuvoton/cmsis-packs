@@ -7,7 +7,7 @@
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicro_DFP" version="1.3.26"/>
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM0_DFP" version="1.0.0"/>
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM23_DFP" version="1.0.1"/>
-	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM33_DFP" version="1.0.0"/>
+	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM33_DFP" version="1.0.1"/>
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM4_DFP" version="1.0.0"/>
     <pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroM55_DFP" version="1.0.2"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuVoice_ISD_DFP" version="1.0.20"/>
