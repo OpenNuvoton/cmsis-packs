@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.2" date="2025-09-15">
+      Update IROM.
+    </release>
     <release version="1.0.1" date="2025-07-16">
       Change ram for algorithm size.
     </release>
@@ -34,6 +37,7 @@
         <device Dname="NDA102UD2">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -50,6 +54,7 @@
         <device Dname="NDA102TD2">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -69,6 +74,7 @@
         <device Dname="NDA102SD2">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -89,6 +95,7 @@
         <device Dname="NDA102SE3">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -114,6 +121,7 @@
         <device Dname="NUC1262YE4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
@@ -132,6 +140,7 @@
         <device Dname="NUC1262NE4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
@@ -150,6 +159,7 @@
         <device Dname="NUC1262LE4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
@@ -168,6 +178,7 @@
         <device Dname="NUC1262SE4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
@@ -192,6 +203,7 @@
         <device Dname="NUC1263ND4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -211,6 +223,7 @@
         <device Dname="NUC1263LD4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -230,6 +243,7 @@
         <device Dname="NUC1263SD4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -249,6 +263,7 @@
         <device Dname="NUC1263ZD4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -268,6 +283,7 @@
         <device Dname="NUC1263ND4CE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -287,6 +303,7 @@
         <device Dname="NUC1263LD4CE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -306,6 +323,7 @@
         <device Dname="NUC1263SD4CE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -325,6 +343,7 @@
         <device Dname="NUC1263ZD4CE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -344,6 +363,7 @@
         <device Dname="NSPD5ZD4AE">
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -369,6 +389,7 @@
         <device Dname="M2003FC1AE">
           <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -385,6 +406,7 @@
         <device Dname="M2003XC1AE">
           <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -408,6 +430,7 @@
         <device Dname="M251FB2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x4000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_16.FLM"        start="0x00000000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -424,6 +447,7 @@
         <device Dname="M251EB2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x4000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_16.FLM"        start="0x00000000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -440,6 +464,7 @@
         <device Dname="M251ZB2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x4000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_16.FLM"        start="0x00000000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -456,6 +481,7 @@
         <device Dname="M251FC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -472,6 +498,7 @@
         <device Dname="M251EC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -488,6 +515,7 @@
         <device Dname="M251ZC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -504,6 +532,7 @@
         <device Dname="M251LC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -523,6 +552,7 @@
         <device Dname="M251SC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -542,6 +572,7 @@
         <device Dname="M251ZD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -561,6 +592,7 @@
         <device Dname="M251LD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -580,6 +612,7 @@
         <device Dname="M251SD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -599,6 +632,7 @@
         <device Dname="M251LE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -618,6 +652,7 @@
         <device Dname="M251SE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -637,6 +672,7 @@
         <device Dname="M251KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -656,6 +692,7 @@
         <device Dname="M251LG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -676,6 +713,7 @@
         <device Dname="M251SG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -696,6 +734,7 @@
         <device Dname="M251KG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -716,6 +755,7 @@
         <device Dname="M252FC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -733,6 +773,7 @@
         <device Dname="M252EC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -750,6 +791,7 @@
         <device Dname="M252ZC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -767,6 +809,7 @@
         <device Dname="M252LC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -787,6 +830,7 @@
         <device Dname="M252SC2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -807,6 +851,7 @@
         <device Dname="M252ZD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -827,6 +872,7 @@
         <device Dname="M252LD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -847,6 +893,7 @@
         <device Dname="M252SD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1800"  default="1"/>
@@ -867,6 +914,7 @@
         <device Dname="M252LE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -887,6 +935,7 @@
         <device Dname="M252SE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -907,6 +956,7 @@
         <device Dname="M252KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -927,6 +977,7 @@
         <device Dname="M252LG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -948,6 +999,7 @@
         <device Dname="M252SG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -969,6 +1021,7 @@
         <device Dname="M252KG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -990,6 +1043,7 @@
         <device Dname="M254MD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -1007,6 +1061,7 @@
         <device Dname="M254SD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -1024,6 +1079,7 @@
         <device Dname="M254SD3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1041,6 +1097,7 @@
         <device Dname="M254SE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1058,6 +1115,7 @@
         <device Dname="M254SG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1076,6 +1134,7 @@
         <device Dname="M254KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1093,6 +1152,7 @@
         <device Dname="M254KG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1111,6 +1171,7 @@
         <device Dname="M256MD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -1128,6 +1189,7 @@
         <device Dname="M256SD2AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
@@ -1145,6 +1207,7 @@
         <device Dname="M256SE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1162,6 +1225,7 @@
         <device Dname="M256SG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1180,6 +1244,7 @@
         <device Dname="M256KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1197,6 +1262,7 @@
         <device Dname="M256KG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1215,6 +1281,7 @@
         <device Dname="M258SE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1233,6 +1300,7 @@
         <device Dname="M258SG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1252,6 +1320,7 @@
         <device Dname="M258KE3AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1270,6 +1339,7 @@
         <device Dname="M258KG6AE">
           <debug      svd   ="SVD/Nuvoton/M251_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -1296,6 +1366,7 @@
         <device Dname="M253ZE3AE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1315,6 +1386,7 @@
         <device Dname="M253LE3AE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1334,6 +1406,7 @@
         <device Dname="M253LD3AE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1353,6 +1426,7 @@
         <device Dname="M253ZE3BE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1372,6 +1446,7 @@
         <device Dname="M253LE3BE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1391,6 +1466,7 @@
         <device Dname="M253LD3BE">
           <debug      svd   ="SVD/Nuvoton/M253.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M251_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M251_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1417,12 +1493,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="24"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="5"/>
@@ -1443,12 +1520,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="41"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="5"/>
@@ -1469,12 +1547,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="52"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
@@ -1495,12 +1574,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="111"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
@@ -1521,12 +1601,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="111"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
@@ -1547,12 +1628,13 @@
           <debug      svd   ="SVD/Nuvoton/M2351_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10040000"  size="0x40000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30008000"  size="0x10000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2351_AP_512.FLM"      start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
           <algorithm  name  ="Flash/M2351_LD_4.FLM"        start="0x00100000"  size="0x1000"   RAMstart="0x20000000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
-          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x30010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
+          <algorithm  name  ="Flash/M2351_NS_MKROM.FLM"    start="0x10000000"  size="0x80000"  RAMstart="0x20010000"  RAMsize="0x1200"  default="1"/>
           <feature type="IOs"          n="52"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
@@ -1579,11 +1661,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10080000"  size="0x80000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30020000"  size="0x30000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30010000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20010000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"          n="111"/>
           <feature type="Timer"        n="4"    m="32"/>
           <feature type="UART"         n="6"/>
@@ -1604,11 +1687,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="40"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1629,11 +1713,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="50"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1654,11 +1739,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="106"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1679,11 +1765,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="40"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1704,11 +1791,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="50"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1729,11 +1817,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="IOs"       n="106"/>
           <feature type="Timer"     n="4"   m="32"/>
           <feature type="UART"      n="6"/>
@@ -1754,11 +1843,12 @@
           <debug      svd   ="SVD/Nuvoton/M2354.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"    startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x10000000"  size="0x100000"    startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00100000"  size="0x4000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x40000"     init   ="0"   default="1"/>
           <memory     id="IRAM2"    start="0x30000000"  size="0x40000"     init   ="0"   default="0"/>
           <algorithm  name  ="Flash/M2354_AP_1M.FLM"      start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2354_LD_16.FLM"      start="0x00100000"  size="0x4000"    RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2354_NS.FLM"         start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="CSP"  		n="49"/>
         </device>
       </subFamily>
@@ -1772,6 +1862,7 @@
         <device Dname="M261ZIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1792,6 +1883,7 @@
         <device Dname="M261SIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1812,6 +1904,7 @@
         <device Dname="M261KIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1832,6 +1925,7 @@
         <device Dname="M262ZIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1853,6 +1947,7 @@
         <device Dname="M262SIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1874,6 +1969,7 @@
         <device Dname="M262KIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1895,6 +1991,7 @@
         <device Dname="M263ZIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1917,6 +2014,7 @@
         <device Dname="M263SIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1939,6 +2037,7 @@
         <device Dname="M263KIAAE">
           <debug      svd   ="SVD/Nuvoton/M261_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M261_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M261_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -1967,6 +2066,7 @@
         <device Dname="M2A23YG5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -1987,6 +2087,7 @@
         <device Dname="M2A23LG5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2007,6 +2108,7 @@
         <device Dname="M2A23SG5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2027,6 +2129,7 @@
         <device Dname="M2A23NG5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2047,6 +2150,7 @@
         <device Dname="M2A23LG5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2067,6 +2171,7 @@
         <device Dname="M2A23SG5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2087,6 +2192,7 @@
         <device Dname="M2A23YE5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2107,6 +2213,7 @@
         <device Dname="M2A23LE5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2127,6 +2234,7 @@
         <device Dname="M2A23SE5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2147,6 +2255,7 @@
         <device Dname="M2A23YD5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2167,6 +2276,7 @@
         <device Dname="M2A23LD5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2187,6 +2297,7 @@
         <device Dname="M2A23SD5AC">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2207,6 +2318,7 @@
         <device Dname="M2A23NE5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2227,6 +2339,7 @@
         <device Dname="M2A23LE5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2247,6 +2360,7 @@
         <device Dname="M2A23SE5ACU">
           <debug      svd   ="SVD/Nuvoton/M2A23.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2A23_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/M2A23_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
@@ -2274,6 +2388,7 @@
         <device Dname="M2L31YGDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2295,6 +2410,7 @@
         <device Dname="M2L31YG4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2316,6 +2432,7 @@
         <device Dname="M2L31YE4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2337,6 +2454,7 @@
         <device Dname="M2L31YD4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2358,6 +2476,7 @@
         <device Dname="M2L31ZE4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2379,6 +2498,7 @@
         <device Dname="M2L31ZD4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2400,6 +2520,7 @@
         <device Dname="M2L31XD4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2420,6 +2541,7 @@
         <device Dname="M2L31YIDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2441,6 +2563,7 @@
         <device Dname="M2L31CGDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2462,6 +2585,7 @@
         <device Dname="M2L31CIDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2483,6 +2607,7 @@
         <device Dname="M2L31LGDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2504,6 +2629,7 @@
         <device Dname="M2L31LG4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2524,6 +2650,7 @@
         <device Dname="M2L31LE4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2544,6 +2671,7 @@
         <device Dname="M2L31LD4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2564,6 +2692,7 @@
         <device Dname="M2L31LIDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2585,6 +2714,7 @@
         <device Dname="M2L31SGDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2606,6 +2736,7 @@
         <device Dname="M2L31SG4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2626,6 +2757,7 @@
         <device Dname="M2L31SE4AE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0xa000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x5000"  default="1"/>
@@ -2646,6 +2778,7 @@
         <device Dname="M2L31SIDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2667,6 +2800,7 @@
         <device Dname="M2L31KGDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2688,6 +2822,7 @@
         <device Dname="M2L31KIDAE">
           <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x2000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x2a000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2L31_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
           <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x00100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x15000"  default="1"/>
@@ -2716,6 +2851,7 @@
         <device Dname="MR63ZIAAE">
           <debug      svd   ="SVD/Nuvoton/MR63_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/MR63_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/MR63_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -2738,6 +2874,7 @@
         <device Dname="MR63SIAAE">
           <debug      svd   ="SVD/Nuvoton/MR63_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/MR63_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/MR63_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -2760,6 +2897,7 @@
         <device Dname="MR63KIAAE">
           <debug      svd   ="SVD/Nuvoton/MR63_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/MR63_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/MR63_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
@@ -2789,6 +2927,7 @@
         <device Dname="M2U54KE4AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2805,6 +2944,7 @@
         <device Dname="M2U54KG6AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2821,6 +2961,7 @@
         <device Dname="M2U54YE4AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2837,6 +2978,7 @@
         <device Dname="M2U54YG6AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2853,6 +2995,7 @@
         <device Dname="M2U54SE4AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2869,6 +3012,7 @@
         <device Dname="M2U54SG6AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2885,6 +3029,7 @@
         <device Dname="M2U54AE4AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2901,6 +3046,7 @@
         <device Dname="M2U54AG6AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2917,6 +3063,7 @@
         <device Dname="M2U51YD3AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2933,6 +3080,7 @@
         <device Dname="M2U51YC2AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2948,6 +3096,7 @@
         <device Dname="M2U51TC2AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2962,6 +3111,7 @@
         <device Dname="M2U51FC2AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -2977,6 +3127,7 @@
         <device Dname="M2U51EC2AE">
           <debug      svd   ="SVD/Nuvoton/M2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M2U51_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
