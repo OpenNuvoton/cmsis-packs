@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.2" date="2025-09-30">
+      Update CM2U51 LDROM address.
+    </release>
     <release version="1.0.1" date="2025-07-16">
       Add CM2U51 part no.
     </release>
@@ -72,81 +75,90 @@
         <device Dname="CM2U54ES8AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="128"/>
         </device>
         <!-- *************************  Device 'CM2U54GS8AE'  ***************************** -->
         <device Dname="CM2U54GS8AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="128"/>
         </device>
         <!-- *************************  Device 'CM2U54EL3AE'  ***************************** -->
         <device Dname="CM2U54EL3AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="48"/>
         </device>
         <!-- *************************  Device 'CM2U54GL3AE'  ***************************** -->
         <device Dname="CM2U54GL3AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="48"/>
         </device>
         <!-- *************************  Device 'CM2U54EN8AE'  ***************************** -->
         <device Dname="CM2U54EN8AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="64"/>
         </device>
         <!-- *************************  Device 'CM2U54GN8AE'  ***************************** -->
         <device Dname="CM2U54GN8AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="64"/>
         </device>
         <!-- *************************  Device 'CM2U54EQ3AE'  ***************************** -->
         <device Dname="CM2U54EQ3AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="88"/>
         </device>
         <!-- *************************  Device 'CM2U54GQ3AE'  ***************************** -->
         <device Dname="CM2U54GQ3AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="88"/>
         </device>
         <!-- *************************  Device 'CM2U51DL3AE'  ***************************** -->
         <device Dname="CM2U51DL3AE">
           <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2U51_AP_64.FLM"      start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="48"/>
         </device>
       </subFamily>
