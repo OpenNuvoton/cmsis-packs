@@ -17,8 +17,10 @@
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/" vendor="Nuvoton" name="NuMicroKM1M0_DFP" version="1.0.4"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroCM_DFP" version="1.0.2"/>
 	<pdsc url="https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/" vendor="Nuvoton" name="NuMicroCM33_DFP" version="1.0.0"/>
+	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m251_bsp/" vendor="Nuvoton" name="NuMicro_M251_BSP" version="3.02.008"/>
+	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m253_bsp/" vendor="Nuvoton" name="NuMicro_M253_BSP" version="3.00.010"/>
 	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m460_bsp/" vendor="Nuvoton" name="NuMicro_M460_BSP" version="1.0.1"/>
-	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m5531_bsp/" vendor="Nuvoton" name="NuMicro_M5531_BSP" version="3.01.002"/>
-	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m55m1_bsp/" vendor="Nuvoton" name="NuMicro_M55M1_BSP" version="3.01.002"/>
+	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m5531_bsp/" vendor="Nuvoton" name="NuMicro_M5531_BSP" version="3.1.3"/>
+	<pdsc url="https://github.com/OpenNuvoton/keil_packs/raw/master/m55m1_bsp/" vendor="Nuvoton" name="NuMicro_M55M1_BSP" version="3.1.3"/>
   </pindex>
 </index>
