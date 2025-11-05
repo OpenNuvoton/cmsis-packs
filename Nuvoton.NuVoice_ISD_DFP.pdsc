@@ -3,9 +3,12 @@
   <vendor>Nuvoton</vendor>
   <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/</url>
   <name>NuVoice_ISD_DFP</name>
-  <description>Nuvoton ARM Cortex-M NuVoice, ISD and NPCx Family Device Support</description>
+  <description>Nuvoton ARM Cortex-M NuVoice, NSC and NPCx Family Device Support</description>
 
   <releases>
+ 	<release version="1.0.21" date="2025-07-24">
+      Add NSC family for NSC-related series, delete ISD Series, and revise the NSC128L42 series description according to TRM_NSC128L42_Rev 1.0.
+	</release>
  	<release version="1.0.20" date="2024-09-10">
       Add I2C Slave mode which is follow TRM_N574_Rev 3.0 and add chip NSC128L42 series.
 	</release>
@@ -77,577 +80,11 @@
     <keyword>Device Support</keyword>
     <keyword>Device Family Package Nuvoton</keyword>
     <keyword>NuVoice</keyword>
-	<keyword>ISD</keyword>
+	<keyword>NSC</keyword>
   </keywords>
 
   <devices>
-    <!-- generated, do not modify this section! -->
-    <family Dfamily="ISD Family" Dvendor="Nuvoton:18">
-		<!-- *************************  Subfamily 'I96100 Series'  ***************************** -->
-		<subFamily DsubFamily="I96100 Series">
-			<description>The I96100 series is a ARM Cortex-M0 32-bit microcontroller+Tensilica HIFI3 .</description>
-			<!-- *************************  Device 'I96100'  ***************************** -->
-			<device Dname="I96100">
-				<processor  Dcore="Cortex-M0"  Dclock="150000000"  />
-				<debug      svd   ="SVD/Nuvoton/I96100_v1.svd"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x1C000"     	init   ="0"   default="1"/>
-				<feature type="IOs"  		n="57"/>
-				<feature type="Timer"  		n="4"	m="32"/>
-				<feature type="UART"  		n="2"/>
-				<feature type="SPI"  		n="2"/>
-				<feature type="I2C"  		n="2"/>
-				<feature type="I2S"  		n="2"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="8"	m="16"/>
-				<feature type="USBD" 		n="1" 	name="Full-Speed USB Device"/>	
-			</device>
-		</subFamily>
-
-		<!-- *************************  Subfamily 'I91500 Series'  ***************************** -->
-		<subFamily DsubFamily="I91500 Series">
-			<description>The I91500 series is a ARM Cortex-M0 32-bit microcontroller.</description>
-			<!-- *************************  Device 'I91500'  ***************************** -->
-			<device Dname="I91500">
-				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/I91500_v1.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/I91500_LD_6.FLM"        start="0x00100000"  size="0x1000"  default="0"/>
-				<algorithm  name  ="Flash/I91500_AP_64.FLM"        start="0x00000000"  size="0x10000" default="1"/>
-				<feature type="IOs"  		n="24"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="2"/>
-				<feature type="SPI"  		n="2"/>
-				<feature type="I2C"  		n="2"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="8"	m="16"/>
-				<feature type="USBD" 		n="1" 	name="Full-Speed USB Device"/>	
-			</device>
-		</subFamily>
-	  
-		<!-- *************************  Subfamily 'I9160 Series'  ***************************** -->
-		<subFamily DsubFamily="I9160 Series">
-			<description>The I9160 series is a ARM Cortex-M0 32-bit microcontroller.</description>
-			<!-- *************************  Device 'I9130'  ***************************** -->
-			<device Dname="I9130">
-				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9100_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9100_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9100_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
-				<feature type="IOs"  		n="24"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="2"	m="16"/>
-				<feature type="ADC"  		n="8"	m="16"/>
-			</device>
-
-			<!-- *************************  Device 'I9160'  ***************************** -->
-			<device Dname="I9160">
-				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9100_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9100_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9100_AP_145.FLM"        start="0x00000000"  size="0x24400"                   default="1"/>
-				<feature type="IOs"  		n="24"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="2"	m="16"/>
-				<feature type="ADC"  		n="8"	m="16"/>
-			</device>
-		</subFamily>
-	
-		<!-- *************************  Subfamily 'I91300 Series'  ***************************** -->
-		<subFamily DsubFamily="I91300 Series">	
-		<description>The I91300 series is a ARM Cortex-M0 32-bit microcontroller.</description>
-			<!-- *************************  Device 'I91361'  ***************************** -->
-			<device Dname="I91361">
-			<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9300_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9300_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9300_AP_145.FLM"        start="0x00000000"  size="0x24400"                   default="1"/>
-				<feature type="IOs"  		n="32"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="16"	m="16"/>
-				<feature type="QFP"  		n="48"/>
-			</device>
-
-			<!-- *************************  Device 'I91360'  ***************************** -->
-			<device Dname="I91360">
-				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9300_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9300_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9300_AP_145.FLM"        start="0x00000000"  size="0x24400"                   default="1"/>
-				<feature type="IOs"  		n="32"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="16"	m="16"/>
-				<feature type="QFP"  		n="48"/>
-			</device>
-
-			<!-- *************************  Device 'I91341'  ***************************** -->
-			<device Dname="I91341">
-				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9300_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x18000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9300_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9100_AP_96.FLM"        start="0x00000000"  size="0x18000"                   default="1"/>
-				<feature type="IOs"  		n="32"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="16"	m="16"/>
-				<feature type="QFP"  		n="48"/>
-			</device>
-
-			<!-- *************************  Device 'I91340'  ***************************** -->
-			<device Dname="I91340">
-			<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-				<debug      svd   ="SVD/Nuvoton/ISD9300_v3.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x18000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/ISD9300_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-				<algorithm  name  ="Flash/ISD9300_AP_96.FLM"        start="0x00000000"  size="0x18000"                   default="1"/>
-				<feature type="IOs"  		n="32"/>
-				<feature type="Timer"  		n="3"	m="24"/>
-				<feature type="UART"  		n="1"/>
-				<feature type="SPI"  		n="1"/>
-				<feature type="I2C"  		n="1"/>
-				<feature type="I2S"  		n="1"/>
-				<feature type="AnalogOther"	n="2"/>
-				<feature type="PWM"  		n="6"	m="16"/>
-				<feature type="ADC"  		n="16"	m="16"/>
-				<feature type="QFP"  		n="48"/>
-			</device>
-		</subFamily>
-	 
-      <!-- *************************  Subfamily 'I91000 Series'  ***************************** -->
-      <subFamily DsubFamily="I91000 Series">	
-		<description>The I91000 series is a ARM Cortex-M0 32-bit microcontroller.</description>	  
-        <!-- *************************  Device 'I91032'  ***************************** -->
-        <device Dname="I91032">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91000_v4_2.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x1800"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91000_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
-        <feature type="IOs"  		n="22"/>
-        <feature type="Timer"  		n="3"	m="16"/>
-        <feature type="SPI"  		n="1"/>
-        <feature type="PWM"  		n="2"	m="16"/>
-        <feature type="ADC"  		n="8"	m="12"/>
-		</device>
-      </subFamily>
-
-      <!-- *************************  Subfamily 'I91200 Series'  ***************************** -->
-      <subFamily DsubFamily="I91200 Series">		
-		<description>The I91200 series is a ARM Cortex-M0 32-bit microcontroller.</description>	  
-        <!-- *************************  Device 'I91260'  ***************************** -->
-        <device Dname="I91260">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91200B_v1.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91200_AP_128.FLM"        start="0x00000000"  size="0x20000"                   default="1"/>
-        <feature type="IOs"  		n="32"/>
-        <feature type="Timer"  		n="2"	m="16"/>
-        <feature type="SPI"  		n="2"/>
-        <feature type="PWM"  		n="4"	m="16"/>
-        <feature type="ADC"  		n="8"	m="16"/>
-		</device>
-		
-        <!-- *************************  Device 'I91260C'  ***************************** -->
-        <device Dname="I91260C">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91200B_v1.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91200_AP_128.FLM"        start="0x00000000"  size="0x20000"                   default="1"/>
-        <feature type="IOs"  		n="32"/>
-        <feature type="Timer"  		n="2"	m="16"/>
-        <feature type="SPI"  		n="2"/>
-        <feature type="PWM"  		n="4"	m="16"/>
-        <feature type="ADC"  		n="8"	m="16"/>
-		</device>
-		
-        <!-- *************************  Device 'I91260B'  ***************************** -->
-        <device Dname="I91260B">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91200B_v1.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91200_AP_128.FLM"        start="0x00000000"  size="0x20000"                   default="1"/>
-        <feature type="IOs"  		n="32"/>
-        <feature type="Timer"  		n="2"	m="16"/>
-        <feature type="SPI"  		n="2"/>
-        <feature type="PWM"  		n="4"	m="16"/>
-        <feature type="ADC"  		n="8"	m="16"/>
-		</device>
-		
-        <!-- *************************  Device 'I91230'  ***************************** -->
-        <device Dname="I91230">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91200B_v1.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91200_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
-        <feature type="IOs"  		n="32"/>
-        <feature type="Timer"  		n="2"	m="16"/>
-        <feature type="SPI"  		n="2"/>
-        <feature type="PWM"  		n="4"	m="16"/>
-        <feature type="ADC"  		n="8"	m="16"/>
-		</device>
-		
-        <!-- *************************  Device 'I91230C'  ***************************** -->
-        <device Dname="I91230C">
-		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
-          <debug      svd   ="SVD/Nuvoton/ISD91200B_v1.svd"/> <!--Fixed-->
-          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I91200_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
-        <feature type="IOs"  		n="32"/>
-        <feature type="Timer"  		n="2"	m="16"/>
-        <feature type="SPI"  		n="2"/>
-        <feature type="PWM"  		n="4"	m="16"/>
-        <feature type="ADC"  		n="8"	m="16"/>
-		</device>
-      </subFamily>
-	  
-      <!-- *************************  Subfamily 'I94000 Series'  ***************************** -->
-      <subFamily DsubFamily="I94000 Series">
-		<description>The I94100 series is a ARM Cortex-M4 32-bit microcontroller.</description>
-        <!-- *************************  Device 'I94100'  ***************************** -->
-        <device Dname="I94100">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94120'  ***************************** -->
-        <device Dname="I94120">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-
-        <!-- *************************  Device 'I94121'  ***************************** -->
-        <device Dname="I94121">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x10000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94123'  ***************************** -->
-        <device Dname="I94123">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94124'  ***************************** -->
-        <device Dname="I94124">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-	  
-        <!-- *************************  Device 'I94110'  ***************************** -->
-        <device Dname="I94110">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94111'  ***************************** -->
-        <device Dname="I94111">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x10000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94113'  ***************************** -->
-        <device Dname="I94113">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-	  
-        <!-- *************************  Device 'I94114'  ***************************** -->
-        <device Dname="I94114">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94130'  ***************************** -->
-        <device Dname="I94130">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_128.FLM"      start="0x00000000"  size="0x20000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94131'  ***************************** -->
-        <device Dname="I94131">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x10000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_128.FLM"      start="0x00000000"  size="0x20000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94133'  ***************************** -->
-        <device Dname="I94133">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_128.FLM"      start="0x00000000"  size="0x20000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-		
-        <!-- *************************  Device 'I94134'  ***************************** -->
-        <device Dname="I94134">
-		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
-          <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
-          <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
-          <algorithm  name  ="Flash/I94000_AP_128.FLM"      start="0x00000000"  size="0x20000"                  default="1"/>
-        <feature type="IOs"  		n="26"/>
-        <feature type="Timer"  		n="4"	m="32"/>
-        <feature type="UART"  		n="6"/>
-        <feature type="SPI"  		n="3"/>
-        <feature type="I2C"  		n="3"/>
-        <feature type="USBD"  		n="1"/>
-        <feature type="I2S"  		n="1"/>
-        <feature type="AnalogOther"	n="2"/>
-        <feature type="PWM"  		n="24"	m="16"/>
-        <feature type="ADC"  		n="16"	m="12"/>
-        <feature type="DAC"  		n="2"	m="12"/>
-        <feature type="QFN"  		n="33"/>
-		</device>
-      </subFamily>
-    </family>
-	
+    <!-- generated, do not modify this section! -->	
     <family Dfamily="NPCX Family" Dvendor="Nuvoton:18">
       <!-- *************************  Subfamily 'NPCA121 Series'  ***************************** -->
       <subFamily DsubFamily="NPCA121 Series">
@@ -962,97 +399,6 @@
 			</device>
 		</subFamily>
 
-		<!-- *************************  Subfamily 'NSC74 Series'  ***************************** -->
-		<subFamily DsubFamily="NSC74 Series">
-		<description>The NSC74 series is a ARM Cortex-M0 32-bit microcontroller.</description>		
-			<!-- *************************  Device 'NSC741K5'  ***************************** -->
-			<device Dname="NSC741K5">
-				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
-				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/NSC74_AP_1_5M.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
-				<feature type="IOs"         n="40"/>
-				<feature type="Timer"       n="3"    m="16"/>
-				<feature type="UART"        n="1"/>
-				<feature type="SPI"         n="1"/>
-				<feature type="AnalogOther" n="1"/>
-				<feature type="PWM"         n="12"   m="16"/>
-				<feature type="ADC"         n="5"   m="10"/>
-			</device>
-			
-			<!-- *************************  Device 'NSC741K0'  ***************************** -->
-			<device Dname="NSC741K0">
-				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
-				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/NSC74_AP_1M.FLM"      start="0x00000000"  size="0x100000"                  default="1"/>
-				<feature type="IOs"         n="40"/>
-				<feature type="Timer"       n="3"    m="16"/>
-				<feature type="UART"        n="1"/>
-				<feature type="SPI"         n="1"/>
-				<feature type="AnalogOther" n="1"/>
-				<feature type="PWM"         n="12"   m="16"/>
-				<feature type="ADC"         n="5"   m="10"/>
-			</device>
-
-			<!-- *************************  Device 'NSC74512'  ***************************** -->
-			<device Dname="NSC74512">
-				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
-				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/NSC74_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
-				<feature type="IOs"         n="40"/>
-				<feature type="Timer"       n="3"    m="16"/>
-				<feature type="UART"        n="1"/>
-				<feature type="SPI"         n="1"/>
-				<feature type="AnalogOther" n="1"/>
-				<feature type="PWM"         n="12"   m="16"/>
-				<feature type="ADC"         n="5"   m="10"/>
-			</device>
-
-			<!-- *************************  Device 'NSC74256'  ***************************** -->
-			<device Dname="NSC74256">
-				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
-				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/NSC74_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
-				<feature type="IOs"         n="40"/>
-				<feature type="Timer"       n="3"    m="16"/>
-				<feature type="UART"        n="1"/>
-				<feature type="SPI"         n="1"/>
-				<feature type="AnalogOther" n="1"/>
-				<feature type="PWM"         n="12"   m="16"/>
-				<feature type="ADC"         n="5"   m="10"/>
-			</device>
-		</subFamily>
-
-		<!-- *************************  Subfamily 'NSC128 Series'  ***************************** -->
-		<subFamily DsubFamily="NSC128 Series">
-		<description>The NSC128 series is a ARM Cortex-M23 32-bit microcontroller.</description>		
-			<!-- *************************  Device ''NSC128L42'  ***************************** -->
-			<device Dname="NSC128L42">
-				<processor  Dcore="Cortex-M23"  Dclock="49152000" />
-				<debug      svd   ="SVD/Nuvoton/NSC128L42_v1.svd"/>
-				<memory     id="IROM1"    start="0x00000000"  size="0x50000"     startup="1"   default="1"/>
-				<memory     id="IRAM1"    start="0x20000000"  size="0x4800"     init   ="0"   default="1"/>
-				<algorithm  name  ="Flash/NSC128_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
-				<algorithm  name  ="Flash/NSC128_AP_320.FLM"      start="0x00000000"  size="0x50000"                  default="1"/>
-				<feature type="IOs"         n="68"/>
-				<feature type="Timer"       n="3"    m="16"/>
-				<feature type="UART"        n="1"/>
-				<feature type="SPI"         n="1"/>
-				<feature type="PWM"         n="3"   m="14"/>
-			</device>
-		</subFamily>
-
       <!-- *************************  Subfamily 'N572S Series'  ***************************** -->
       <subFamily DsubFamily="N572S Series">
 		<description>The N572S series is a ARM Cortex-M0 32-bit microcontroller(include SPIFlash).</description>	
@@ -1293,6 +639,100 @@
         <feature type="ADC"  		n="8"	m="10"/>
 		</device>
       </subFamily>
+    </family>
+
+    <family Dfamily="NSC Family" Dvendor="Nuvoton:18">
+
+		<!-- *************************  Subfamily 'NSC74 Series'  ***************************** -->
+		<subFamily DsubFamily="NSC74 Series">
+		<description>The NSC74 series is a ARM Cortex-M0 32-bit microcontroller.</description>		
+			<!-- *************************  Device 'NSC741K5'  ***************************** -->
+			<device Dname="NSC741K5">
+				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
+				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/NSC74_AP_1_5M.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
+				<feature type="IOs"         n="40"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="AnalogOther" n="1"/>
+				<feature type="PWM"         n="12"   m="16"/>
+				<feature type="ADC"         n="5"   m="10"/>
+			</device>
+			
+			<!-- *************************  Device 'NSC741K0'  ***************************** -->
+			<device Dname="NSC741K0">
+				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
+				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/NSC74_AP_1M.FLM"      start="0x00000000"  size="0x100000"                  default="1"/>
+				<feature type="IOs"         n="40"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="AnalogOther" n="1"/>
+				<feature type="PWM"         n="12"   m="16"/>
+				<feature type="ADC"         n="5"   m="10"/>
+			</device>
+
+			<!-- *************************  Device 'NSC74512'  ***************************** -->
+			<device Dname="NSC74512">
+				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
+				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/NSC74_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
+				<feature type="IOs"         n="40"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="AnalogOther" n="1"/>
+				<feature type="PWM"         n="12"   m="16"/>
+				<feature type="ADC"         n="5"   m="10"/>
+			</device>
+
+			<!-- *************************  Device 'NSC74256'  ***************************** -->
+			<device Dname="NSC74256">
+				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
+				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/NSC74_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
+				<feature type="IOs"         n="40"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="AnalogOther" n="1"/>
+				<feature type="PWM"         n="12"   m="16"/>
+				<feature type="ADC"         n="5"   m="10"/>
+			</device>
+		</subFamily>
+
+		<!-- *************************  Subfamily 'NSC Series'  ***************************** -->
+		<subFamily DsubFamily="NSC Series">
+		<description>The NSC128 series is a ARM Cortex-M23 32-bit microcontroller.</description>		
+			<!-- *************************  Device 'NSC128L42'  ***************************** -->
+			<device Dname="NSC128L42">
+				<processor  Dcore="Cortex-M23"  Dclock="49152000" />
+				<debug      svd   ="SVD/Nuvoton/NSC_v2.svd"/>
+				<memory     id="IROM1"    start="0x00000000"  size="0x50000"     startup="1"   default="1"/>
+				<memory     id="IRAM1"    start="0x20000000"  size="0x4800"     init   ="0"   default="1"/>
+				<algorithm  name  ="Flash/NSC_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
+				<algorithm  name  ="Flash/NSC_AP_320.FLM"      start="0x00000000"  size="0x50000"                  default="1"/>
+				<feature type="IOs"         n="68"/>
+				<feature type="Timer"       n="3"    m="16"/>
+				<feature type="UART"        n="1"/>
+				<feature type="SPI"         n="1"/>
+				<feature type="PWM"         n="3"   m="14"/>
+			</device>
+		</subFamily>
     </family>
   </devices>
 

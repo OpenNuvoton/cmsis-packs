@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+<package schemaVersion="1.7.44" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.44/schema/PACK.xsd">
+  <!-- Must have - software pack vendor name: -->
   <vendor>Nuvoton</vendor>
   <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
   <name>NuMicroM55_DFP</name>
   <description>Nuvoton ARM Cortex-M55 NuMicro Family Device Support</description>
+  <supportContact></supportContact>
+   <!-- Must have - licensing information (for software BOM): -->
+  <license>LICENSE</license>
+  <licenseSets>
+    <licenseSet id="all" default="true" gating="true">
+      <license name="LICENSE" title="Apache 2.0 License"/>
+    </licenseSet>
+  </licenseSets>
 
   <releases>
+    <release version="3.1.3" date="2025-11-03">
+      - Supported M55M1B.
+      - Added CMSIS drivers.
+      - Updated startup, standard drivers, libraries, sample codes.
+    </release>
     <release version="1.0.2" date="2025-08-07">
       Update IROM3 and RAMStart for flash algorithm.
     </release>
@@ -17,12 +31,20 @@
     </release>
   </releases>
 
+  <requirements>
+    <!-- Strongly recommended - requirement to DFP (or other packs): -->
+    <packages>
+      <package vendor="ARM" name="CMSIS" version="6.1.0"/>
+    </packages>
+  </requirements>
+
   <keywords>
     <!-- keywords for indexing -->
     <keyword>Nuvoton</keyword>
     <keyword>Device Support</keyword>
     <keyword>Device Family Package Nuvoton</keyword>
-    <keyword>NuMicro</keyword>
+    <keyword>NuMicroM55</keyword>
+    <keyword>M55M1H2LJAE</keyword>
   </keywords>
 
   <devices>
@@ -31,7 +53,7 @@
       <!-- *************************  Subfamily 'M55M1'  ***************************** -->
       <subFamily DsubFamily="M55M1">
         <processor Dcore="Cortex-M55" Dfpu="DP_FPU" Dmpu="MPU" Dmve="FP_MVE" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="180000000"/>
-        <compile    header="Device/M55M1/Include/M55M1.h"/>
+        <compile    header="Library/Device/Nuvoton/M55M1/Include/M55M1.h"/>
         <description>The NuMicro M55M1 series 32-bit microcontroller.</description>
         <!-- *************************  Device 'M55M1R2LJAE'  ***************************** -->
         <device Dname="M55M1R2LJAE">
@@ -181,7 +203,7 @@
       <!-- *************************  Subfamily 'M5531'  ***************************** -->
       <subFamily DsubFamily="M5531">
         <processor Dcore="Cortex-M55" Dfpu="DP_FPU" Dmpu="MPU" Dmve="FP_MVE" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="180000000"/>
-        <compile    header="Device/M5531/Include/M5531.h"/>
+        <compile    header="Library/Device/Nuvoton/M5531/Include/M5531.h"/>
         <description>The NuMicro M5531 series 32-bit microcontroller.</description>
         <!-- *************************  Device 'M5531R2LJAE'  ***************************** -->
         <device Dname="M5531R2LJAE">
@@ -260,55 +282,1047 @@
 
   <conditions>
     <!-- conditions are dependecy rules that can apply to a component or an individual file -->
-    <condition id="M55NuMicro M55M1 Device">
-      <description>Nuvoton M55NuMicro M55M1 Series devices</description>
+    <condition id="NuMicro M55M1 Device">
+      <description>Nuvoton NuMicro M55M1 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M55M1H3[HKR]2LJAE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M55M1[HKR]2LJAE"/>
     </condition>
-    <condition id="M55NuMicro M5531 Device">
-      <description>Nuvoton M55NuMicro M5531 Series devices</description>
+    <condition id="NuMicro M5531 Device">
+      <description>Nuvoton NuMicro M5531 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M5531[HKR]2LJAE"/>
+    </condition>
+    <condition id="NuMicro M55M1_M5531 Device">
+      <accept condition="NuMicro M55M1 Device"/>
+      <accept condition="NuMicro M5531 Device"/>
+    </condition>
+
+    <condition id="Toolchain ARMCC">
+      <accept Tcompiler="ARMCC"/> 
+    </condition>
+
+    <condition id="Toolchain GCC">
+      <accept Tcompiler="GCC"/> 
+    </condition>
+
+    <condition id="Toolchain IAR">
+      <accept Tcompiler="IAR"/> 
+    </condition>
+
+    <condition id="NuMicro M55M1 Device Startup">
+      <description>Nuvoton NuMicro M55M1 Series devices Startup</description>
+      <require condition="NuMicro M55M1 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="CLK"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SYS"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="UART"/>
+    </condition>
+
+    <condition id="NuMicro M5531 Device Startup">
+      <description>Nuvoton NuMicro M5531 Series devices Startup</description>
+      <require condition="NuMicro M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="CLK"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SYS"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="UART"/>
+    </condition>
+
+    <condition id="NuMicro M55M1 Device DMIC">
+      <description>Nuvoton NuMicro M55M1 Series devices DMIC</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="PMC"/>
+    </condition>
+
+    <condition id="NuMicro M55M1 Device UTCPD">
+      <description>Nuvoton NuMicro M55M1 Series devices UTCPD</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="PowerDeliveryLib"/>
+    </condition>
+
+    <condition id="PowerDeliveryLib Driver UTCPD">
+      <description>PowerDeliveryLib UTCPD Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="UTCPD"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="PDMA"/>
+    </condition>
+
+    <condition id="SmartcardLib Driver SC">
+      <description>SmartcardLib SC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SC"/>
+    </condition>
+
+    <condition id="UsbHostLib Driver CDC">
+      <description>UsbHostLib CDC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core"/>
+    </condition>
+
+    <condition id="UsbHostLib Driver HID">
+      <description>UsbHostLib HID Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core"/>
+    </condition>
+
+    <condition id="UsbHostLib Driver MSC">
+      <description>UsbHostLib MSC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core"/>
+    </condition>
+
+    <condition id="UsbHostLib Driver UAC">
+      <description>UsbHostLib UAC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core"/>
+    </condition>
+
+    <condition id="UsbHostLib Driver UVC">
+      <description>UsbHostLib UVC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core"/>
+    </condition>
+
+    <condition id="CMSIS Driver Common">
+      <description>CMSIS Common Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="CLK"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="LPPDMA"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="PDMA"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SYS"/>
+    </condition>
+
+    <condition id="CMSIS Driver Retarget">
+      <description>CMSIS Retarget Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="UART"/>
+    </condition>
+
+    <condition id="CMSIS Driver CAN">
+      <description>CMSIS CAN Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="CANFD"/>
+    </condition>
+
+    <condition id="CMSIS Driver Ethernet MAC">
+      <description>CMSIS Ethernet MAC Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="EMAC"/>
+    </condition>
+
+    <condition id="CMSIS Driver Flash">
+      <description>CMSIS Flash Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="FMC"/>
+    </condition>
+
+    <condition id="CMSIS Driver GPIO">
+      <description>CMSIS GPIO Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="GPIO"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="LPGPIO"/>
+    </condition>
+
+    <condition id="CMSIS Driver I2C">
+      <description>CMSIS I2C Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="I2C"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="LPI2C"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C"/>
+    </condition>
+
+    <condition id="CMSIS Driver MCI">
+      <description>CMSIS MCI Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SDH"/>
+    </condition>
+
+    <condition id="CMSIS Driver SAI">
+      <description>CMSIS SAI Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="I2S"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SPI"/>
+    </condition>
+
+    <condition id="CMSIS Driver SPI">
+      <description>CMSIS SPI Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="LPSPI"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="QSPI"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SPI"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SPIM"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI"/>
+    </condition>
+
+    <condition id="CMSIS Driver USART">
+      <description>CMSIS USART Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="LPUART"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="SCUART"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="UART"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART"/>
+    </condition>
+
+    <condition id="CMSIS Driver USBD">
+      <description>CMSIS USBD Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common" />
+      <require Cclass="Device" Cgroup="StdDriver" Csub="USBD"/>
+    </condition>
+
+    <condition id="CMSIS Driver USBH">
+      <description>CMSIS USBH Driver</description>
+      <require condition="NuMicro M55M1_M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common"/>
+    </condition>
+
+    <condition id="CMSIS Driver M55M1 VIO">
+      <description>CMSIS VIO M55M1 Driver</description>
+      <require condition="NuMicro M55M1 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="GPIO"/>
+    </condition>
+
+    <condition id="CMSIS Driver M5531 VIO">
+      <description>CMSIS VIO M5531 Driver</description>
+      <require condition="NuMicro M5531 Device"/>
+      <require Cclass="CMSIS Driver" Cgroup="Common"/>
+      <require Cclass="Device" Cgroup="StdDriver" Csub="GPIO"/>
     </condition>
   </conditions>
 
   <components>
-    <!-- *************************  Startup file  ***************************** -->
-    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M55NuMicro M55M1 Device">
-      <!-- Cversion is necessary -->
-      <description>System Startup for Nuvoton M55M1 Series</description>
-      <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-      </RTE_Components_h>
+    <!-- CMSIS Driver components section: -->
+    <component Cclass="CMSIS Driver" Cgroup="Common" Csub="M55M1_M5531" Cversion="1.0.0" condition="CMSIS Driver Common">
+    <description>CMSIS common driver for Nuvoton M55M1 series</description>
       <files>
-        <!-- header path -->
-        <file category="include" name="Device/M55M1/StdDriver/inc/"/>
-        <file category="include" name="Device/M55M1/Include/"/>
-        <file category="header"  name="Device/M55M1/Include/M55M1.h"/>
-        <file category="header"  name="Device/M55M1/Include/NuMicro.h"/>
-        <!-- startup/system files -->
-        <file category="source"  name="Device/M55M1/Source/startup_M55M1.c" attr="config" version="0.00.001"/>
-        <file category="source"  name="Device/M55M1/Source/system_M55M1.c" attr="config" version="0.00.001"/>
-        <!-- retarget files -->
-        <file category="sourceC" name="Device/M55M1/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      <file category="include" name="Library/CMSIS/Driver/Include/"/>
+      <file category="include" name="Library/CMSIS/Driver/Source/"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_Common.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device.h" attr="config" version="1.0.0"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/drv_lppdma.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/drv_pdma.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/misc.c"/>
       </files>
     </component>
-    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M55NuMicro M5531 Device">
+
+    <component Cclass="CMSIS Driver" Cgroup="Retarget" Csub="M55M1_M5531" Cversion="1.0.0" condition="CMSIS Driver Retarget">
+    <description>CMSIS Retarget driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/retarget.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="CAN" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="1.3.0" condition="CMSIS Driver CAN">
+    <description>CMSIS CAN driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_CAN.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_CAN.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_CAN.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.2.0" condition="CMSIS Driver Ethernet MAC">
+    <description>CMSIS Ethernet MAC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_ETH_MAC.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_ETH.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_ETH_MAC.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_ETH_MAC.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="Flash" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.3.0" condition="CMSIS Driver Flash">
+    <description>CMSIS Flash driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_Flash.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_Flash.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_Flash.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="GPIO" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="1.0.0" condition="CMSIS Driver GPIO">
+    <description>CMSIS GPIO driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_GPIO.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_GPIO_LPGPIO.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_GPIO.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_GPIO/Driver_GPIO.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_GPIO/Driver_GPIO_LPGPIO.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="I2C" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.4.0" condition="CMSIS Driver I2C">
+    <description>CMSIS I2C driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_I2C.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_I2C.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_I2C/Driver_I2C.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_I2C/Driver_I2C_LPI2C.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_I2C/Driver_I2C_UI2C.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="MCI" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.4.0" condition="CMSIS Driver MCI">
+    <description>CMSIS MCI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_MCI.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_MCI.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_MCI.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="SAI" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="1.2.0" condition="CMSIS Driver SAI">
+    <description>CMSIS SAI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_SAI.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_SAI.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SAI/Driver_SAI_I2S.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SAI/Driver_SAI_SPII2S.c"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_SAI/i2s_hal.h"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="SPI" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.3.0" condition="CMSIS Driver SPI">
+    <description>CMSIS SPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_SPI.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_SPI.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SPI/Driver_SPI.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SPI/Driver_SPI_LPSPI.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SPI/Driver_SPI_QSPI.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SPI/Driver_SPI_SPIM.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_SPI/Driver_SPI_USPI.c"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_SPI/spi_hal.h"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="USART" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.4.0" condition="CMSIS Driver USART">
+    <description>CMSIS USART driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_USART.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_USART.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_USART/Driver_USART_LPUART.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_USART/Driver_USART_SC_UART.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_USART/Driver_USART_UART.c"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_USART/Driver_USART_UUART.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="USB Device" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.3.0" condition="CMSIS Driver USBD">
+    <description>CMSIS USBD driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_USBD.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_USB.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_USBD.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/Source/Driver_USBD/Driver_USBD.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="USB Host" Csub="M55M1_M5531" Cversion="1.0.0" Capiversion="2.4.0" condition="CMSIS Driver USBH">
+    <description>CMSIS USBH driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/Source/RTE_Device/RTE_Device_USBH.h" attr="config" version="1.0.0"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_USB.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Include/Driver_USBH.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Include/Driver_USBH_EHCI_Config.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Include/Driver_USBH_EHCI_HW.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Include/Driver_USBH_EHCI_Regs.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Include/Driver_USBH_EHCI.h"/>
+      <file category="sourceC"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Source/Driver_USBH_EHCI_HW.c"/>
+      <file category="sourceC"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_EHCI/Source/Driver_USBH_EHCI.c"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Include/Driver_USBH_OHCI_Config.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Include/Driver_USBH_OHCI_HW.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Include/Driver_USBH_OHCI_Regs.h"/>
+      <file category="header"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Include/Driver_USBH_OHCI.h"/>
+      <file category="sourceC"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Source/Driver_USBH_OHCI_HW.c"/>
+      <file category="sourceC"  name="Library/CMSIS/Driver/Source/Driver_USBH/Driver_USBH_OHCI/Source/Driver_USBH_OHCI.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="M55M1" Cversion="1.0.0" Capiversion="1.0.0" condition="CMSIS Driver M55M1 VIO">
+    <description>CMSIS VIO for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/VIO/Include/cmsis_vio.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/VIO/Source/vio_NuMaker-M55M1.c"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="M5531" Cversion="1.0.0" Capiversion="1.0.0" condition="CMSIS Driver M5531 VIO">
+    <description>CMSIS VIO for Nuvoton M5531 series</description>
+      <files>
+      <file category="header"  name="Library/CMSIS/Driver/VIO/Include/cmsis_vio.h"/>
+      <file category="sourceC" name="Library/CMSIS/Driver/VIO/Source/vio_NuMaker-M5531.c"/>
+      </files>
+    </component>
+
+    <!-- StdDriver components section: -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="NuMicro M55M1 Device Startup">
       <!-- Cversion is necessary -->
-      <description>System Startup for Nuvoton M5531 Series</description>
-      <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-      </RTE_Components_h>
+      <description>System Startup for Nuvoton M55M1 series</description>
       <files>
         <!-- header path -->
-        <file category="include" name="Device/M5531/StdDriver/inc/"/>
-        <file category="include" name="Device/M5531/Include/"/>
-        <file category="header"  name="Device/M5531/Include/M5531.h"/>
-        <file category="header"  name="Device/M5531/Include/NuMicro.h"/>
+        <file category="include" name="Library/StdDriver/inc/"/>
+        <file category="include" name="Library/Device/Nuvoton/M55M1/Include/"/>
+        <file category="header"  name="Library/Device/Nuvoton/M55M1/Include/M55M1.h"/>
         <!-- startup/system files -->
-        <file category="source"  name="Device/M5531/Source/startup_M5531.c" attr="config" version="0.00.001"/>
-        <file category="source"  name="Device/M5531/Source/system_M5531.c" attr="config" version="0.00.001"/>
-        <!-- retarget files -->
-        <file category="sourceC" name="Device/M5531/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Library/Device/Nuvoton/M55M1/Source/startup_M55M1.c" attr="config" version="1.0.0"/>
+        <file category="source"  name="Library/Device/Nuvoton/M55M1/Source/system_M55M1.c" attr="config" version="1.0.0"/>
+        <!-- linkerScript files -->
+        <file category="linkerScript" name="Library/Device/Nuvoton/M55M1/Source/ARM/M55M1.scf" attr="config" version="1.0.0" condition="Toolchain ARMCC"/>
+        <file category="linkerScript" name="Library/Device/Nuvoton/M55M1/Source/GCC/M55M1.ld" attr="config" version="1.0.0" condition="Toolchain GCC"/>
+        <file category="linkerScript" name="Library/Device/Nuvoton/M55M1/Source/IAR/M55M1.icf" attr="config" version="1.0.0" condition="Toolchain IAR"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="Retarget" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>Debug Port and Semihost Setting driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="sourceC" name="Library/StdDriver/src/retarget.c" version="1.0.0"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>ACMP driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/acmp.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/acmp.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="AWF" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>AWF driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/awf.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/awf.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>BPWM driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/bpwm.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/bpwm.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>CANFD driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/canfd.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/canfd.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CCAP" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>CCAP driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/ccap.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/ccap.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>CLK driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/clk.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/clk.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>CRC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/crc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/crc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>CRYPTO driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/crypto.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/crypto.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>DAC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/dac.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/dac.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DMIC" Cversion="1.0.0" condition="NuMicro M55M1 Device DMIC">
+    <description>DMIC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/dmic.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/dmic.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>EADC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/eadc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/eadc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>EBI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/ebi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/ebi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>ECAP driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/ecap.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/ecap.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EMAC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>EMAC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/emac/synopGMAC_Dev.h"/>
+      <file category="header"  name="Library/StdDriver/inc/emac/synopGMAC_network_interface.h"/>
+      <file category="header"  name="Library/StdDriver/inc/emac/synopGMAC_plat.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/emac/synopGMAC_Dev.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/emac/synopGMAC_network_interface.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/emac/synopGMAC_plat.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>EPWM driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/epwm.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/epwm.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EQEI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>EQEI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/eqei.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/eqei.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>FMC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/fmc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/fmc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GDMA" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>GDMA driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/gdma/dma350_ch_drv.h"/>
+      <file category="header"  name="Library/StdDriver/inc/gdma/dma350_drv.h"/>
+      <file category="header"  name="Library/StdDriver/inc/gdma/dma350_lib.h"/>
+      <file category="header"  name="Library/StdDriver/inc/gdma/dma350_regdef.h"/>
+      <file category="header"  name="Library/StdDriver/inc/gdma/gdma.h"/>
+      <file category="header"  name="Library/StdDriver/src/gdma/arm_cmse.h" condition="Toolchain IAR"/>
+      <file category="sourceC" name="Library/StdDriver/src/gdma/dma350_address_remap_template.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/gdma/dma350_ch_drv.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/gdma/dma350_drv.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/gdma/dma350_lib.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>GPIO driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/gpio.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/gpio.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HSUSBD" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>HSUSBD driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/hsusbd.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/hsusbd.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>I2C driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/i2c.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/i2c.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>I2S driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/i2s.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/i2s.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3C" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>I3C driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/i3c.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/i3c.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KDF" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>KDF driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/kdf.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/kdf.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KPI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>KPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/kpi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/kpi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KS" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>KS driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/ks.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/ks.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPADC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPADC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lpadc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lpadc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPGPIO" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPGPIO driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lpgpio.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lpgpio.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPI2C" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPI2C driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lpi2c.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lpi2c.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPPDMA" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPPDMA driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lppdma.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lppdma.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPSPI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPSPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lpspi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lpspi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPTMR" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPTMR driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lptmr.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lptmr.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPTMR_PWM" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPTMR_PWM driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lptmr_pwm.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lptmr_pwm.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPUART" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>LPUART driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/lpuart.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/lpuart.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="NPU" Cversion="1.0.0" condition="NuMicro M55M1 Device">
+    <description>NPU driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/npu/ethosu_driver.h"/>
+      <file category="header"  name="Library/StdDriver/inc/npu/ethosu_types.h"/>
+      <file category="header"  name="Library/StdDriver/inc/npu/pmu_ethosu.h"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_config_u55.h"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_config_u65.h"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_config.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/npu/ethosu_device_u55_u65.c"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_device.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/npu/ethosu_driver.c"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_interface.h"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu_log.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/npu/ethosu_pmu.c"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu55_interface.h"/>
+      <file category="header"  name="Library/StdDriver/src/npu/ethosu65_interface.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="OTFC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>OTFC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/otfc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/otfc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>PDMA driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/pdma.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/pdma.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PMC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>PMC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/pmc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/pmc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>QSPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/qspi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/qspi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RNG" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>RNG driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/rng.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/rng.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>RTC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/rtc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/rtc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/sc.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/sc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SCUART driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/scuart.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/scuart.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCU" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SCU driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/scu/dpm.h"/>
+      <file category="header"  name="Library/StdDriver/inc/scu/fvc.h"/>
+      <file category="header"  name="Library/StdDriver/inc/scu/mpc_sie_drv.h"/>
+      <file category="header"  name="Library/StdDriver/inc/scu/mpc_sie_reg_map.h"/>
+      <file category="header"  name="Library/StdDriver/inc/scu/plm.h"/>
+      <file category="header"  name="Library/StdDriver/inc/scu/scu.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/scu/dpm.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/scu/fvc.c"/>
+      <file category="sourceC" name="Library/StdDriver/src/scu/mpc_sie_drv.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SDH driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/sdh.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/sdh.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/spi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/spi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SPIM driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/spim.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/spim.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM_HYPER" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SPIM_HYPER driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/spim_hyper.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/spim_hyper.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>SYS driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/sys.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/sys.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>TIMER driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/timer.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/timer.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>TIMER_PWM driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/timer_pwm.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/timer_pwm.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>TRNG driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/trng.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/trng.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TTMR" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>TTMR driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/ttmr.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/ttmr.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>UART driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/uart.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/uart.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>USBD driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/usbd.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/usbd.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>USCI_I2C driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/usci_i2c.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/usci_i2c.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>USCI_SPI driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/usci_spi.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/usci_spi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>USCI_UART driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/usci_uart.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/usci_uart.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UTCPD" Cversion="1.0.0" condition="NuMicro M55M1 Device UTCPD">
+    <description>UTCPD driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/utcpd.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/utcpd.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>WDT driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/wdt.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/wdt.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>WWDT driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/StdDriver/inc/wwdt.h"/>
+      <file category="sourceC" name="Library/StdDriver/src/wwdt.c"/>
+      </files>
+    </component>
+
+    <!-- PowerDeliveryLib components section: -->
+    <component Cclass="Device" Cgroup="PowerDeliveryLib" Cversion="1.0.0" condition="PowerDeliveryLib Driver UTCPD">
+    <description>Power delivery library for Nuvoton M55M1 series</description>
+      <files>
+      <file category="include" name="Library/PowerDeliveryLib/Include/Inc/"/>
+      <file category="header"  name="Library/PowerDeliveryLib/Include/utcpd_config.h"/>
+      <file category="header"  name="Library/PowerDeliveryLib/Include/utcpdlib.h"/>
+	    <file category="library" name="Library/PowerDeliveryLib/libPD_DRP.a" condition="Toolchain GCC"/>
+	    <file category="library" name="Library/PowerDeliveryLib/libPD_SNK.a" condition="Toolchain GCC"/>
+	    <file category="library" name="Library/PowerDeliveryLib/libPD_SRC.a" condition="Toolchain GCC"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_DRP.a" condition="Toolchain IAR"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_DRP.lib" condition="Toolchain ARMCC"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_SNK.a" condition="Toolchain IAR"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_SNK.lib" condition="Toolchain ARMCC"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_SRC.a" condition="Toolchain IAR"/>
+	    <file category="library" name="Library/PowerDeliveryLib/PD_SRC.lib" condition="Toolchain ARMCC"/>
+      </files>
+    </component>
+
+    <!-- SmartcardLib components section: -->
+    <component Cclass="Device" Cgroup="SmartcardLib" Cversion="1.0.0" condition="SmartcardLib Driver SC">
+    <description>Smartcard library for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/SmartcardLib/include/sclib.h"/>
+	    <file category="library" name="Library/SmartcardLib/libSmartCardLib.a" condition="Toolchain GCC"/>
+	    <file category="library" name="Library/SmartcardLib/SmartCardLib.a" condition="Toolchain IAR"/>
+	    <file category="library" name="Library/SmartcardLib/SmartCardLib.lib" condition="Toolchain ARMCC"/>
+      </files>
+    </component>
+
+    <!-- UsbHostLib components section: -->
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_Core" Cversion="1.0.0" condition="NuMicro M55M1_M5531 Device">
+    <description>USB host library core driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/UsbHostLib/inc/config.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/ehci.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/hub.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/ohci.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usb.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usbh_cdc.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usbh_hid.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usbh_lib.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usbh_uac.h"/>
+      <file category="header"  name="Library/UsbHostLib/inc/usbh_uvc.h"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/ehci.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/ehci_iso.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/hub.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/mem_alloc.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/ohci.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/ohci_0.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/ohci_1.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_core/usb_core.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_CDC" Cversion="1.0.0" condition="UsbHostLib Driver CDC">
+    <description>USB host library CDC driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="sourceC" name="Library/UsbHostLib/src_cdc/cdc_core.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_cdc/cdc_driver.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_cdc/cdc_parser.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_HID" Cversion="1.0.0" condition="UsbHostLib Driver HID">
+    <description>USB host library HID class driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="sourceC" name="Library/UsbHostLib/src_hid/hid_core.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_hid/hid_driver.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_hid/hid_parser.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_MSC" Cversion="1.0.0" condition="UsbHostLib Driver MSC">
+    <description>USB host library mass storage class driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/UsbHostLib/src_msc/msc.h"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_msc/msc_driver.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_msc/msc_xfer.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_UAC" Cversion="1.0.0" condition="UsbHostLib Driver UAC">
+    <description>USB host library audio class driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="header"  name="Library/UsbHostLib/src_uac/uac.h"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_uac/uac_core.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_uac/uac_driver.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_uac/uac_parser.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="UsbHostLib" Csub="UsbHostLib_UVC" Cversion="1.0.0" condition="UsbHostLib Driver UVC">
+    <description>USB host library video class driver for Nuvoton M55M1 series</description>
+      <files>
+      <file category="sourceC" name="Library/UsbHostLib/src_uvc/uvc_core.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_uvc/uvc_driver.c"/>
+      <file category="sourceC" name="Library/UsbHostLib/src_uvc/uvc_parser.c"/>
+      </files>
+    </component>
+
+    <!-- StdDriver components section: -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="NuMicro M5531 Device Startup">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M55M1 series</description>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Library/StdDriver/inc/"/>
+        <file category="include" name="Library/Device/Nuvoton/M5531/Include/"/>
+        <file category="header"  name="Library/Device/Nuvoton/M5531/Include/M5531.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Library/Device/Nuvoton/M5531/Source/startup_M5531.c" attr="config" version="1.0.0"/>
+        <file category="source"  name="Library/Device/Nuvoton/M5531/Source/system_M5531.c" attr="config" version="1.0.0"/>
+        <!-- linkerScript files -->
+        <file category="linkerScript" name="Library/Device/Nuvoton/M5531/Source/ARM/M5531.scf" attr="config" version="1.0.0" condition="Toolchain ARMCC"/>
+        <file category="linkerScript" name="Library/Device/Nuvoton/M5531/Source/GCC/M5531.ld" attr="config" version="1.0.0" condition="Toolchain GCC"/>
+        <file category="linkerScript" name="Library/Device/Nuvoton/M5531/Source/IAR/M5531.icf" attr="config" version="1.0.0" condition="Toolchain IAR"/>
       </files>
     </component>
   </components>
