@@ -15,6 +15,9 @@
   </licenseSets>
 
   <releases>
+    <release version="3.1.4-rc.2" date="2025-11-26">
+      - Add debug sequences.
+    </release>
     <release version="3.1.4-rc.1" date="2025-11-21">
       - Update components.
     </release>
@@ -60,6 +63,100 @@
         <description>The NuMicro M55M1 series 32-bit microcontroller.</description>
         <accessportV2 __apid="0" address="0x00000000"/>
         <debug svd="SVD/Nuvoton/M55M1.svd" __apid="0"/>
+        <sequences>
+          <sequence name="DebugPortStart">
+            <block>
+              __var nReset = 0x80;
+              DAP_SWJ_Pins(0, nReset, 0);
+              DAP_Delay(8000);
+              DAP_SWJ_Pins(nReset, nReset, 0);
+              DAP_Delay(72800);
+
+              __var SW_DP_ABORT    = 0x0;
+              __var DP_CTRL_STAT   = 0x4;
+              __var DP_SELECT      = 0x8;
+              __var DP_STICKY_BITS = 0x000000B2;          // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR | WDATAERR
+              __var JTAG_DP_STICKY_BITS_CLR = 0x00000032; // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR
+              __var SWD_DP_STICKY_BITS_CLR  = 0x0000001E; // DP ABORT: ORUNERRCLR | WDERRCLR | STKERRCLR | STKCMPCLR
+              __var powered_down   = 0;
+              __var ctrl_stat_val  = 0;
+
+              // Switch to DP Register Bank 0
+              WriteDP(DP_SELECT, 0x00000000);
+
+              // Read DP CTRL/STAT Register and check if CSYSPWRUPACK and CDBGPWRUPACK bits are set
+              ctrl_stat_val = ReadDP(DP_CTRL_STAT);
+              powered_down = ((ctrl_stat_val &amp; 0xA0000000) != 0xA0000000);
+            </block>
+
+            <!-- Check and clear sticky error bits -->
+            <control if="ctrl_stat_val &amp; DP_STICKY_BITS">
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Clear JTAG-DP sticky error bits by writing '1', preserve other values
+                  WriteDP(DP_CTRL_STAT, ctrl_stat_val | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+              	// Clear SWD-DP sticky error bits by writing to DP ABORT
+              	WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+
+            <!-- Check if DP is powered down and power it up if so -->
+            <control if="powered_down">
+              <block>
+                // Request Debug/System Power-Up
+                WriteDP(DP_CTRL_STAT, 0x50000000);
+              </block>
+
+              <!-- Wait for Power-Up Request to be acknowledged -->
+              <control while="(ReadDP(DP_CTRL_STAT) &amp; 0xA0000000) != 0xA0000000" timeout="1000000"/>
+              
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  // Additionally clear STICKYORUN, STICKYCMP, and STICKYERR bits by writing '1'
+                  WriteDP(DP_CTRL_STAT, 0x50000F00 | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  WriteDP(DP_CTRL_STAT, 0x50000F00);
+                  // Clear WDATAERR, STICKYORUN, STICKYCMP, and STICKYERR bits of CTRL/STAT Register by write to ABORT register
+                  WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+          </sequence>
+          <sequence name="DebugPortStop">
+            <block>
+              __var DP_ABORT = 0x0;
+              __var DP_CTRL_STAT = 0x4;
+              __var DP_SELECT    = 0x8;
+              __var DHCSR_Addr = 0xE000EDF0;
+
+              WriteDP(DP_ABORT, 0x1F);
+              // disable Core Debug via DHCSR
+              Write32(DHCSR_Addr, 0xA05F0000);
+
+              // Switch to DP Register Bank 0
+              WriteDP(DP_SELECT, 0x00000000);
+
+              // Power Down Debug port
+              WriteDP(DP_CTRL_STAT, 0x00000000);
+            </block>
+          </sequence>
+        </sequences>
         <memory    name="IROM1" access="rx"     start="0x00100000" size="0x00200000" default="1" startup="1"/>
         <memory    name="IROM2" access="rx"     start="0x10100000" size="0x00200000" default="0"/>
         <memory    name="IROM3" access="rx"     start="0x0F100000" size="0x00002000" default="0"/>
@@ -161,6 +258,100 @@
         <description>The NuMicro M5531 series 32-bit microcontroller.</description>
         <accessportV2 __apid="0" address="0x00000000"/>
         <debug svd="SVD/Nuvoton/M5531.svd" __apid="0"/>
+        <sequences>
+          <sequence name="DebugPortStart">
+            <block>
+              __var nReset = 0x80;
+              DAP_SWJ_Pins(0, nReset, 0);
+              DAP_Delay(8000);
+              DAP_SWJ_Pins(nReset, nReset, 0);
+              DAP_Delay(72800);
+
+              __var SW_DP_ABORT    = 0x0;
+              __var DP_CTRL_STAT   = 0x4;
+              __var DP_SELECT      = 0x8;
+              __var DP_STICKY_BITS = 0x000000B2;          // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR | WDATAERR
+              __var JTAG_DP_STICKY_BITS_CLR = 0x00000032; // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR
+              __var SWD_DP_STICKY_BITS_CLR  = 0x0000001E; // DP ABORT: ORUNERRCLR | WDERRCLR | STKERRCLR | STKCMPCLR
+              __var powered_down   = 0;
+              __var ctrl_stat_val  = 0;
+
+              // Switch to DP Register Bank 0
+              WriteDP(DP_SELECT, 0x00000000);
+
+              // Read DP CTRL/STAT Register and check if CSYSPWRUPACK and CDBGPWRUPACK bits are set
+              ctrl_stat_val = ReadDP(DP_CTRL_STAT);
+              powered_down = ((ctrl_stat_val &amp; 0xA0000000) != 0xA0000000);
+            </block>
+
+            <!-- Check and clear sticky error bits -->
+            <control if="ctrl_stat_val &amp; DP_STICKY_BITS">
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Clear JTAG-DP sticky error bits by writing '1', preserve other values
+                  WriteDP(DP_CTRL_STAT, ctrl_stat_val | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+              	// Clear SWD-DP sticky error bits by writing to DP ABORT
+              	WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+
+            <!-- Check if DP is powered down and power it up if so -->
+            <control if="powered_down">
+              <block>
+                // Request Debug/System Power-Up
+                WriteDP(DP_CTRL_STAT, 0x50000000);
+              </block>
+
+              <!-- Wait for Power-Up Request to be acknowledged -->
+              <control while="(ReadDP(DP_CTRL_STAT) &amp; 0xA0000000) != 0xA0000000" timeout="1000000"/>
+              
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  // Additionally clear STICKYORUN, STICKYCMP, and STICKYERR bits by writing '1'
+                  WriteDP(DP_CTRL_STAT, 0x50000F00 | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  WriteDP(DP_CTRL_STAT, 0x50000F00);
+                  // Clear WDATAERR, STICKYORUN, STICKYCMP, and STICKYERR bits of CTRL/STAT Register by write to ABORT register
+                  WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+          </sequence>
+          <sequence name="DebugPortStop">
+            <block>
+              __var DP_ABORT = 0x0;
+              __var DP_CTRL_STAT = 0x4;
+              __var DP_SELECT    = 0x8;
+              __var DHCSR_Addr = 0xE000EDF0;
+
+              WriteDP(DP_ABORT, 0x1F);
+              // disable Core Debug via DHCSR
+              Write32(DHCSR_Addr, 0xA05F0000);
+
+              // Switch to DP Register Bank 0
+              WriteDP(DP_SELECT, 0x00000000);
+
+              // Power Down Debug port
+              WriteDP(DP_CTRL_STAT, 0x00000000);
+            </block>
+          </sequence>
+        </sequences>
         <memory     name="IROM1" access="rx"       start="0x00100000" size="0x00200000" default="1" startup="1"/>
         <memory     name="IROM2" access="rx"       start="0x10100000" size="0x00200000" default="0"/>
         <memory     name="IROM3" access="rx"       start="0x0F100000" size="0x00002000" default="0"/>
