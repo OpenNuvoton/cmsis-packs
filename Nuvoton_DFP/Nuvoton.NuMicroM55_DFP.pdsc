@@ -15,6 +15,9 @@
   </licenseSets>
 
   <releases>
+    <release version="3.1.4-rc.3" date="2025-11-28">
+      - Update template.
+    </release>
     <release version="3.1.4-rc.2" date="2025-11-26">
       - Add debug sequences.
     </release>
