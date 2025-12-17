@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Nuvoton</vendor>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
+  <name>NuMicroCM23_DFP</name>
+  <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
+
+  <releases>
+    <release version="1.0.3" date="2025-11-28">
+      Add CM2052/CM2053 part no.
+    </release>
+    <release version="1.0.2" date="2025-09-30">
+      Update CM2U51 LDROM address.
+    </release>
+    <release version="1.0.1" date="2025-07-16">
+      Add CM2U51 part no.
+    </release>
+    <release version="1.0.0" date="2024-01-09">
+      Initial Version.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Nuvoton</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Nuvoton</keyword>
+    <keyword>NuMicro</keyword>
+  </keywords>
+
+  <devices>
+    <!-- generated, do not modify this section! -->
+    <family Dfamily="NuMicro M23 Family" Dvendor="Nuvoton:18">
+      <!-- *************************  Subfamily 'CM2003'  ***************************** -->
+      <subFamily DsubFamily="CM2003">
+        <processor  Dcore="Cortex-M23"  Dclock="24000000"/>
+        <compile    header="Device/CM2003/Include/CM2003.h"/>
+        <description>The NuMicro CM2003 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'CM2003CF2AE'  ***************************** -->
+        <device Dname="CM2003CF2AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="SOP"       n="20"/>
+        </device>
+
+        <!-- *************************  Device 'CM2003CF3AE'  ***************************** -->
+        <device Dname="CM2003CF3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_32.FLM"        start="0x00000000"  size="0x8000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="IOs"       n="18"/>
+          <feature type="Timer"         n="4"   m="32"/>
+          <feature type="UART"          n="2"/>
+          <feature type="I2C"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="8"   m="12"/>
+          <feature type="QFN"       n="20"/>
+        </device>
+      </subFamily>
+
+      <subFamily DsubFamily="CM2052">
+        <processor  Dcore="Cortex-M23"  Dclock="48000000"/>
+        <compile    header="Device/CM2052/Include/CM2052.h"/>
+        <description>The NuMicro CM2052 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'CM2052EL8AE'  ***************************** -->
+        <device Dname="CM2052EL8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2052.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2052_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/CM2052_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"       n="37"/>
+          <feature type="Timer"     n="4"   m="32"/>
+          <feature type="UART"      n="3"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"      n="1"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="AnalogOther"   n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'CM2052EN8AE'  ***************************** -->
+        <device Dname="CM2052EN8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2052.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2052_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/CM2052_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"       n="49"/>
+          <feature type="Timer"     n="4"   m="32"/>
+          <feature type="UART"      n="3"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"      n="1"/>
+          <feature type="I2S"       n="1"/>
+          <feature type="AnalogOther"   n="2"/>
+          <feature type="PWM"       n="24"  m="16"/>
+          <feature type="ADC"       n="16"  m="12"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+      </subFamily>
+
+      <subFamily DsubFamily="CM2053">
+        <processor  Dcore="Cortex-M23"  Dclock="48000000"/>
+        <compile    header="Device/CM2053/Include/CM2053.h"/>
+        <description>The NuMicro CM2053 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'CM2053EL8AE'  ***************************** -->
+        <device Dname="CM2053EL8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2053.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2052_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/CM2052_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"       n="37"/>
+          <feature type="Timer"     n="4"   m="32"/>
+          <feature type="UART"      n="5"/>
+          <feature type="SPI"       n="1"/>
+          <feature type="I2C"       n="2"/>
+          <feature type="USBD"      n="1"/>
+          <feature type="CAN"       n="1"/>
+          <feature type="PWM"       n="6"   m="16"/>
+          <feature type="ADC"       n="12"  m="12"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+      </subFamily>
+
+      <!-- *************************  Subfamily 'CM2U51'  ***************************** -->
+      <subFamily DsubFamily="CM2U51">
+        <processor  Dcore="Cortex-M23"  Dclock="40000000"/>
+        <compile    header="Device/CM2U51/Include/CM2U51.h"/>
+        <description>The NuMicro CM2U51 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
+        <!-- *************************  Device 'CM2U54ES8AE'  ***************************** -->
+        <device Dname="CM2U54ES8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="128"/>
+        </device>
+        <!-- *************************  Device 'CM2U54GS8AE'  ***************************** -->
+        <device Dname="CM2U54GS8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="128"/>
+        </device>
+        <!-- *************************  Device 'CM2U54EL3AE'  ***************************** -->
+        <device Dname="CM2U54EL3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM2U54GL3AE'  ***************************** -->
+        <device Dname="CM2U54GL3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM2U54EN8AE'  ***************************** -->
+        <device Dname="CM2U54EN8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- *************************  Device 'CM2U54GN8AE'  ***************************** -->
+        <device Dname="CM2U54GN8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- *************************  Device 'CM2U54EQ3AE'  ***************************** -->
+        <device Dname="CM2U54EQ3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_128.FLM"      start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="88"/>
+        </device>
+        <!-- *************************  Device 'CM2U54GQ3AE'  ***************************** -->
+        <device Dname="CM2U54GQ3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_256.FLM"      start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="88"/>
+        </device>
+        <!-- *************************  Device 'CM2U51DL3AE'  ***************************** -->
+        <device Dname="CM2U51DL3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2U51.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2U51_AP_64.FLM"      start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM2U51_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
+    <condition id="Compiler ARM">
+      <!-- conditions selecting ARM Compiler -->
+      <accept Tcompiler="ARMCC"/>
+    </condition>
+
+    <condition id="M23NuMicro CM2003 Device">
+      <description>Nuvoton M23NuMicro CM2003 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2003CF[23]AE"/>
+    </condition>
+    <condition id="M23NuMicro CM2052 Device">
+      <description>Nuvoton M23NuMicro CM2052 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2052E[LN]8AE"/>
+    </condition>
+    <condition id="M23NuMicro CM2053 Device">
+      <description>Nuvoton M23NuMicro CM2053 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2053EL8AE"/>
+    </condition>
+    <condition id="M23NuMicro CM2U51 Device">
+      <description>Nuvoton M23NuMicro CM2U51 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2U5[14][DEG][SLNQ][38]AE"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- *************************  Startup file  ***************************** -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton CM2003 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/CM2003/StdDriver/inc/"/>
+        <file category="include" name="Device/CM2003/Include/"/>
+        <file category="header"  name="Device/CM2003/Include/CM2003.h"/>
+        <file category="header"  name="Device/CM2003/Include/NuMicro.h"/>
+        <file category="header"  name="Device/CM2003/Include/system_CM2003.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/CM2003/Source/ARM/startup_CM2003.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/CM2003/Source/system_CM2003.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton CM2052 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/CM2052/StdDriver/inc/"/>
+        <file category="include" name="Device/CM2052/Include/"/>
+        <file category="header"  name="Device/CM2052/Include/CM2052.h"/>
+        <file category="header"  name="Device/CM2052/Include/NuMicro.h"/>
+        <file category="header"  name="Device/CM2052/Include/system_CM2052.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Device/CM2052/Source/ARM/startup_CM2052.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/CM2052/Source/system_CM2052.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton CM2053 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/CM2053/StdDriver/inc/"/>
+        <file category="include" name="Device/CM2053/Include/"/>
+        <file category="header"  name="Device/CM2053/Include/CM2053.h"/>
+        <file category="header"  name="Device/CM2053/Include/NuMicro.h"/>
+        <file category="header"  name="Device/CM2053/Include/system_CM2053.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Device/CM2053/Source/ARM/startup_CM2053.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/CM2053/Source/system_CM2053.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro CM2U51 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton CM2U51 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/CM2U51/StdDriver/inc/"/>
+        <file category="include" name="Device/CM2U51/Include/"/>
+        <file category="header"  name="Device/CM2U51/Include/CM2U51.h"/>
+        <file category="header"  name="Device/CM2U51/Include/NuMicro.h"/>
+        <file category="header"  name="Device/CM2U51/Include/system_CM2U51.h"/>
+        <!-- startup/system files -->
+        <file category="source"  name="Device/CM2U51/Source/ARM/startup_CM2U51.c" attr="config" version="0.00.001" condition="Compiler ARM"/>
+        <file category="source"  name="Device/CM2U51/Source/system_CM2U51.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/CM2U51/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+  </components>
+</package>
