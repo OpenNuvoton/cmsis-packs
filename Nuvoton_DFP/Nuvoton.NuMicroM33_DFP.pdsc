@@ -6,7 +6,7 @@
   <description>Nuvoton ARM Cortex-M NuMicroM33 Family Device Support</description>
 
   <releases>
-    <release version="1.0.2" date="2025-12-01">
+    <release version="1.0.2" date="2025-12-18">
       Add M3351 series.
     </release>
     <release version="1.0.1" date="2025-09-10">
