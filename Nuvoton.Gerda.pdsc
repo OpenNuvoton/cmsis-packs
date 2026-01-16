@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.4" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Nuvoton</vendor>
+  <name>Gerda</name>
+  <description>Nuvoton ARM Cortex-M Gerda Series Device Support</description>
+  <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/</url>
+  <supportContact></supportContact>
+  <!-- optional license file -->
+  <!-- 
+  <license>
+  </license>
+  -->
+
+  <releases>
+    <release version="1.0.0" date="2025-12-12">
+      Initial Version
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Nuvoton</keyword>
+    <keyword>Gerda</keyword>
+    <keyword>Gerda-4M</keyword>
+    <keyword>Gerda-4L</keyword>
+    <keyword>Gerda-4UL</keyword>
+  </keywords>
+
+  <!-- devices section (mandatory for Device Family Packs) -->
+  <devices>
+    <family Dfamily="Gerda Series" Dvendor="Nuvoton:18">
+      <subFamily DsubFamily="Gen.4">
+        <!-- ****************  Device "Gerda-4L"  **************** -->
+        <device Dname = "Gerda-4L">
+          <!--<debug svd="SVD/Gerda-4L.svd"/>-->
+          <!--<compile header="Device/Gerda-4L/Include/KM2KSD4.h"/>-->
+
+          <processor Dcore="Cortex-M7" DcoreVersion="r0p1" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="50000000"/>
+          <debugconfig default="jtag" dormant="true"/>
+          <description>The Gerda-4L(KM2KSD4) series LSI puts together video output, audio output and communications functions for Automotive HMI 
+Systems (Head-Up Display (HUD), Electronic Mirror and Electronic instrument cluster). .
+          </description>
+
+          <memory id="IROM1" start="0x60000000" size="0x10000000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x00020000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x90000000" size="0x00a00000" init="0"    default="0"/>
+          <algorithm name="Flash/Gerda-4L_W25Q256JVx2.FLM" start="0x60000000" size="0x04000000" RAMstart="0x00008000"  RAMsize="0x38000"  default="1"/>
+          <algorithm name="Flash/Gerda-4L_W25Q256JVx1.FLM" start="0x60000000" size="0x02000000" RAMstart="0x00008000"  RAMsize="0x38000"  default="1"/>
+
+        <!-- ************************  Debug Description  **************************** -->
+        <!-- ****************  Sequence for connect sequence  **************** -->
+        <sequences>
+          <sequence name="ResetHardware">
+            <block>
+              __var nReset      = 0x80;
+              __var canReadPins = 0;
+
+              // De-assert nRESET line
+              canReadPins = (DAP_SWJ_Pins(0x00, nReset, 0) != 0xFFFFFFFF);
+            </block>
+
+            <!-- Keep reset active for 50 ms -->
+            <control while="1" timeout="50000"/>
+
+            <control if="canReadPins">
+              <!-- Assert nRESET line and wait max. 1s for recovery -->
+              <control while="(DAP_SWJ_Pins(nReset, nReset, 0) &amp; nReset) == 0" timeout="1000000"/>
+            </control>
+
+            <control if="!canReadPins">
+
+              <block>
+                // Assert nRESET line
+                DAP_SWJ_Pins(nReset, nReset, 0);
+              </block>
+              
+              <!-- Wait 100ms for recovery if nRESET not readable -->
+              <control while="1" timeout="100000"/>
+              
+            </control>
+            <block>
+                sequence("KTAP0_IR3_DRWrite_DAPJTAG1");
+                sequence("DebugPortSetup_Local");
+            </block>
+          </sequence>
+
+
+          <sequence name="DebugPortSetup_Local">
+            <block>
+               //Query(0, "  ====@@@@ local DebugPortSetup @@@@====", 1);
+            </block>
+            <block>
+              __var isSWJ      = ((__protocol &amp; 0x00010000) != 0);
+              __var hasDormant = __protocol &amp; 0x00020000;
+              __var protType   = __protocol &amp; 0x0000FFFF;
+            </block>
+
+            <!-- JTAG Protocol -->
+            <control if="protType == 1">
+              <control if="isSWJ">
+                <control if="hasDormant">
+                  <block atomic="1">
+                    // Ensure current debug interface is in reset state
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+                    // Select Dormant State (from SWD)
+                    DAP_SWJ_Sequence(16, 0xE3BC);
+                    // At least 8 cycles SWDIO/TMS HIGH
+                    DAP_SWJ_Sequence(8, 0xFF);
+                    // Alert Sequence Bits  0.. 63
+                    DAP_SWJ_Sequence(64, 0x86852D956209F392);
+                    // Alert Sequence Bits 64..127
+                    DAP_SWJ_Sequence(64, 0x19BC0EA2E3DDAFE9);
+                    // 4 cycles SWDIO/TMS LOW + 8-Bit JTAG Activation Code (0x0A)            
+                    DAP_SWJ_Sequence(12, 0x0A0);
+                    // Ensure JTAG interface is reset
+                    DAP_SWJ_Sequence(6, 0x3F);
+                  </block>
+                </control>
+                <control if="!hasDormant">
+                  <block atomic="1">
+                    // Ensure current debug interface is in reset state
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+                    // Execute SWJ-DP Switch Sequence SWD to JTAG (0xE73C)
+                    // Change if SWJ-DP uses deprecated switch code (0xAEAE)
+                    DAP_SWJ_Sequence(16, 0xE73C);
+                    // Ensure JTAG interface is reset
+                    DAP_SWJ_Sequence(6, 0x3F);
+                  </block>
+                </control>
+              </control>
+              <block atomic="1">
+                // JTAG "Soft" Reset
+                DAP_JTAG_Sequence(6, 1, 0x3F);
+                DAP_JTAG_Sequence(1, 0, 0x01);
+              </block>
+            </control>
+            
+            <!-- SWD Protocol -->
+            <control if="protType == 2">
+              <control if="isSWJ">
+                <control if="hasDormant">
+                  <block atomic="1">
+                    // Ensure current debug interface is in reset state
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+                    // Select Dormant State (from JTAG)
+                    DAP_SWJ_Sequence(31, 0x33BBBBBA);
+                    // At least 8 cycles SWDIO/TMS HIGH
+                    DAP_SWJ_Sequence(8, 0xFF);
+                    // Alert Sequence Bits  0.. 63
+                    DAP_SWJ_Sequence(64, 0x86852D956209F392);
+                     // Alert Sequence Bits 64..127
+                    DAP_SWJ_Sequence(64, 0x19BC0EA2E3DDAFE9);
+                    // 4 cycles SWDIO/TMS LOW + 8-Bit SWD Activation Code (0x1A)            
+                    DAP_SWJ_Sequence(12, 0x1A0);
+                    // Enter SWD Line Reset State
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);  // &gt; 50 cycles SWDIO/TMS High
+                    DAP_SWJ_Sequence(3,  0x00);                // At least 2 idle cycles (SWDIO/TMS Low)
+                  </block>
+                </control>
+                <control if="!hasDormant">
+                  <block atomic="1">
+                    // Ensure current debug interface is in reset state
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+                    // Execute SWJ-DP Switch Sequence JTAG to SWD (0xE79E)
+                    // Change if SWJ-DP uses deprecated switch code (0xEDB6)
+                    DAP_SWJ_Sequence(16, 0xE79E);
+                    // Enter SWD Line Reset State
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);  // &gt; 50 cycles SWDIO/TMS High
+                    DAP_SWJ_Sequence(3,  0x00);                // At least 2 idle cycles (SWDIO/TMS Low)
+                  </block>
+                </control>
+              </control>
+
+              <control if="!isSWJ">
+                <control if="hasDormant">
+                  <block atomic="1">
+                    // Ensure current debug interface is in reset state
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+                    // At least 8 cycles SWDIO/TMS HIGH
+                    DAP_SWJ_Sequence(8, 0xFF);
+                    // Alert Sequence Bits  0.. 63
+                    DAP_SWJ_Sequence(64, 0x86852D956209F392);
+                    // Alert Sequence Bits 64..127
+                    DAP_SWJ_Sequence(64, 0x19BC0EA2E3DDAFE9);
+                    // 4 cycles SWDIO/TMS LOW + 8-Bit SWD Activation Code (0x1A)            
+                    DAP_SWJ_Sequence(12, 0x1A0);
+                    // Enter SWD Line Reset State
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);  // &gt; 50 cycles SWDIO/TMS High
+                    DAP_SWJ_Sequence(3,  0x00);                // At least 2 idle cycles (SWDIO/TMS Low)
+                  </block>
+                </control>
+
+                <control if="!hasDormant">
+                  <block atomic="1">
+                    // Enter SWD Line Reset State
+                    DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);  // &gt; 50 cycles SWDIO/TMS High
+                    DAP_SWJ_Sequence(3,  0x00);                // At least 2 idle cycles (SWDIO/TMS Low)
+                  </block>
+                </control>
+               </control>
+              
+              <block>
+                // Read DPIDR to enable SWD interface (SW-DPv1 and SW-DPv2)
+                ReadDP(0x0);
+              </block>
+            </control>
+          </sequence>
+
+
+          <sequence name="DebugPortStart_Local">
+            <block>
+             //Query(0, "  ====@@@@ local DebugPortStart @@@@====", 1);
+            </block>
+            <block>
+              __var SW_DP_ABORT    = 0x0;
+              __var DP_CTRL_STAT   = 0x4;
+              __var DP_SELECT      = 0x8;
+              __var DP_STICKY_BITS = 0x000000B2;          // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR | WDATAERR
+              __var JTAG_DP_STICKY_BITS_CLR = 0x00000032; // DP CTRL/STAT: STICKYORUN | STICKYCMP | STICKYERR
+              __var SWD_DP_STICKY_BITS_CLR  = 0x0000001E; // DP ABORT: ORUNERRCLR | WDERRCLR | STKERRCLR | STKCMPCLR
+              __var powered_down   = 0;
+              __var ctrl_stat_val  = 0;
+
+              // Switch to DP Register Bank 0
+              WriteDP(DP_SELECT, 0x00000000);
+
+              // Read DP CTRL/STAT Register and check if CSYSPWRUPACK and CDBGPWRUPACK bits are set
+              ctrl_stat_val = ReadDP(DP_CTRL_STAT);
+              powered_down = ((ctrl_stat_val &amp; 0xA0000000) != 0xA0000000);
+            </block>
+
+            <!-- Check and clear sticky error bits -->
+            <control if="ctrl_stat_val &amp; DP_STICKY_BITS">
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Clear JTAG-DP sticky error bits by writing '1', preserve other values
+                  WriteDP(DP_CTRL_STAT, ctrl_stat_val | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+                  // Clear SWD-DP sticky error bits by writing to DP ABORT
+                  WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+
+            <!-- Check if DP is powered down and power it up if so -->
+            <control if="powered_down">
+              <block>
+                // Request Debug/System Power-Up
+                WriteDP(DP_CTRL_STAT, 0x50000000);
+              </block>
+              <!-- Wait for Power-Up Request to be acknowledged -->
+              <control while="(ReadDP(DP_CTRL_STAT) &amp; 0xA0000000) != 0xA0000000" timeout="1000000"/>
+              
+              <!-- JTAG specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 1">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  // Additionally clear STICKYORUN, STICKYCMP, and STICKYERR bits by writing '1'
+                  WriteDP(DP_CTRL_STAT, 0x50000F00 | JTAG_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+              
+              <!-- SWD specific part -->
+              <control if="(__protocol &amp; 0xFFFF) == 2">
+                <block>
+                  // Init AP Transfer Mode, Transaction Counter, and Lane Mask (Normal Transfer Mode, Include all Byte Lanes)
+                  WriteDP(DP_CTRL_STAT, 0x50000F00);
+                  // Clear WDATAERR, STICKYORUN, STICKYCMP, and STICKYERR bits of CTRL/STAT Register by write to ABORT register
+                  WriteDP(SW_DP_ABORT, SWD_DP_STICKY_BITS_CLR);
+                </block>
+              </control>
+            </control>
+          </sequence>
+
+
+
+         <sequence name="DebugCoreStart_Local">
+           <block>
+            //Query(0, "  ====@@@@ local DebugCoreStart_Local @@@@====", 1);
+           </block>
+           <block>
+             // System Control Space (SCS) offset as defined in Armv6-M/Armv7-M.
+             __var SCS_Addr   = 0xE000E000;
+             __var DHCSR_Addr = SCS_Addr + 0xDF0;
+             __var rdata = 0;
+             // Enable Core Debug via DHCSR
+             Write32(DHCSR_Addr, 0xA05F0001);
+             rdata = Read32(DHCSR_Addr);  // @@ debug @@
+           </block>
+         </sequence>
+
+
+         <sequence name="ResetCatchSet_Local">
+           <block>
+             // System Control Space (SCS) offset as defined
+             // in Armv6-M/Armv7-M. Reimplement this sequence
+             // if the SCS is located at a different offset.
+             __var SCS_Addr   = 0xE000E000;
+             __var DHCSR_Addr = SCS_Addr + 0xDF0;
+             __var DEMCR_Addr = SCS_Addr + 0xDFC;
+             __var value      = 0;
+           
+             // Enable Reset Vector Catch in DEMCR
+             value = Read32(DEMCR_Addr);
+             Write32(DEMCR_Addr, (value | 0x00000001));
+          
+             // Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit
+             Read32(DHCSR_Addr);
+           </block>
+         </sequence>
+
+
+         <sequence name="ResetCatchClear_Local">
+           <block>
+             // System Control Space (SCS) offset as defined
+             // in Armv6-M/Armv7-M. Reimplement this sequence
+             // if the SCS is located at a different offset.
+             
+             __var SCS_Addr   = 0xE000E000;
+             __var DEMCR_Addr = SCS_Addr + 0xDFC;
+             __var value      = 0;
+             
+             // Disable Reset Vector Catch in DEMCR
+             value = Read32(DEMCR_Addr);
+             Write32(DEMCR_Addr, (value &amp; (~0x00000001)));
+           </block>
+         </sequence>
+
+
+         <sequence name="DebugDeviceUnlock">
+            <block>
+              //Query(0, "  ====@@@@DebugDeviceUnlock start1 @@@@====", 1);
+            </block>
+            <block>
+              sequence("DebugPortSetup_Local");
+              sequence("DebugPortStart_Local");
+              sequence("DebugCoreStart_Local");
+              sequence("CustomResetVectorCatch");
+              sequence("KTAP0_IR3_DRWrite_DAPJTAG3");
+              sequence("DebugPortSetup_Local");
+              sequence("ResetCatchClear");
+            </block>
+            <block>
+              //Query(0, "  ====@@@@DebugDeviceUnlock end @@@@====", 1);
+            </block>
+         </sequence>
+
+
+         <sequence name="CustomResetVectorCatch">
+           <block>
+             //Query(0, "  ====@@@@ CustomResetVectorCatch start@@@@====", 1);
+             __var DP_CTRL_STAT   = 0x4;
+             __var ctrl_stat_val  = 0;
+              ctrl_stat_val = ReadDP(DP_CTRL_STAT);
+           </block>
+           <block>
+             // 1. A HW Reset (pin reset) is initiated by the user or the debugger GUI.
+             // 2. After nRESET is released, JTAG communication is re-established. The pdsc sequence begins from this point.
+
+             // 3. Vector catch setting
+             __var DEMCR_Addr = 0xE000EDFC;
+             __var DHCSR_Addr = 0xE000EDF0;
+             __var GPOPT_Addr = 0x40010898;
+             __var rdata      = 0;
+             
+             rdata = Read32(DEMCR_Addr);
+             Write32(DEMCR_Addr, (rdata | 0x00000001)); // VC_CORERESET=1
+             rdata = Read32(DEMCR_Addr); // @@ debug @@
+             rdata = Read32(DHCSR_Addr);
+     
+           </block>
+           <block>
+             //Query(0, "  ====@@@@ kakunin @@@@====", 1);
+             // C-M7 activated → stopped by vector catch
+             __var DHCSR_Val = 0xE000EDF0;
+             rdata = Read32(DHCSR_Val);
+           </block>
+           <block>
+             //Query(0, "  ====@@@@ CustomResetVectorCatch end@@@@====", 1);
+           </block>
+         </sequence>
+
+
+         <sequence name="ResetCatchClear">
+           <block>
+               __var DEMCR_Addr = 0xE000EDFC;
+               __var DHCSR_Addr = 0xE000EDF0;
+               __var GPOPT_Addr = 0x40010898;
+               __var rdata      = 0;
+               __var DP_CTRL_STAT   = 0x4;
+               __var ctrl_stat_val  = 0;
+               
+                ctrl_stat_val = ReadDP(DP_CTRL_STAT);
+              
+             // Disable Reset Vector Catch in DEMCR
+             rdata = Read32(DHCSR_Addr);
+             rdata = Read32(DEMCR_Addr);
+             Write32(DEMCR_Addr, (rdata &amp; (~0x00000001)));
+
+             // This is required for Verify on 
+             sequence("GerdaFlashInit");
+           </block>
+           
+         </sequence>
+
+
+         <sequence name="GerdaFlashInit">
+           <block>
+              __var DCRSR_Addr = 0xE000EDF4;
+              __var DCRDR_Addr = 0xE000EDF8;
+              __var IECTR5 = 0x40006014;
+              __var SYSCNT_RSTCNT_RST_FMU = 0x40010880;
+              __var SYSCNT_CG_PERI200_1 = 0x40010018;
+              __var SFLASH_CLK = 0x4008CE34;
+              __var SFLASHNUM = 0x4008CE30;
+              __var BUS_MODE = 0x4008CE04;
+              __var SFLASH_FAST = 0x4008CE38;
+              __var FLASH_SR_REQ = 0x4008CEf4;
+              __var FLM0_REG_SET = 0x4008CEf0;
+              __var FLM1_REG_SET = 0x4008D2F0;
+              __var rdata      = 0;
+              
+             // reset vector PC check
+             Write32(DCRSR_Addr, 0xF);
+             rdata = Read32(DCRDR_Addr);
+             
+             Write32(SYSCNT_CG_PERI200_1, 0x00000040);
+             Write32(SYSCNT_RSTCNT_RST_FMU, 0x00000001);
+             Write32(IECTR5, 0x00000020);
+             
+             Write32(SFLASH_CLK, 0x00000003);
+             Write32(SFLASHNUM, 0x00000002);
+             Write32(BUS_MODE, 0x00000001);
+             Write32(SFLASH_FAST, 0x00000001);
+             Write32(FLASH_SR_REQ, 0x00000002);
+             Write32(FLM0_REG_SET, 0x00000001);
+             Write32(FLM1_REG_SET, 0x00000001);
+             Write32(FLASH_SR_REQ, 0x00000001);
+             Write32(FLM0_REG_SET, 0x00000001);
+             Write32(FLASH_SR_REQ, 0x00000000);
+             Write32(SFLASHNUM, 0x00000002);
+             Write32(FLM0_REG_SET, 0x00000001);
+           </block>
+         </sequence>
+
+         <sequence name="CM7_SELECT">
+           <block>
+             //Query(0, "==== CM7_SELECT start ====", 1);
+             // IRシフト: KTAP=IDCODE(0x1)、CM7=BYPASS(0xF)
+              //DAP_JTAG_Sequence(5, 1, 0x1F);    // Test-Logic-Reset 
+             //DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 1. IR shift: 0x3F (same as I-JET)
+             DAP_JTAG_Sequence(2, 1, 0x00);    // Select-DR-Scan, Select-IR-Scan
+             DAP_JTAG_Sequence(2, 0, 0x00);    // Capture-IR, Shift-IR
+             //DAP_JTAG_Sequence(7, 0, 0xFE);  // 7bit shift, TDI=0x3F
+             DAP_JTAG_Sequence(8, 0, 0xF1);    // 7bit Shift, TDI=0x3F
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-IR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+              // Update-IR 
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             Query(0, "==== CM7_SELECT end ====", 1);
+           </block>
+         </sequence>
+
+
+         <sequence name="KTAP0_IR3_DRWrite_DAPJTAG1">
+           <block>
+             //Query(0, "==== KTAP0_IR3_DRWrite_DAPJTAG1 start ====", 1);
+             // 1. IR shift: 0x3F (same as I-JET)
+             DAP_JTAG_Sequence(2, 1, 0x00);    // Select-DR-Scan, Select-IR-Scan
+             DAP_JTAG_Sequence(2, 0, 0x00);    // Capture-IR, Shift-IR
+             DAP_JTAG_Sequence(7, 0, 0x3F);    // 7bit Shift, TDI=0x3F
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-IR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 2. DR-Scan: 33-bit shift, same value as I-JET
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Select-DR-Scan
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Capture-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Shift-DR
+             DAP_JTAG_Sequence(33, 0, 0x000001400); // DR Shift
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-DR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 3. IR shift: 0x3F (same as I-JET)
+             ///DAP_JTAG_Sequence(2, 1, 0x00);    // Select-DR-Scan, Select-IR-Scan
+             ///DAP_JTAG_Sequence(2, 0, 0x00);    // Capture-IR, Shift-IR
+             ///DAP_JTAG_Sequence(7, 0, 0x3F);    // 7bit Shift, TDI=0x3F
+             ///DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-IR
+             ///DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             ///DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 4. DR-Scan: 33bit Shift
+             ///DAP_JTAG_Sequence(1, 1, 0x00);    // Select-DR-Scan
+             ///DAP_JTAG_Sequence(1, 0, 0x00);    // Capture-DR
+             ///DAP_JTAG_Sequence(1, 0, 0x00);    // Shift-DR
+             ///DAP_JTAG_Sequence(33, 0, 0x1FFFFFFFC); // DR Shift
+             ///DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-DR
+             ///DAP_JTAG_Sequence(1, 1, 0x00);    // Update-DR
+             ///DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             //Query(0, "==== KTAP0_IR3_DRWrite_DAPJTAG1 end ====", 1);
+           </block>
+         </sequence>
+
+
+         <sequence name="KTAP0_IR3_DRWrite_DAPJTAG3">
+           <block>
+             //Query(0, "==== KTAP0_IR3_DRWrite_DAPJTAG3 start ====", 1);
+             
+             // 1. IR shift: 0x3C (same as I-JET)
+             DAP_JTAG_Sequence(2, 1, 0x00);    // Select-DR-Scan, Select-IR-Scan
+             DAP_JTAG_Sequence(2, 0, 0x00);    // Capture-IR, Shift-IR
+             DAP_JTAG_Sequence(7, 0, 0x3F);    // 7bit Shift, TDI=0x3F
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-IR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 2. DR-Scan: 33bit Shift、The value is the same as I-JET
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Select-DR-Scan
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Capture-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Shift-DR
+             DAP_JTAG_Sequence(33, 0, 0x002001400); // DR Shift
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-DR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 3. IR shift: 0x3F (same as I-JET)
+             DAP_JTAG_Sequence(2, 1, 0x00);    // Select-DR-Scan, Select-IR-Scan
+             DAP_JTAG_Sequence(2, 0, 0x00);    // Capture-IR, Shift-IR
+             DAP_JTAG_Sequence(7, 0, 0x3F);    // 7bit Shift, TDI=0x3F
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-IR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-IR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             // 4. DR-Scan: 33bit Shift
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Select-DR-Scan
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Capture-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Shift-DR
+             DAP_JTAG_Sequence(33, 0, 0x1FFFFFFFC); // DR Shift
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Exit1-DR
+             DAP_JTAG_Sequence(1, 1, 0x00);    // Update-DR
+             DAP_JTAG_Sequence(1, 0, 0x00);    // Run-Test/Idle
+             
+             //Query(0, "==== KTAP0_IR3_DRWrite_DAPJTAG3 end ====", 1);
+           </block>
+         </sequence>
+        </sequences>
+        </device>
+
+
+
+        <!-- ****************  Device "Gerda-4UL"  **************** -->
+        <device Dname = "Gerda-4UL">
+          <!--<debug svd="SVD/Gerda-4UL.svd"/>-->
+          <!--<compile header="Device/Gerda-4UL/Include/KM2KSZ2.h"/>-->
+
+          <processor Dcore="Cortex-M33" DcoreVersion="r0p0" Dfpu="SP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="40000000"/>
+          <debugconfig default="swd" dormant="true"/>
+          <description>Gerda-4UL integrates video output, audio output and communication functions for in-vehicle HMI systems such as head-up 
+displays (HUD), HVAC, and electronic meters. 
+          </description>
+
+          <memory id="IROM1" start="0x60000000" size="0x10000000" startup="1" default="1"/>
+          <memory id="IRAM1" start="0x20000000" size="0x00010000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x90000000" size="0x00380000" init="0"    default="0"/>
+
+
+          <algorithm name="Flash/Gerda-4UL_64KBS-256B.FLM" start="0x60000000" size="0x10000000" RAMstart="0x00010000"  RAMsize="0x10000"  default="1"/>
+          <algorithm name="Flash/Gerda-4UL_CS2_64KBS-256B.FLM" start="0x80000000" size="0x10000000" RAMstart="0x00010000"  RAMsize="0x10000"  default="1"/>
+          <algorithm name="Flash/Gerda-4UL_128KBS-512B.FLM" start="0x60000000" size="0x10000000" RAMstart="0x00010000"  RAMsize="0x10000"  default="1"/>
+          <algorithm name="Flash/Gerda-4UL_CS2_128KBS-512B.FLM" start="0x80000000" size="0x10000000" RAMstart="0x00010000"  RAMsize="0x10000"  default="1"/>
+
+
+        <!-- ************************  Debug Description  **************************** -->
+
+
+        <!-- ****************  Sequence for connect sequence  **************** -->
+        <sequences>
+
+          <sequence name="ResetHardware">
+            <block>
+              sequence("ResetHardwareAssert");
+              sequence("ResetHardwareDeassert");
+              DAP_Delay(10000); // 10ms
+            </block>
+          </sequence>
+
+
+          <sequence name="ResetHardwareAssert">
+            <block>
+                __var nReset = 0x80;
+              
+                // De-assert nRESET line to activate the hardware reset
+                DAP_SWJ_Pins(0, nReset, 0);
+            </block>
+          </sequence>
+
+
+          <sequence name="ResetHardwareDeassert">
+            <block>
+              __var nReset = 0x80;
+              __var canReadPins = 0;
+              // Reset release
+              DAP_SWJ_Pins(nReset, nReset, 0); // nRESETを解除
+
+              // Enter 16 or more SWD clocks (1 byte = 8 clocks. 2 bytes = 16 clocks)
+              // Send 2 bytes of 0x00 pattern (SWDIO=L, SWCLK=Toggle 16 times)
+              DAP_SWJ_Sequence(16, 0x0000);
+              DAP_SWJ_Sequence(16, 0x0000);
+            </block>
+
+            <!-- Add status monitoring and waiting time as needed -->
+            <control while="0" timeout="16000"/>
+          </sequence>
+
+          <sequence name="RebootSetting">
+            <block>
+                //Query(0, "  ==== RebootSetting ====", 1);
+            </block>
+            <block>
+              __var RSTCNT_SYSREBOOT     = 0x44004040;
+              __var RSTCNT_SYSREBOOTMODE = 0x44004048;
+              __var CACH0_CTRL           = 0xF2001010;
+              __var CACH1_CTRL           = 0xF2002010;
+              __var CACH0_CTRL_ALL       = 0xF2001020;
+              __var CACH1_CTRL_ALL       = 0xF2002020;
+              __var CACH0_MAINT_STATUS   = 0xF2001028;
+              __var CACH1_MAINT_STATUS   = 0xF2002028;
+              __var rdata = 0;
+              
+              
+              // reboot mode
+              //Write32(0x44004048, 0x00000000);
+              Write8(0x44004048, 0x00000000);
+              DAP_Delay(1000);
+            </block>
+              
+            <block>
+              //CACHE1(Flash) invalitade
+              Write32(CACH1_CTRL_ALL, 0x00000020);
+              //rdata= Read32(CACH1_MAINT_STATUS);
+              DAP_Delay(500000); // 500ms
+              //rdata= Read32(CACH1_MAINT_STATUS);
+              
+              //rdata = Read32(CACH1_CTRL);
+              //Write32(CACH1_CTRL, rdata &amp; 0xFFFFFFFE);
+              Write32(CACH1_CTRL, 0x0);
+
+
+              //CACHE0(ViewMEM/HyperRAM)
+              Write32(CACH0_CTRL_ALL, 0x00000020);
+              //rdata= Read32(CACH0_MAINT_STATUS);
+              DAP_Delay(500000); // 500ms
+              //rdata= Read32(CACH0_MAINT_STATUS);
+
+              //rdata = Read32(CACH0_CTRL);
+              //Write32(CACH0_CTRL, rdata &amp; 0xFFFFFFFE);
+              Write32(CACH0_CTRL, 0x0);
+            </block>
+
+            <block>
+              // reboot
+              DAP_Delay(500000); // 500ms
+              Write8(0x44004040, 0x00000000);
+              DAP_Delay(1000);
+              Write8(0x44004040, 0x1);
+              DAP_Delay(1000);
+            </block>
+            <block>
+               __var DHCSR_Addr = 0xE000EDF0;
+               
+              <!-- Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit -->
+              Read32( 0xE000EDF0);
+             </block>
+          </sequence>
+
+          <sequence name="DebugDeviceUnlock">
+            <block>
+              <!-- Query(0, "  ==== DebugDeviceUnlock()", 1); -->
+              //sequence("DisableWDT");
+               //sequence("UnlockDAP");
+
+                sequence("Gerda_reset_release");
+            </block>
+
+
+            <block>
+              <!-- DebugCoreStart ARM Original -->
+              <!-- Debug enable                -->
+              <!--   - DHCSR.C_DEBUGEN = 1     -->
+              __var DHCSR_Addr = 0xE000EDF0;
+              __var DEMCR_Addr = 0xE000EDFC;
+
+               Write32(DHCSR_Addr, 0xA05F0001);
+            </block>
+
+            <block>
+              <!-- ResetCatchSet ARM Original -->
+              <!-- Enable Reset Vector Catch. -->
+              <!--   - DEMCR.VC_CORERESET = 1 -->
+              __var rdata = 0;
+              rdata = Read32(DEMCR_Addr);
+              Write32(DEMCR_Addr, (rdata | 0x00000003));
+            </block>
+            <block>
+               // attach flag check MTB work memory used
+               rdata = Read32(0xF1000000);
+            </block>
+            <control if="(rdata) != 0x55aa55aa">
+                <block>
+                  sequence("RebootSetting");
+                </block>
+            </control>
+            <block>
+                Write32(0xF1000000,0);
+            </block>
+          </sequence>
+
+
+
+
+          <sequence name="ResetCatchClear">
+              <block>
+                __var DEMCR_Addr = 0xE000EDFC;
+                __var DCRSR_Addr = 0xE000EDF4;
+                __var DCRDR_Addr = 0xE000EDF8;
+                __var rdata      = 0;
+
+                Write32(DEMCR_Addr, 0x0);
+
+                // reset vector PC check
+                Write32(DCRSR_Addr, 0xF);
+                rdata = Read32(DCRDR_Addr);
+
+              </block>
+              <block>
+                // This is required for Verify on
+                sequence("Gerda_reinit");
+              </block>
+          </sequence>
+
+
+
+          <sequence name="Gerda_reinit">
+            <block>
+                __var EMC_SYSTEM_NRST = 0x40040000;
+                __var EMC_SYSTEM_CLK = 0x40040004;
+                __var EMC_SYSTEM_NRST1 = 0x40040040;
+                __var EMC_SYSTEM_CLK1 = 0x40040044;
+                __var EMC_SYSTEM_INT1 = 0x40040048;
+                __var EMC_SYSTEM_NRST2 = 0x40040080;
+                __var EMC_SYSTEM_CLK2 = 0x40040084;
+                __var rdata = 0;
+
+                Write32(EMC_SYSTEM_NRST,0x00000000);
+                Write32(EMC_SYSTEM_NRST1,0x00000000);
+                Write32(EMC_SYSTEM_NRST2,0x00000000);
+                Write32(EMC_SYSTEM_CLK,0x00000000);
+                Write32(EMC_SYSTEM_CLK1,0x00000000);
+                Write32(EMC_SYSTEM_CLK2,0x00000000);
+                rdata = Read32(0xF1000030);
+            </block>
+            <control if="(rdata) == 0x11111111">
+               <block>
+                  sequence("GerdaFlashInit");
+               </block>
+            </control>
+          </sequence>
+
+          <sequence name="Gerda_reset_release">
+            <block>
+              <!-- GPOPT reg set  -->
+              __var GPOPT0 = 0xF0102010;
+              __var _gpopt_cfg  = 0x00000200;
+              __var _gpopt_work = 0;
+              __var rdata = 0;
+
+              rdata = Read32(GPOPT0);
+              _gpopt_work = rdata;
+              _gpopt_work = _gpopt_work|_gpopt_cfg;
+              Write32(GPOPT0, _gpopt_work);
+              DAP_Delay(1000);
+              
+              _gpopt_work = _gpopt_work|0x01000800;
+              Write32(GPOPT0, _gpopt_work);
+              rdata = Read32(GPOPT0);
+            </block>
+         </sequence>
+
+
+         <sequence name="GerdaFlashInit">
+             <block>
+               __var rdata=0;
+               __var EMC_SYSTEM_NRST = 0x40040000;
+               __var EMC_SYSTEM_CLK = 0x40040004;
+               __var EMC_SYSTEM_NRST1 = 0x40040040;
+               __var EMC_SYSTEM_CLK1 = 0x40040044;
+               __var EMC_SYSTEM_INT1 = 0x40040048;
+               __var EMC_SYSTEM_NRST2 = 0x40040080;
+               __var EMC_SYSTEM_CLK2 = 0x40040084;
+               __var IECTRL = 0x40816000;
+               __var FSEL = 0x40816200;
+               __var DRVCTRL = 0x40816030;
+               __var EMMCDRIVE = 0x408162A8;
+               __var UHS1DRIVE = 0x408162A4;
+               __var PLSEL = 0x40816140;
+               __var PLCTRL = 0x40816110;
+               __var EMC_FLMn_SFLASH_NUM = 0x40040E30;
+               __var EMC_FLMn_SFLASH_IOSEL = 0x40040E58;
+               __var EMC_FLMn_SFLASH_SR_REQ = 0x40040EF4;
+               __var EMC_FLMn_REG_SET = 0x40040EF0;
+               __var EMC_FLMn_SFLASH_CLK = 0x40040E34;
+               __var EMC_FLMn_SFLASH_FAST = 0x40040E38;
+               __var EMC_FLMn_BUS_MODE = 0x40040E04;
+               
+               
+               Write32(EMC_SYSTEM_NRST,0xffffffff);
+               Write32(EMC_SYSTEM_NRST1,0xffffffff);
+               Write32(EMC_SYSTEM_NRST2,0xffffffff);
+               Write32(EMC_SYSTEM_CLK,0xffffffff);
+               Write32(EMC_SYSTEM_CLK1,0xffffffff);
+               Write32(EMC_SYSTEM_CLK2,0xffffffff);
+
+               Write32(EMC_FLMn_BUS_MODE,1);
+               Write32(EMC_FLMn_SFLASH_CLK,3);
+               Write32(EMC_FLMn_SFLASH_FAST,1);
+
+               rdata = Read32(IECTRL+(4*6));
+               Write32(IECTRL+(4*6),rdata|0x00000200);
+               rdata = Read32(IECTRL);
+               Write32(IECTRL,rdata|0x00000008);
+
+               Write32(EMC_FLMn_SFLASH_NUM,1);    // flash num=1
+               Write32(EMC_FLMn_SFLASH_IOSEL,3);
+               Write32(EMC_FLMn_SFLASH_SR_REQ,2);
+               Write32(EMC_FLMn_REG_SET,1);
+
+               Write32(IECTRL+(4*0),0xa);
+               Write32(IECTRL+(4*2),0x0);
+               Write32(IECTRL+(4*6),0x04000200);
+               Write32(FSEL+(4*0),0xAAA00000);
+               Write32(FSEL+(4*1),0x0000000A);
+               Write32(FSEL+(4*2),0x00000000);
+               Write32(FSEL+(4*10),0x00000000);
+               Write32(FSEL+(4*11),0x00000000);
+               Write32(FSEL+(4*25),0x00000000);
+               Write32(FSEL+(4*27),0x00000000);
+               Write32(DRVCTRL+(4*0),0x00015455);
+               Write32(DRVCTRL+(4*1),0x00000000);
+               Write32(DRVCTRL+(4*12),0x00050000);
+               Write32(DRVCTRL+(4*13),0x00100000);
+               Write32(EMMCDRIVE,0x00000000);
+               Write32(UHS1DRIVE,0x00000000);
+               Write32(PLSEL+(4*0),0x00000002);
+               Write32(PLCTRL+(4*0),0x00000002);
+               Write32(PLSEL+(4*2),0x00000000);
+               Write32(PLCTRL+(4*2),0x00000000);
+
+               Write32(EMC_FLMn_SFLASH_SR_REQ,0);
+               Write32(EMC_FLMn_REG_SET,1);
+               
+               // dummy read
+               rdata = Read32(0x6000a000);
+             </block>
+         </sequence>
+
+        </sequences>
+       </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <condition id="Gerda Series (Gerda-4UL)">
+      <description>System Startup for Gerda Series (Gerda-4UL)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="Gerda-4UL"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <component Cclass="Debug" Cgroup="Debug" Cversion="1.00" condition="Gerda Series (Gerda-4UL)">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Gerda Series </description>
+      <files>
+         <file category="other" name="Debug/debug_normal.ini" />
+         <file category="other" name="Debug/TaskTrace.ini" />
+         <file category="other" name="Debug/TaskTracedata.ini" />
+      </files>
+    </component>
+  </components>
+</package>
