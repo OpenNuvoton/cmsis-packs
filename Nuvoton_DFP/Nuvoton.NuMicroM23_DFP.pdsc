@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.5" date="2026-04-13">
+      Add SPROM region.
+    </release>
     <release version="1.0.4" date="2025-10-30">
       Add KM1M2 series.
     </release>
@@ -128,9 +131,11 @@
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+          <algorithm  name  ="Flash/NUC126_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <feature type="IOs"       n="38"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="2"/>
@@ -147,10 +152,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
-          <feature type="IOs"       n="38"/>
+          <algorithm  name  ="Flash/NUC126_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+		  <feature type="IOs"       n="38"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="2"/>
           <feature type="SPI"       n="2"/>
@@ -166,10 +173,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
-          <feature type="IOs"       n="38"/>
+          <algorithm  name  ="Flash/NUC126_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+		  <feature type="IOs"       n="38"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="2"/>
           <feature type="SPI"       n="2"/>
@@ -185,10 +194,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1262AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC126_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC126_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
-          <feature type="IOs"       n="50"/>
+          <algorithm  name  ="Flash/NUC126_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2800"  default="1"/>
+		  <feature type="IOs"       n="50"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="2"/>
           <feature type="SPI"       n="2"/>
@@ -210,9 +221,11 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
@@ -230,10 +243,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="36"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -250,10 +265,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="36"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -270,10 +287,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="22"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="22"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -290,10 +309,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="36"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -310,10 +331,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="36"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -330,10 +353,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="36"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="36"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -350,10 +375,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="22"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="22"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>
@@ -370,10 +397,12 @@
           <debug      svd   ="SVD/Nuvoton/NUC1263AE.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NUC1263_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
           <algorithm  name  ="Flash/NUC1263_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
-          <feature type="IOs"       n="22"/>
+          <algorithm  name  ="Flash/NUC1263_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+		  <feature type="IOs"       n="22"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="3"/>
           <feature type="SPI"       n="3"/>

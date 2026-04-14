@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M4 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.2" date="2026-04-14">
+      Add SPROM Region.
+    </release>
     <release version="1.0.1" date="2025-09-15">
       Update IROM.
     </release>
@@ -409,7 +412,7 @@ NUC472 also provides Ethernet 10/100 MAC with MII and RMII interface.</descripti
         <processor  Dcore="Cortex-M4"  Dclock="144000000"  Dfpu="FPU"/>
         <compile    header="Device/M433/Include/M433.h"/>
         <description>The NuMicro M433 series 32-bit microcontroller powered by Cortex-M4F runs up to 133 MHz.</description>
-        <!-- *************************  Device 'M483SE8AE'  ***************************** -->
+        <!-- *************************  Device 'M433SE8AE'  ***************************** -->
         <device Dname="M433SE8AE">
           <debug      svd   ="SVD/Nuvoton/M433.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
@@ -2859,9 +2862,11 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <feature type="IOs"       n="27"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
@@ -2880,10 +2885,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="27"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="27"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -2901,10 +2908,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="27"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="27"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -2922,10 +2931,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="42"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="42"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -2943,10 +2954,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="42"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="42"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -2964,10 +2977,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="53"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="53"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -2985,10 +3000,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="53"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="53"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3259,10 +3276,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="26"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="26"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -3281,10 +3300,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="42"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="42"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -3303,10 +3324,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="42"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="42"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -3325,10 +3348,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="53"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="53"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3347,10 +3372,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="53"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="53"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3369,10 +3396,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="100"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="100"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3391,10 +3420,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="100"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="100"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3623,10 +3654,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3646,10 +3679,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3669,10 +3704,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="101"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="101"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3860,10 +3897,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"          n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"          n="45"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"          n="4"/>
@@ -3882,10 +3921,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3904,10 +3945,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3926,10 +3969,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3948,10 +3993,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="101"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="101"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -3970,10 +4017,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="26"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="26"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -3992,10 +4041,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="41"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="41"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -4014,10 +4065,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="41"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="41"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="3"/>
@@ -4036,10 +4089,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4058,10 +4113,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="101"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="101"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4080,10 +4137,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0xc000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4103,10 +4162,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="45"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="45"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4126,10 +4187,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="101"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="101"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4149,10 +4212,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"       n="115"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"       n="115"/>
           <feature type="Timer"         n="4"   m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"       n="4"/>
@@ -4172,10 +4237,12 @@ Low voltage reset and Brown-out Detector.
           <debug      svd   ="SVD/Nuvoton/M481_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x00100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x1000"      startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x28000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/M481_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
           <algorithm  name  ="Flash/M481_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
-          <feature type="IOs"          n="101"/>
+          <algorithm  name  ="Flash/M481_SP_4.FLM"        start="0x00200000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x14000"  default="1"/>
+		  <feature type="IOs"          n="101"/>
           <feature type="Timer"          n="4"    m="32"/>
           <feature type="UART"          n="6"/>
           <feature type="SPI"          n="4"/>

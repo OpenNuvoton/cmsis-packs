@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M NuMicroCM33 Family Device Support</description>
 
   <releases>
+    <release version="1.0.1" date="2026-04-09">
+      Add CM3031 part no.
+    </release>
     <release version="1.0.0" date="2025-07-15">
       Initial Version.
     </release>
@@ -29,8 +32,10 @@
         <description>The NuMicro CM3031 series is a 32-bit microcontroller based on Arm Cortex-M33F core.</description>
         <!-- *************************  Device 'CM3034HS8AE'  ***************************** -->
         <device Dname="CM3034HS8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>          
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
@@ -38,7 +43,9 @@
         </device>
         <!-- *************************  Device 'CM3034HN8AE'  ***************************** -->
         <device Dname="CM3034HN8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -47,61 +54,42 @@
         </device>
         <!-- *************************  Device 'CM3034HL8AE'  ***************************** -->
         <device Dname="CM3034HL8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM3034HL3AE'  ***************************** -->
+        <device Dname="CM3034HL3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
         </device>
         <!-- *************************  Device 'CM3034HJ3AE'  ***************************** -->
         <device Dname="CM3034HJ3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
-        </device>
-        <!-- *************************  Device 'CM3034GS8AE'  ***************************** -->
-        <device Dname="CM3034GS8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-        <!-- *************************  Device 'CM3034GN8AE'  ***************************** -->
-        <device Dname="CM3034GN8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-        <!-- *************************  Device 'CM3034GL8AE'  ***************************** -->
-        <device Dname="CM3034GL8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-        <!-- *************************  Device 'CM3034GJ3AE'  ***************************** -->
-        <device Dname="CM3034GJ3AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="33"/>
         </device>
         <!-- *************************  Device 'CM3033HS8AE'  ***************************** -->
         <device Dname="CM3033HS8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -110,7 +98,9 @@
         </device>
         <!-- *************************  Device 'CM3033HN8AE'  ***************************** -->
         <device Dname="CM3033HN8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
@@ -119,107 +109,120 @@
         </device>
         <!-- *************************  Device 'CM3033HL8AE'  ***************************** -->
         <device Dname="CM3033HL8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="48"/>
         </device>
-        <!-- *************************  Device 'CM3033GS8AE'  ***************************** -->
-        <device Dname="CM3033GS8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-        <!-- *************************  Device 'CM3033GN8AE'  ***************************** -->
-        <device Dname="CM3033GN8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-        <!-- *************************  Device 'CM3033GL8AE'  ***************************** -->
-        <device Dname="CM3033GL8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-        <!-- *************************  Device 'CM3031HS8AE'  ***************************** -->
-        <device Dname="CM3031HS8AE">
+        <!-- *************************  Device 'CM3033HL3AE'  ***************************** -->
+        <device Dname="CM3033HL3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
+          <feature type="QFN" n="48"/>
         </device>
-        <!-- *************************  Device 'CM3031HN8AE'  ***************************** -->
-        <device Dname="CM3031HN8AE">
+        <!-- *************************  Device 'CM3033HJ3AE'  ***************************** -->
+        <device Dname="CM3033HJ3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-        <!-- *************************  Device 'CM3031HL8AE'  ***************************** -->
-        <device Dname="CM3031HL8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-        <!-- *************************  Device 'CM3031HJ3AE'  ***************************** -->
-        <device Dname="CM3031HJ3AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFN" n="33"/>
-        </device>
-        <!-- *************************  Device 'CM3031GS8AE'  ***************************** -->
-        <device Dname="CM3031GS8AE">
+        </device>		
+        <!-- *************************  Device 'CM3034GN8AE'  ***************************** -->
+        <device Dname="CM3034GN8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
-          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-        <!-- *************************  Device 'CM3031GN8AE'  ***************************** -->
-        <device Dname="CM3031GN8AE">
-          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="64"/>
         </device>
-        <!-- *************************  Device 'CM3031GL8AE'  ***************************** -->
-        <device Dname="CM3031GL8AE">
+        <!-- *************************  Device 'CM3034GL3AE'  ***************************** -->
+        <device Dname="CM3034GL3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM3034GL8AE'  ***************************** -->
+        <device Dname="CM3034GL8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP" n="48"/>
         </device>
-        <!-- *************************  Device 'CM3031GJ3AE'  ***************************** -->
-        <device Dname="CM3031GJ3AE">
+        <!-- *************************  Device 'CM3034GJ3AE'  ***************************** -->
+        <device Dname="CM3034GJ3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0x50000"     init="0"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="33"/>
+        </device>
+        <!-- *************************  Device 'CM3033GN8AE'  ***************************** -->
+        <device Dname="CM3033GN8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- *************************  Device 'CM3033GL3AE'  ***************************** -->
+        <device Dname="CM3033GL3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM3033GL8AE'  ***************************** -->
+        <device Dname="CM3033GL8AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
+          <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'CM3033GJ3AE'  ***************************** -->
+        <device Dname="CM3033GJ3AE">
+          <debug      svd="SVD/Nuvoton/CM3031.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x18000"     init="0"   default="1"/>
           <algorithm  name  ="Flash/CM3031_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/CM3031_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x30000000"  RAMsize="0x4000"  default="1"/>
@@ -238,7 +241,7 @@
 
     <condition id="M33NuMicro CM3031 Device">
       <description>Nuvoton M33NuMicro CM3031 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="CM303[134][GH][SNLJ][38]AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="CM303[34][GH][SNLJ][38]AE"/>
     </condition>
   </conditions>
 
