@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.6" date="2026-04-14">
+	  Add M2003 part no.
+    </release>
     <release version="1.0.5" date="2026-04-13">
       Add SPROM region.
     </release>
@@ -458,6 +461,186 @@
           <feature type="QFN"       n="20"/>
         </device>
 
+        <!-- *************************  Device 'M2003SG6AE'  ***************************** -->
+        <device Dname="M2003SG6AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x9000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003LG6AE'  ***************************** -->
+        <device Dname="M2003LG6AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x9000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+        <!-- *************************  Device 'M2003RG6AE'  ***************************** -->
+        <device Dname="M2003RG6AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x9000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003R1G6AE'  ***************************** -->
+        <device Dname="M2003R1G6AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x9000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003LE4AE'  ***************************** -->
+        <device Dname="M2003LE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2003TE4AE'  ***************************** -->
+        <device Dname="M2003TE4AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
+        <!-- *************************  Device 'M2003LD4AE'  ***************************** -->
+        <device Dname="M2003LD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2003TD4AE'  ***************************** -->
+        <device Dname="M2003TD4AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
+        <!-- *************************  Device 'M2003ED4AE'  ***************************** -->
+        <device Dname="M2003ED4AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="SOP"       n="28"/>
+        </device>
+
+        <!-- *************************  Device 'M2003VJ7AE'  ***************************** -->
+        <device Dname="M2003VJ7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="100"/>
+        </device>
+
+        <!-- *************************  Device 'M2003SJ7AE'  ***************************** -->
+        <device Dname="M2003SJ7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003VI7AE'  ***************************** -->
+        <device Dname="M2003VI7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="100"/>
+        </device>
+
+        <!-- *************************  Device 'M2003SI7AE'  ***************************** -->
+        <device Dname="M2003SI7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003LI7AE'  ***************************** -->
+        <device Dname="M2003LI7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="48"/>
+        </device>
       </subFamily>
 
       <!-- *************************  Subfamily 'M251'  ***************************** -->
@@ -3338,7 +3521,8 @@
     </condition>
     <condition id="M23NuMicro M2003 Device">
       <description>Nuvoton M23NuMicro M2003 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M2003[FX]C1AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M2003[FXETLRSV][CDEGIJ][1467]AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M2003R1G6AE"/>
     </condition>
     <condition id="M23NuMicro M2351 Device">
       <description>Nuvoton M23NuMicro M2351 Series devices</description>
