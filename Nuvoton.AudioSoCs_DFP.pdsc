@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M Audio SoCs Family Device Support</description>
 
   <releases>
+    <release version="1.0.1" date="2026-05-04">
+      Add IROM2 for all series with LDROM.
+    </release>
     <release version="1.0.0" date="2025-08-06">
       First Release version of Audio SoCs Device Family Pack.
     </release>
@@ -50,6 +53,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
 				<debug      svd   ="SVD/Nuvoton/I91500_v1.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/I91500_LD_6.FLM"        start="0x00100000"  size="0x1000"  default="0"/>
 				<algorithm  name  ="Flash/I91500_AP_64.FLM"        start="0x00000000"  size="0x10000" default="1"/>
@@ -73,6 +77,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
 				<debug      svd   ="SVD/Nuvoton/ISD9100_v3.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/ISD9100_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
 				<algorithm  name  ="Flash/ISD9100_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
@@ -92,6 +97,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="48000000"/>
 				<debug      svd   ="SVD/Nuvoton/ISD9100_v3.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/ISD9100_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
 				<algorithm  name  ="Flash/ISD9100_AP_145.FLM"        start="0x00000000"  size="0x24400"                   default="1"/>
@@ -207,6 +213,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+		  <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
           <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -229,6 +236,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+		  <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -252,6 +260,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+		  <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -275,6 +284,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/I94100_v1_3.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+		  <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/I94000_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/I94000_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>

@@ -6,6 +6,12 @@
   <description>Nuvoton ARM Cortex-M NuVoice, NSC and NPCx Family Device Support</description>
 
   <releases>
+	<release version="1.0.23" date="2026-05-04">
+      Add IROM2 for all series with LDROM. For N574, add IROM3 and IROM4 for SPI Falsh memory information.
+	</release>
+	<release version="1.0.22" date="2026-01-08">
+      Add N577 series.
+	</release>
  	<release version="1.0.21" date="2025-07-24">
       Add NSC family for NSC-related series, delete ISD Series, and revise the NSC128L42 series description according to TRM_NSC128L42_Rev 1.0.
 	</release>
@@ -94,6 +100,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/NPCA121_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NPCX_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/NPCX_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -117,6 +124,7 @@
 		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
           <debug      svd   ="SVD/Nuvoton/NPCA121_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/NPCX_CFG.FLM"         start="0x00300000"  size="0x00000004"               default="0"/>
           <algorithm  name  ="Flash/NPCX_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -319,9 +327,14 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/N574F_v4.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
+				<memory     id="IROM3"    start="0x90000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM4"    start="0x80000000"  size="0x10000000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/N574_AP_1_5M.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device1.FLM"      start="0x90000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device2.FLM"      start="0x80000000"  size="0x10000000"                  default="0"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -336,9 +349,14 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/N574F_v4.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
+				<memory     id="IROM3"    start="0x90000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM4"    start="0x80000000"  size="0x10000000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/N574_AP_1M.FLM"      start="0x00000000"  size="0x100000"                  default="1"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device1.FLM"      start="0x90000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device2.FLM"      start="0x80000000"  size="0x10000000"                  default="0"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -353,9 +371,14 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/N574F_v4.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
+				<memory     id="IROM3"    start="0x90000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM4"    start="0x80000000"  size="0x10000000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/N574_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device1.FLM"      start="0x90000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device2.FLM"      start="0x80000000"  size="0x10000000"                  default="0"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -370,9 +393,14 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/N574F_v4.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
+				<memory     id="IROM3"    start="0x90000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM4"    start="0x80000000"  size="0x10000000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/N574_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/N574_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device1.FLM"      start="0x90000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device2.FLM"      start="0x80000000"  size="0x10000000"                  default="0"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -386,9 +414,16 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/N574F128_v4.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00100000"  size="0x1800"     startup="0"   default="0"/>
+				<memory     id="IROM3"    start="0x90000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM4"    start="0x80000000"  size="0x10000000"     startup="0"   default="0"/>
+				<memory     id="IROM5"    start="0x70000000"  size="0x10000000"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/N574F128_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/N574F128_AP_128.FLM"      start="0x00000000"  size="0x20000"                  default="1"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device1.FLM"      start="0x90000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPI_SPI0Device2.FLM"      start="0x80000000"  size="0x10000000"                  default="0"/>
+				<algorithm  name  ="Flash/N574_SPIM_SPIMDevice1.FLM"      start="0x70000000"  size="0x10000000"                  default="0"/>
 				<feature type="IOs"         n="40"/>
 				<feature type="Timer"       n="3"    m="16"/>
 				<feature type="UART"        n="1"/>
@@ -425,6 +460,7 @@
 		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
           <debug      svd   ="SVD/Nuvoton/N575F145_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/N575_CFG.FLM"         start="0x00300000"  size="0x00000004"                   default="0"/>
           <algorithm  name  ="Flash/N575_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -477,6 +513,7 @@
 		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
           <debug      svd   ="SVD/Nuvoton/N570H064.svd"/> <!--Fixed-->
           <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1800"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x1800"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/N570_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
           <algorithm  name  ="Flash/N570_AP_64.FLM"        start="0x00000000"  size="0x10000"                   default="1"/>
@@ -586,6 +623,7 @@
 		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
           <debug      svd   ="SVD/Nuvoton/N575F145_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/N575_CFG.FLM"         start="0x00300000"  size="0x00000004"                   default="0"/>
           <algorithm  name  ="Flash/N575_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -606,6 +644,7 @@
 		  <processor  Dcore="Cortex-M0"  Dclock="48000000"/>
           <debug      svd   ="SVD/Nuvoton/N575F145_v1.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x24400"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/N575_CFG.FLM"         start="0x00300000"  size="0x00000004"                   default="0"/>
           <algorithm  name  ="Flash/N575_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
@@ -639,6 +678,58 @@
         <feature type="ADC"  		n="8"	m="10"/>
 		</device>
       </subFamily>
+	  
+	  <!-- *************************  Subfamily 'N577 Series'  ***************************** -->
+      <subFamily DsubFamily="N577 Series">
+		<description>The N577 series is a ARM Cortex-M4 32-bit microcontroller.</description>
+        <!-- *************************  Device 'N577F512'  ***************************** -->
+        <device Dname="N577F512">
+		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
+          <debug      svd   ="SVD/Nuvoton/N577_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/N577_CFG_12.FLM"      start="0x00300000"  size="0x0000000B"               default="0"/>
+          <algorithm  name  ="Flash/N577_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
+          <algorithm  name  ="Flash/N577_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
+        <feature type="IOs"  		n="26"/>
+        <feature type="Timer"  		n="4"	m="32"/>
+        <feature type="UART"  		n="6"/>
+        <feature type="SPI"  		n="3"/>
+        <feature type="I2C"  		n="3"/>
+        <feature type="USBD"  		n="1"/>
+        <feature type="I2S"  		n="1"/>
+        <feature type="AnalogOther"	n="2"/>
+        <feature type="PWM"  		n="24"	m="16"/>
+        <feature type="ADC"  		n="16"	m="12"/>
+        <feature type="DAC"  		n="2"	m="12"/>
+        <feature type="QFN"  		n="33"/>
+		</device>
+		
+        <!-- *************************  Device 'N577C512'  ***************************** -->
+        <device Dname="N577C512">
+		  <processor  Dcore="Cortex-M4"  Dclock="200000000" Dfpu="FPU"/>
+          <debug      svd   ="SVD/Nuvoton/N577_v1.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x30000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/N577_CFG_12.FLM"      start="0x00300000"  size="0x0000000B"               default="0"/>
+          <algorithm  name  ="Flash/N577_LD_4.FLM"        start="0x00100000"  size="0x1000"                   default="0"/>
+          <algorithm  name  ="Flash/N577_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
+        <feature type="IOs"  		n="26"/>
+        <feature type="Timer"  		n="4"	m="32"/>
+        <feature type="UART"  		n="6"/>
+        <feature type="SPI"  		n="3"/>
+        <feature type="I2C"  		n="3"/>
+        <feature type="USBD"  		n="1"/>
+        <feature type="I2S"  		n="1"/>
+        <feature type="AnalogOther"	n="2"/>
+        <feature type="PWM"  		n="24"	m="16"/>
+        <feature type="ADC"  		n="16"	m="12"/>
+        <feature type="DAC"  		n="2"	m="12"/>
+        <feature type="QFN"  		n="33"/>
+		</device>
+	  </subFamily>
     </family>
 
     <family Dfamily="NSC Family" Dvendor="Nuvoton:18">
@@ -651,6 +742,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x180000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/NSC74_AP_1_5M.FLM"      start="0x00000000"  size="0x180000"                  default="1"/>
@@ -668,6 +760,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/NSC74_AP_1M.FLM"      start="0x00000000"  size="0x100000"                  default="1"/>
@@ -685,6 +778,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/NSC74_AP_512.FLM"      start="0x00000000"  size="0x80000"                  default="1"/>
@@ -702,6 +796,7 @@
 				<processor  Dcore="Cortex-M0"  Dclock="39936000" />
 				<debug      svd   ="SVD/Nuvoton/NSC74_v2.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00200000"  size="0x1800"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/NSC74_LD_6.FLM"        start="0x00200000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/NSC74_AP_256.FLM"      start="0x00000000"  size="0x40000"                  default="1"/>
@@ -723,6 +818,7 @@
 				<processor  Dcore="Cortex-M23"  Dclock="49152000" />
 				<debug      svd   ="SVD/Nuvoton/NSC_v2.svd"/>
 				<memory     id="IROM1"    start="0x00000000"  size="0x50000"     startup="1"   default="1"/>
+				<memory     id="IROM2"    start="0x00100000"  size="0x1800"     startup="0"   default="0"/>
 				<memory     id="IRAM1"    start="0x20000000"  size="0x4800"     init   ="0"   default="1"/>
 				<algorithm  name  ="Flash/NSC_LD_6.FLM"        start="0x00100000"  size="0x1800"                   default="0"/>
 				<algorithm  name  ="Flash/NSC_AP_320.FLM"      start="0x00000000"  size="0x50000"                  default="1"/>
