@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+<package schemaVersion="1.7.44" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.44/schema/PACK.xsd">
   <vendor>Nuvoton</vendor>
   <url>https://github.com/OpenNuvoton/cmsis-packs/raw/master/Nuvoton_DFP/</url>
   <name>NuMicroM33_DFP</name>
-  <description>Nuvoton ARM Cortex-M NuMicroM33 Family Device Support</description>
-
+  <description>Nuvoton ARM Cortex-M33 NuMicro Family Device Support</description>
   <releases>
+    <release version="1.0.4" date="2026-07-03">
+      Add stddriver files.
+    </release>
     <release version="1.0.3" date="2026-02-11">
       Add M3333/M3334 part no.
     </release>
@@ -20,610 +22,923 @@
       Initial Version.
     </release>
   </releases>
-
   <keywords>
-    <!-- keywords for indexing -->
     <keyword>Nuvoton</keyword>
     <keyword>Device Support</keyword>
-    <keyword>Device Family Package Nuvoton</keyword>
-    <keyword>NuMicroM33</keyword>
+    <keyword>NuMicroM33_DFP</keyword>
+    <keyword>Cortex-M33</keyword>
   </keywords>
-
   <devices>
-    <!-- generated, do not modify this section! -->
     <family Dfamily="NuMicro M33 Family" Dvendor="Nuvoton:18">
-      <!-- *************************  Subfamily 'M3331'  ***************************** -->
       <subFamily DsubFamily="M3331">
         <processor  Dcore="Cortex-M33" Dfpu="SP_FPU" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="180000000"/>
-        <compile    header="Device/m3331/Include/m3331.h"/>
-        <description>The NuMicro M3331 series is a 32-bit microcontroller based on Arm Cortex-M33F core.</description>
-        <!-- *************************  Device 'M3334KIGAE'  ***************************** -->
-        <device Dname="M3334KIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-
-        <!-- *************************  Device 'M3334KGGAE'  ***************************** -->
-        <device Dname="M3334KGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-
-        <!-- *************************  Device 'M3333KIGAE'  ***************************** -->
-        <device Dname="M3333KIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
-        </device>
-
-        <!-- *************************  Device 'M3333KGGAE'  ***************************** -->
+        <compile header="Library/Device/Nuvoton/m3331/Include/m3331.h" />
+        <description>NuMicro M3331 series Cortex-M33 microcontroller.</description>
+        <debug svd="SVD/Nuvoton/M3331.svd" />
         <device Dname="M3333KGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-
-        <!-- *************************  Device 'M3334SIGAE'  ***************************** -->
-        <device Dname="M3334SIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
+        <device Dname="M3333KIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-
-        <!-- *************************  Device 'M3334SGGAE'  ***************************** -->
-        <device Dname="M3334SGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M3333SIGAE'  ***************************** -->
-        <device Dname="M3333SIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M3333SGGAE'  ***************************** -->
-        <device Dname="M3333SGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M3334LIGAE'  ***************************** -->
-        <device Dname="M3334LIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3334LGGAE'  ***************************** -->
-        <device Dname="M3334LGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3333LIGAE'  ***************************** -->
-        <device Dname="M3333LIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3333LGGAE'  ***************************** -->
-        <device Dname="M3333LGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3334YIGAE'  ***************************** -->
-        <device Dname="M3334YIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3334YGGAE'  ***************************** -->
-        <device Dname="M3334YGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3333YIGAE'  ***************************** -->
-        <device Dname="M3333YIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3333YGGAE'  ***************************** -->
-        <device Dname="M3333YGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3334TIGAE'  ***************************** -->
-        <device Dname="M3334TIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
-        </device>
-
-        <!-- *************************  Device 'M3334TGGAE'  ***************************** -->
-        <device Dname="M3334TGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
-        </device>
-
-        <!-- *************************  Device 'M3333TIGAE'  ***************************** -->
-        <device Dname="M3333TIGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_512.FLM"          start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
-        </device>
-		
-        <!-- *************************  Device 'M3333TGGAE'  ***************************** -->
-        <device Dname="M3333TGGAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x50000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x50000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
-        </device>
-
-        <!-- *************************  Device 'M3334SGAAE'  ***************************** -->
-        <device Dname="M3334SGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M3333SGAAE'  ***************************** -->
-        <device Dname="M3333SGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M3334LGAAE'  ***************************** -->
-        <device Dname="M3334LGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-
-        <!-- *************************  Device 'M3333LGAAE'  ***************************** -->
         <device Dname="M3333LGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-
-        <!-- *************************  Device 'M3334YGAAE'  ***************************** -->
-        <device Dname="M3334YGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
+        <device Dname="M3333LGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-
-        <!-- *************************  Device 'M3333YGAAE'  ***************************** -->
-        <device Dname="M3333YGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
+        <device Dname="M3333LIGAE">
+          <debug svd="SVD/Nuvoton/M3331.svd" />
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-
-        <!-- *************************  Device 'M3334TGAAE'  ***************************** -->
-        <device Dname="M3334TGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
+        <device Dname="M3333SGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-	
-        <!-- *************************  Device 'M3333TGAAE'  ***************************** -->
+        <device Dname="M3333SGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333SIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
         <device Dname="M3333TGAAE">
-          <debug svd ="SVD/Nuvoton/M3331.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x40000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x18000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x18000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3331_AP_256.FLM"        start="0x00000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3331_NS_256.FLM"          start="0x10000000"  size="0x40000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="33"/>
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333TGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333TIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333YGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333YGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3333YIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334KGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334KIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334LGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334LGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334LIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334SGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334SGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334SIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334TGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334TGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334TIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334YGAAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x18000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x18000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334YGGAE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3334YIGAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x2000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x50000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x50000" init="0" default="0" />
+          <algorithm name="Flash/M3331_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_LD_8.FLM" start="0x0F100000" size="0x2000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3331_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
       </subFamily>
       <subFamily DsubFamily="M3351">
         <processor  Dcore="Cortex-M33" Dfpu="SP_FPU" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="144000000"/>
-        <compile    header="Device/M3351/Include/M3351.h"/>
-        <description>The NuMicro M3351 series is a 32-bit microcontroller based on Arm Cortex-M33F core.</description>
-        <!-- *************************  Device 'M3351LICAE'  ***************************** -->
-        <device Dname="M3351LICAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_512.FLM"        start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-        <!-- *************************  Device 'M3351YICAE'  ***************************** -->
-        <device Dname="M3351YICAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_512.FLM"        start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-        <!-- *************************  Device 'M3351SICAE'  ***************************** -->
-        <device Dname="M3351SICAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_512.FLM"        start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-        <!-- *************************  Device 'M3351VICAE'  ***************************** -->
-        <device Dname="M3351VICAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_512.FLM"        start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="100"/>
-        </device>
-        <!-- *************************  Device 'M3351KICAE'  ***************************** -->
+        <compile header="Library/Device/Nuvoton/M3351/Include/M3351.h" />
+        <description>NuMicro M3351 series Cortex-M33 microcontroller.</description>
+        <debug svd="SVD/Nuvoton/M3351.svd" />
         <device Dname="M3351KICAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x80000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_512.FLM"        start="0x10000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
-        <!-- *************************  Device 'M3351LJCAE'  ***************************** -->
-        <device Dname="M3351LJCAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x100000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_1M.FLM"        start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="48"/>
-        </device>
-        <!-- *************************  Device 'M3351YJCAE'  ***************************** -->
-        <device Dname="M3351YJCAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x100000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_1M.FLM"        start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFN" n="48"/>
-        </device>
-        <!-- *************************  Device 'M3351SJCAE'  ***************************** -->
-        <device Dname="M3351SJCAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x100000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_1M.FLM"        start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="64"/>
-        </device>
-        <!-- *************************  Device 'M3351VJCAE'  ***************************** -->
-        <device Dname="M3351VJCAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x100000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_1M.FLM"        start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="100"/>
-        </device>
-        <!-- *************************  Device 'M3351KJCAE'  ***************************** -->
         <device Dname="M3351KJCAE">
-          <debug svd ="SVD/Nuvoton/M3351.svd"/>
-          <memory id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory id="IROM2"    start="0x10000000"  size="0x100000"     startup="0"   default="0"/>
-          <memory id="IROM3"    start="0x0F100000"  size="0x4000"      startup="0"   default="0"/>
-          <memory id="IRAM1"    start="0x20000000"  size="0x20000"     init   ="0"   default="1"/>
-          <memory id="IRAM2"    start="0x30000000"  size="0x20000"     init   ="0"   default="0"/>
-          <algorithm  name  ="Flash/M3351_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_LD_16.FLM"        start="0x0F100000"  size="0x4000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M3351_NS_1M.FLM"        start="0x10000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP" n="128"/>
+          <memory id="IROM1" start="0x00000000" size="0x100000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x100000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_1M.FLM" start="0x00000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351LICAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351LJCAE">
+          <memory id="IROM1" start="0x00000000" size="0x100000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x100000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_1M.FLM" start="0x00000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351SICAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351SJCAE">
+          <memory id="IROM1" start="0x00000000" size="0x100000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x100000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_1M.FLM" start="0x00000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351VICAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351VJCAE">
+          <memory id="IROM1" start="0x00000000" size="0x100000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x100000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_1M.FLM" start="0x00000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351YICAE">
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x80000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_512.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_512.FLM" start="0x10000000" size="0x80000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351YJCAE">
+          <memory id="IROM1" start="0x00000000" size="0x100000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x100000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0x20000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0x20000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_1M.FLM" start="0x00000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
       </subFamily>
     </family>
   </devices>
-
   <conditions>
-    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
-    <condition id="Compiler ARM">
-      <!-- conditions selecting ARM Compiler -->
-      <require Tcompiler="ARMCC"/>
+    <condition id="Compiler ARMCC">
+      <accept Tcompiler="ARMCC" />
     </condition>
-
     <condition id="M33NuMicro M3331 Device">
       <description>Nuvoton M33NuMicro M3331 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M333[34][KLSYT][GI][AG]AE"/>
+      <accept Dvendor="Nuvoton:18" Dname="M333[34][KLSYT][GI][AG]AE"/>
     </condition>
     <condition id="M33NuMicro M3351 Device">
       <description>Nuvoton M33NuMicro M3351 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="M3351[KLSYV][IJ]CAE"/>
+      <accept Dvendor="Nuvoton:18" Dname="M3351[KLSYV][IJ]CAE"/>
     </condition>
   </conditions>
-
   <components>
-    <!-- *************************  Startup file  ***************************** -->
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
-      <!-- Cversion is necessary -->
       <description>System Startup for Nuvoton M3331 Series</description>
-      <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-      </RTE_Components_h>
       <files>
-        <!-- header path -->
-        <file category="include" name="Device/m3331/StdDriver/inc/"/>
-        <file category="include" name="Device/m3331/Include/"/>
-        <file category="header"  name="Device/m3331/Include/m3331.h"/>
-        <file category="header"  name="Device/m3331/Include/NuMicro.h"/>
-        <file category="header"  name="Device/m3331/Include/system_m3331.h"/>
-        <!-- startup/system files -->
-        <file category="source"  name="Device/m3331/Source/startup_m3331.c" attr="config" version="0.00.001"/>
-        <file category="source"  name="Device/m3331/Source/system_m3331.c" attr="config" version="0.00.001"/>
-        <!-- retarget files -->
-        <file category="sourceC" name="Device/m3331/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+        <file category="include" name="Library/Device/Nuvoton/m3331/StdDriver/inc/" />
+        <file category="include" name="Library/Device/Nuvoton/m3331/Include/" />
+        <file category="header" name="Library/Device/Nuvoton/m3331/Include/m3331.h" />
+        <file category="header" name="Library/Device/Nuvoton/m3331/Include/NuMicro.h" />
+        <file category="header" name="Library/Device/Nuvoton/m3331/Include/system_m3331.h" />
+        <file category="source" name="Library/Device/Nuvoton/m3331/Source/startup_m3331.c" attr="config" version="0.00.001" />
+        <file category="source" name="Library/Device/Nuvoton/m3331/Source/system_m3331.c" attr="config" version="0.00.001" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/retarget.c" attr="config" version="0.00.001" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>ACMP driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>BPWM driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>CANFD driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>CLK driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>CRC driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>EADC driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>EBI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>ECAP driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ELLSI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>ELLSI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/ellsi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/ellsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>EPWM driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EQEI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>EQEI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/eqei.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/eqei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>FMC driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>GPIO driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HSUSBD" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>HSUSBD driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/hsusbd.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/hsusbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>I2C driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>I2S driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3C" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>I3C driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/i3c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/i3c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>LLSI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDCI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>PDCI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/pdci.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/pdci.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>PDMA driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>QSPI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>RTC driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>SDH driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>SPI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>SYS driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>TIMER driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>TIMER_PWM driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>UART driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>USCI_I2C driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>USCI_SPI driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>USCI_UART driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>WDT driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M33NuMicro M3331 Device">
+      <description>WWDT driver for Nuvoton M3331 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/m3331/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/m3331/StdDriver/src/wwdt.c" />
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
-      <!-- Cversion is necessary -->
       <description>System Startup for Nuvoton M3351 Series</description>
-      <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-      </RTE_Components_h>
       <files>
-        <!-- header path -->
-        <file category="include" name="Device/M3351/StdDriver/inc/"/>
-        <file category="include" name="Device/M3351/Include/"/>
-        <file category="header"  name="Device/M3351/Include/M3351.h"/>
-        <file category="header"  name="Device/M3351/Include/NuMicro.h"/>
-        <file category="header"  name="Device/M3351/Include/system_M3351.h"/>
-        <!-- startup/system files -->
-        <file category="source"  name="Device/M3351/Source/startup_M3351.c" attr="config" version="0.00.001"/>
-        <file category="source"  name="Device/M3351/Source/system_M3351.c" attr="config" version="0.00.001"/>
-        <!-- retarget files -->
-        <file category="sourceC" name="Device/M3351/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+        <file category="include" name="Library/Device/Nuvoton/M3351/StdDriver/inc/" />
+        <file category="include" name="Library/Device/Nuvoton/M3351/Include/" />
+        <file category="header" name="Library/Device/Nuvoton/M3351/Include/M3351.h" />
+        <file category="header" name="Library/Device/Nuvoton/M3351/Include/NuMicro.h" />
+        <file category="header" name="Library/Device/Nuvoton/M3351/Include/system_M3351.h" />
+        <file category="source" name="Library/Device/Nuvoton/M3351/Source/startup_M3351.c" attr="config" version="0.00.001" />
+        <file category="source" name="Library/Device/Nuvoton/M3351/Source/system_M3351.c" attr="config" version="0.00.001" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/retarget.c" attr="config" version="0.00.001" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>ACMP driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>BPWM driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>CANFD driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>CLK driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>CRC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>CRYPTO driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>DAC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DFMC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>DFMC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/dfmc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/dfmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>EADC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>EBI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>ECAP driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ELLSI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>ELLSI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/ellsi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/ellsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EQEI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>EQEI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/eqei.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/eqei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>FMC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>GPIO driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>I2C driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3C" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>I3C driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/i3c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/i3c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>LLSI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>PDMA driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>PWM driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>QSPI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RNG" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>RNG driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/rng.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/rng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>RTC driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>SPI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>SYS driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>TIMER driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>TIMER_PWM driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>TRNG driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/trng.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/trng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>UART driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>USBD driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>USCI_I2C driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>USCI_SPI driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>USCI_UART driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>WDT driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M33NuMicro M3351 Device">
+      <description>WWDT driver for Nuvoton M3351 series</description>
+      <files>
+        <file category="header" name="Library/Device/Nuvoton/M3351/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Library/Device/Nuvoton/M3351/StdDriver/src/wwdt.c" />
       </files>
     </component>
   </components>
