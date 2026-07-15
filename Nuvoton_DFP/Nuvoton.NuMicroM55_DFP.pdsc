@@ -15,6 +15,9 @@
   </licenseSets>
 
   <releases>
+    <release version="3.1.4-rc.4" date="2026-07-15">
+      - Add flash algorithm project.
+    </release>
     <release version="3.1.4-rc.3" date="2025-11-28">
       - Update template.
     </release>
