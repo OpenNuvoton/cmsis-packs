@@ -15,6 +15,9 @@
   </licenseSets>
 
   <releases>
+    <release version="3.1.4-rc.5" date="2026-07-27">
+      - Add DTCM and SPIM region.
+    </release>
     <release version="3.1.4-rc.4" date="2026-07-15">
       - Add flash algorithm project.
     </release>
@@ -166,11 +169,15 @@
         <memory    name="IROM1" access="rx"     start="0x00100000" size="0x00200000" default="1" startup="1"/>
         <memory    name="IROM2" access="rx"     start="0x10100000" size="0x00200000" default="0"/>
         <memory    name="IROM3" access="rx"     start="0x0F100000" size="0x00002000" default="0"/>
-        <memory    name="IRAM1" access="rwx"    start="0x20100000" size="0x00150000" default="1"/>
+        <memory    name="SPIM0" access="rx"     start="0x82000000" size="0x02000000" default="0"/>
+        <memory    name="DTCM1" access="rwx"    start="0x20000000" size="0x00020000" default="0"/>
+        <memory    name="DTCM2" access="rwx"    start="0x30000000" size="0x00020000" default="0"/>
+		<memory    name="IRAM1" access="rwx"    start="0x20100000" size="0x00150000" default="1"/>
         <memory    name="IRAM2" access="rwx"    start="0x30100000" size="0x00150000" default="0"/>
         <algorithm name="Flash/M55M1_AP_2M.FLM" start="0x00100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
         <algorithm name="Flash/M55M1_LD_8.FLM"  start="0x0F100000" size="0x00002000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
         <algorithm name="Flash/M55M1_NS_2M.FLM" start="0x10100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
+        <algorithm name="Flash/M55M1_SPIM.FLM" start="0x82000000" size="0x02000000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
         
         <!-- *************************  Device 'M55M1R2LJAE'  ***************************** -->
         <device Dname="M55M1R2LJAE">
@@ -361,11 +368,15 @@
         <memory     name="IROM1" access="rx"       start="0x00100000" size="0x00200000" default="1" startup="1"/>
         <memory     name="IROM2" access="rx"       start="0x10100000" size="0x00200000" default="0"/>
         <memory     name="IROM3" access="rx"       start="0x0F100000" size="0x00002000" default="0"/>
+        <memory     name="SPIM0" access="rx"       start="0x82000000" size="0x02000000" default="0"/>
+        <memory     name="DTCM1" access="rwx"      start="0x20000000" size="0x00020000" default="0"/>
+        <memory     name="DTCM2" access="rwx"      start="0x30000000" size="0x00020000" default="0"/>
         <memory     name="IRAM1" access="rwx"      start="0x20100000" size="0x00150000" default="1"/>
         <memory     name="IRAM2" access="rwx"      start="0x30100000" size="0x00150000" default="0"/>
-        <algorithm  name  ="Flash/M5531_AP_2M.FLM" start="0x00100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
-        <algorithm  name  ="Flash/M5531_LD_8.FLM"  start="0x0F100000" size="0x00002000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
-        <algorithm  name  ="Flash/M5531_NS_2M.FLM" start="0x10100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/>
+        <algorithm  name="Flash/M5531_AP_2M.FLM"   start="0x00100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
+        <algorithm  name="Flash/M5531_LD_8.FLM"    start="0x0F100000" size="0x00002000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
+        <algorithm  name="Flash/M5531_NS_2M.FLM"   start="0x10100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
+        <algorithm  name="Flash/M5531_SPIM.FLM"    start="0x82000000" size="0x02000000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
 
         <!-- *************************  Device 'M5531R2LJAE'  ***************************** -->
         <device Dname="M5531R2LJAE">
