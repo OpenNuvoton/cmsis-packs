@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.5" date="2026-08-04">
+      Add stddriver files.
+    </release>
     <release version="1.0.4" date="2026-04-09">
       Add CM2003 part no.
     </release>
@@ -123,7 +126,7 @@
 
       <subFamily DsubFamily="CM2052">
         <processor  Dcore="Cortex-M23"  Dclock="48000000"/>
-        <compile    header="Device/CM2052/Include/CM2052.h"/>
+        <compile    header="Device/CM2052/Include/cm2052.h"/>
         <description>The NuMicro CM2052 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
         <!-- *************************  Device 'CM2052EL8AE'  ***************************** -->
         <device Dname="CM2052EL8AE">
@@ -349,12 +352,12 @@
         <!-- header path -->
         <file category="include" name="Device/CM2052/StdDriver/inc/"/>
         <file category="include" name="Device/CM2052/Include/"/>
-        <file category="header"  name="Device/CM2052/Include/CM2052.h"/>
+        <file category="header"  name="Device/CM2052/Include/cm2052.h"/>
         <file category="header"  name="Device/CM2052/Include/NuMicro.h"/>
-        <file category="header"  name="Device/CM2052/Include/system_CM2052.h"/>
+        <file category="header"  name="Device/CM2052/Include/system_cm2052.h"/>
         <!-- startup/system files -->
-        <file category="source"  name="Device/CM2052/Source/ARM/startup_CM2052.c" attr="config" version="0.00.001"/>
-        <file category="source"  name="Device/CM2052/Source/system_CM2052.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/CM2052/Source/ARM/startup_cm2052.c" attr="config" version="0.00.001"/>
+        <file category="source"  name="Device/CM2052/Source/system_cm2052.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/CM2052/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
@@ -397,6 +400,466 @@
         <file category="source"  name="Device/CM2U51/Source/system_CM2U51.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/CM2U51/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+
+    <!-- *************************  StdDriver  ***************************** -->
+    <!-- CM2003 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>ADC driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>CLK driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>ECAP driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>FMC driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>GPIO driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>I2C driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>PWM driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>SYS driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>TIMER driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>UART driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>USCI_I2C driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>USCI_SPI driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>USCI_UART driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>WDT driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro CM2003 Device">
+      <description>WWDT driver for Nuvoton CM2003 series</description>
+      <files>
+        <file category="header" name="Device/CM2003/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/CM2003/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- CM2052 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>ACMP driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>BPWM driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>CLK driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>CRC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>CRYPTO driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>DAC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>EADC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>EBI driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>FMC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>GPIO driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>I2C driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LCD" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>LCD driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/lcd.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/lcd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>PDMA driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>PWM driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>QSPI driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>RTC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>SC driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>SCUART driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>SPI driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>SYS driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>TIMER driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>TIMER_PWM driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TK" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>TK driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/tk.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/tk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>UART driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>USBD driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>USCI_I2C driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>USCI_SPI driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>USCI_UART driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>WDT driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro CM2052 Device">
+      <description>WWDT driver for Nuvoton CM2052 series</description>
+      <files>
+        <file category="header" name="Device/CM2052/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/CM2052/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- CM2053 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>BPWM driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>CANFD driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>CLK driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>CRC driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>EADC driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>FMC driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>GPIO driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>I2C driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>PDMA driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>RTC driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>SPI driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>SYS driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>TIMER driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>UART driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>USBD driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>USCI_I2C driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>USCI_SPI driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>USCI_UART driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>WDT driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro CM2053 Device">
+      <description>WWDT driver for Nuvoton CM2053 series</description>
+      <files>
+        <file category="header" name="Device/CM2053/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/CM2053/StdDriver/src/wwdt.c" />
       </files>
     </component>
   </components>

@@ -6,11 +6,16 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.8" date="2026-08-03">
+      1. Remove KM1M2 series.
+      2. Add stddriver files.
+      3. Add M2L31E series.
+    </release>
     <release version="1.0.7" date="2026-05-06">
-	  Update M2003J ROM address.
+      Update M2003J ROM address.
     </release>
     <release version="1.0.6" date="2026-04-14">
-	  Add M2003 part no.
+      Add M2003 part no.
     </release>
     <release version="1.0.5" date="2026-04-13">
       Add SPROM region.
@@ -3104,6 +3109,264 @@
           <feature type="DAC"  		n="2"	m="12"/>
           <feature type="QFP"  		n="128"/>
         </device>
+
+        <!-- *************************  Device 'M2L31SF3AE'  ***************************** -->
+        <device Dname="M2L31SF3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x30000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_192.FLM"        start="0x00000000"  size="0x30000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="53"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="20"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31SE3AE'  ***************************** -->
+        <device Dname="M2L31SE3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="53"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="20"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31SD3AE'  ***************************** -->
+        <device Dname="M2L31SD3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="53"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="20"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LF3AE'  ***************************** -->
+        <device Dname="M2L31LF3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x30000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_192.FLM"        start="0x00000000"  size="0x30000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LE3AE'  ***************************** -->
+        <device Dname="M2L31LE3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31LD3AE'  ***************************** -->
+        <device Dname="M2L31LD3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFP"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31YF3AE'  ***************************** -->
+        <device Dname="M2L31YF3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x30000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_192.FLM"        start="0x00000000"  size="0x30000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31YE3AE'  ***************************** -->
+        <device Dname="M2L31YE3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31YD3AE'  ***************************** -->
+        <device Dname="M2L31YD3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="41"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="16"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="48"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31ZF3AE'  ***************************** -->
+        <device Dname="M2L31ZF3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x30000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_192.FLM"        start="0x00000000"  size="0x30000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="26"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="10"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="33"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31ZE3AE'  ***************************** -->
+        <device Dname="M2L31ZE3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x20000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="26"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="10"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="33"/>
+        </device>
+
+        <!-- *************************  Device 'M2L31ZD3AE'  ***************************** -->
+        <device Dname="M2L31ZD3AE">
+          <debug      svd   ="SVD/Nuvoton/M2L31.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2L31_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/M2L31_LD_8.FLM"        start="0x0F100000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="IOs"  		n="26"/>
+          <feature type="Timer"  		n="4"	m="32"/>
+          <feature type="UART"  		n="6"/>
+          <feature type="SPI"  		n="2"/>
+          <feature type="I2C"  		n="2"/>
+          <feature type="USBD"  		n="1"/>
+          <feature type="CAN"  		n="1"/>
+          <feature type="I2S"  		n="2"/>
+          <feature type="PWM"  		n="12"	m="16"/>
+          <feature type="ADC"  		n="10"	m="12"/>
+          <feature type="DAC"  		n="1"	m="12"/>
+          <feature type="QFN"  		n="33"/>
+        </device>
       </subFamily>
 
      <!-- *************************  Subfamily 'MR63'  ***************************** -->
@@ -3403,103 +3666,6 @@
           <feature type="SOP"  		n="28"/>
         </device>
       </subFamily>
-
-     <!-- *************************  Subfamily 'KM1M2'  ***************************** -->
-      <subFamily DsubFamily="KM1M2">
-        <processor  Dcore="Cortex-M23" Dfpu="NO_FPU" Dmpu="MPU" Dendian="Configurable" Dclock="40000000"/>
-        <compile    header="Device/KM1M2/Include/KM1M2.h"/>
-        <description>The NuMicro KM1M2 series is a 32-bit microcontroller with embedded ARM Cortex-M23 core.</description>
-
-       <!-- *************************  Device 'KM1M2DF04R'  ***************************** -->
-        <device Dname="KM1M2DF04R">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="64"/>
-        </device>
-
-       <!-- *************************  Device 'KM1M2DF03R'  ***************************** -->
-        <device Dname="KM1M2DF03R">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="80"/>
-        </device>
-
-       <!-- *************************  Device 'KM1M2DF02R'  ***************************** -->
-        <device Dname="KM1M2DF02R">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="100"/>
-        </device>
-
-       <!-- *************************  Device 'KM1M2DF04N'  ***************************** -->
-        <device Dname="KM1M2DF04N">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="64"/>
-        </device>
-
-       <!-- *************************  Device 'KM1M2DF03N'  ***************************** -->
-        <device Dname="KM1M2DF03N">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="80"/>
-        </device>
-
-       <!-- *************************  Device 'KM1M2DF02N'  ***************************** -->
-        <device Dname="KM1M2DF02N">
-          <debug      svd   ="SVD/Nuvoton/KM1M2.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"      startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"      startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/KM1M2_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/KM1M2_DATA_8.FLM"        start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"  		n="100"/>
-        </device>
-      </subFamily>
     </family>
   </devices>
 
@@ -3510,10 +3676,6 @@
       <accept Tcompiler="ARMCC"/>
     </condition>
 
-    <condition id="M23NuMicro KM1M2 Device">
-      <description>Nuvoton M23NuMicro KM1M2 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="KM1M2DF0[234][NR]"/>
-    </condition>
     <condition id="M23NuMicro M253 Device">
       <description>Nuvoton M23NuMicro M253 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M253[ZL][DE]3[AB]E"/>
@@ -3530,7 +3692,7 @@
     </condition>
     <condition id="M23NuMicro M2L31 Device">
       <description>Nuvoton M23NuMicro M2L31 Series devices</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="M2L31[YCLSKZX][IGED][D4]AE"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="M2L31[YCLSKZX][IGFED][D43]AE"/>
     </condition>
     <condition id="M23NuMicro M2003 Device">
       <description>Nuvoton M23NuMicro M2003 Series devices</description>
@@ -3598,26 +3760,6 @@
         <file category="source"  name="Device/M2003/Source/system_M2003.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/M2003/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
-      </files>
-    </component>
-    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro KM1M2 Device">
-      <!-- Cversion is necessary -->
-      <description>System Startup for Nuvoton KM1M2 Series</description>
-      <RTE_Components_h>
-        <!-- the following content goes into file 'RTE_Components.h' -->
-      </RTE_Components_h>
-      <files>
-        <!-- header path -->
-        <file category="include" name="Device/KM1M2/StdDriver/inc/"/>
-        <file category="include" name="Device/KM1M2/Include/"/>
-        <file category="header"  name="Device/KM1M2/Include/KM1M2.h"/>
-        <file category="header"  name="Device/KM1M2/Include/NuMicro.h"/>
-        <file category="header"  name="Device/KM1M2/Include/system_KM1M2.h"/>
-        <!-- startup/system files -->
-        <file category="sourceAsm"  name="Device/KM1M2/Source/ARM/startup_KM1M2.s" attr="config" version="0.00.001" condition="Compiler ARM"/>
-        <file category="source"  name="Device/KM1M2/Source/system_KM1M2.c" attr="config" version="0.00.001"/>
-        <!-- retarget files -->
-        <file category="sourceC" name="Device/KM1M2/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro M251 Device">
@@ -3852,6 +3994,2104 @@
         <file category="source"  name="Device/NUC1263/Source/system_NUC1263.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/NUC1263/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <!-- *************************  StdDriver  ***************************** -->
+    <!-- M2003 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>ADC driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>CAN driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>CLK driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>CRC driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>ECAP driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>FMC driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>GPIO driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>I2C driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>PDMA driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>PWM driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>QSPI driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>SYS driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>TIMER driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>UART driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>USCI_I2C driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>USCI_SPI driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>USCI_UART driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>WDT driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2003 Device">
+      <description>WWDT driver for Nuvoton M2003 series</description>
+      <files>
+        <file category="header" name="Device/M2003/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2003/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M251 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>ACMP driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>BPWM driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>CLK driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>CRC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>CRYPTO driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>DAC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>EADC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>EBI driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>FMC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>GPIO driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>I2C driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LCD" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>LCD driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/lcd.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/lcd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>PDMA driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>PWM driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>QSPI driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>RTC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>SC driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>SCUART driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>SPI driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>SYS driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>TIMER driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>TIMER_PWM driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TK" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>TK driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/tk.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/tk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>UART driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>USBD driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>USCI_I2C driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>USCI_SPI driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>USCI_UART driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>WDT driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M251 Device">
+      <description>WWDT driver for Nuvoton M251 series</description>
+      <files>
+        <file category="header" name="Device/M251/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M251/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M253 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>BPWM driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>CANFD driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>CLK driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>CRC driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>EADC driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>FMC driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>GPIO driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>I2C driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>PDMA driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>RTC driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>SPI driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>SYS driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>TIMER driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>UART driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>USBD driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>USCI_I2C driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>USCI_SPI driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>USCI_UART driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>WDT driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M253 Device">
+      <description>WWDT driver for Nuvoton M253 series</description>
+      <files>
+        <file category="header" name="Device/M253/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M253/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M2A23 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>ACMP driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>ADC driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>BPWM driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>CANFD driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>CLK driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>CRC driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>DAC driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>FMC driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>GPIO driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>I2C driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>LLSI driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>PDMA driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>PWM driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>SPI driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>SYS driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>TIMER driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>UART driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>USCI_I2C driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>USCI_SPI driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>USCI_UART driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>WDT driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2A23 Device">
+      <description>WWDT driver for Nuvoton M2A23 series</description>
+      <files>
+        <file category="header" name="Device/M2A23/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2A23/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M2L31 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>ACMP driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>CANFD driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>CLK driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>CRC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>CRYPTO driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>DAC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>EADC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>EBI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>ECAP driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>EPWM driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EQEI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>EQEI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/eqei.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/eqei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>GPIO driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>I2C driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPADC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPADC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lpadc.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lpadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPGPIO" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPGPIO driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lpgpio.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lpgpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPI2C" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPI2C driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lpi2c.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lpi2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPPDMA" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPPDMA driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lppdma.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lppdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPSPI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPSPI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lpspi.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lpspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPTMR" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPTMR driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lptmr.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lptmr.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPTMR_PWM" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPTMR_PWM driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lptmr_pwm.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lptmr_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LPUART" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>LPUART driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/lpuart.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/lpuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>PDMA driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>PWM driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>QSPI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RMC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>RMC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/rmc.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/rmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RNG" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>RNG driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/rng.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/rng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>RTC driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>SPI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>SYS driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>TIMER driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>TIMER_PWM driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TK" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>TK driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/tk.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/tk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>TRNG driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/trng.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/trng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TTMR" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>TTMR driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/ttmr.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/ttmr.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>UART driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>USBD driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>USCI_I2C driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>USCI_SPI driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>USCI_UART driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UTCPD" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>UTCPD driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/utcpd.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/utcpd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>WDT driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2L31 Device">
+      <description>WWDT driver for Nuvoton M2L31 series</description>
+      <files>
+        <file category="header" name="Device/M2L31/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2L31/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M2U51 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>ACMP driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>ADC driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>BPWM driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>CLK driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>CRC driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>CRYPTO driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>FMC driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>GPIO driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>I2C driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LCD" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>LCD driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/lcd.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/lcd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>PDMA driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>PWM driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>RTC driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>SPI driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>SYS driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>TIMER driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>TIMER_PWM driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>UART driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>USCI_I2C driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>USCI_SPI driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>USCI_UART driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>WDT driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2U51 Device">
+      <description>WWDT driver for Nuvoton M2U51 series</description>
+      <files>
+        <file category="header" name="Device/M2U51/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2U51/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M2351 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>ACMP driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>BPWM driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>CAN driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>CLK driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>CRC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>CRYPTO driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>DAC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>EADC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>EBI driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>ECAP driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>EPWM driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>FMC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>GPIO driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>I2C driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>I2S driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>PDMA driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>QEI driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>QSPI driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>RTC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>SC driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>SCUART driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>SDH driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>SPI driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>SYS driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>TIMER driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>TIMER_PWM driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>UART driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>USBD driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>USCI_I2C driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>USCI_SPI driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>USCI_UART driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>WDT driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2351 Device">
+      <description>WWDT driver for Nuvoton M2351 series</description>
+      <files>
+        <file category="header" name="Device/M2351/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2351/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M2354 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>ACMP driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>BPWM driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>CAN driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>CLK driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>CRC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>CRYPTO driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>DAC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DPM" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>DPM driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/dpm.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/dpm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>EADC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>EBI driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>ECAP driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>EPWM driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EWDT" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>EWDT driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/ewdt.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/ewdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EWWDT" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>EWWDT driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/ewwdt.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/ewwdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>FMC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FVC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>FVC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/fvc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/fvc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>GPIO driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>I2C driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>I2S driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KEYSTORE" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>KEYSTORE driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/keystore.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/keystore.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LCD" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>LCD driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/lcd.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/lcd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>PDMA driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>QEI driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>QSPI driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RNG" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>RNG driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/rng.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/rng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>RTC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>SC driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>SCUART driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>SDH driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>SPI driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>SYS driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TAMPER" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>TAMPER driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/tamper.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/tamper.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>TIMER driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>TIMER_PWM driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>UART driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>USBD driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>USCI_I2C driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>USCI_SPI driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>USCI_UART driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>WDT driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M2354 Device">
+      <description>WWDT driver for Nuvoton M2354 series</description>
+      <files>
+        <file category="header" name="Device/M2354/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M2354/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M261 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>ACMP driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>BPWM driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>CAN driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>CLK driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>CRC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>CRYPTO driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>DAC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>EADC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>EBI driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>ECAP driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>EPWM driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>FMC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>GPIO driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>I2C driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>I2S driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>PDMA driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>QEI driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>QSPI driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>RTC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>SC driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>SCUART driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>SDH driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>SPI driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>SYS driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>TIMER driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>TIMER_PWM driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>UART driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>USBD driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>USCI_I2C driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>USCI_SPI driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>USCI_UART driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>WDT driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro M261 Device">
+      <description>WWDT driver for Nuvoton M261 series</description>
+      <files>
+        <file category="header" name="Device/M261/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M261/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- NUC1262 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>ADC driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>BPWM driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>CLK driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>CRC driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>FMC driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>GPIO driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>I2C driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>LLSI driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>PDMA driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>SPI driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>SYS driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>TIMER driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>UART driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>USBD driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>WDT driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro NUC1262 Device">
+      <description>WWDT driver for Nuvoton NUC1262 series</description>
+      <files>
+        <file category="header" name="Device/NUC1262/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/NUC1262/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- NUC1263 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>ACMP driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>ADC driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>BPWM driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>CLK driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>CRC driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>DAC driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>FMC driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>GPIO driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>I2C driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3CS" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>I3CS driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/i3cs.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/i3cs.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>LLSI driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>PDMA driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>SPI driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>SYS driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>TIMER driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>UART driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>USBD driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>WDT driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro NUC1263 Device">
+      <description>WWDT driver for Nuvoton NUC1263 series</description>
+      <files>
+        <file category="header" name="Device/NUC1263/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/NUC1263/StdDriver/src/wwdt.c" />
       </files>
     </component>
   </components>

@@ -14,6 +14,16 @@
   -->
 
   <releases>
+    <release version="1.1.6" date="2026-03-19">
+     - Updated SVD file and include file for KM1M7CF4x/5x
+     - Added startup component for KM1M7CF4x/5x
+    </release>
+    <release version="1.1.5" date="2025-12-18">
+     - Added KM1M7CF4x/5x
+    </release>
+    <release version="1.1.4" date="2024-04-30">
+     - Unreleased
+    </release>
     <release version="1.1.3" date="2024-02-29">
      - Added KM1M7BF03/04
     </release>
@@ -43,53 +53,8 @@
     <keyword>Nuvoton</keyword>
     <keyword>NuMicro M7 Family</keyword>
     <keyword>KM1M7A</keyword>
-    <keyword>KM1M7AF0x</keyword>
-    <keyword>KM1M7AF00N</keyword>
-    <keyword>KM1M7AF00M</keyword>
-    <keyword>KM1M7AF00K</keyword>
-    <keyword>KM1M7AF02N</keyword>
-    <keyword>KM1M7AF02M</keyword>
-    <keyword>KM1M7AF02K</keyword>
-    <keyword>KM1M7AF5x</keyword>
-    <keyword>KM1M7AF50N</keyword>
-    <keyword>KM1M7AF50M</keyword>
-    <keyword>KM1M7AF50K</keyword>
-    <keyword>KM1M7AF52N</keyword>
-    <keyword>KM1M7AF52M</keyword>
-    <keyword>KM1M7AF52K</keyword>
     <keyword>KM1M7B</keyword>
-    <keyword>KM1M7BF0x</keyword>
-    <keyword>KM1M7BF00N</keyword>
-    <keyword>KM1M7BF00M</keyword>
-    <keyword>KM1M7BF00K</keyword>
-    <keyword>KM1M7BF02N</keyword>
-    <keyword>KM1M7BF02M</keyword>
-    <keyword>KM1M7BF02K</keyword>
-    <keyword>KM1M7BF03N</keyword>
-    <keyword>KM1M7BF03M</keyword>
-    <keyword>KM1M7BF03K</keyword>
-    <keyword>KM1M7BF04N</keyword>
-    <keyword>KM1M7BF04M</keyword>
-    <keyword>KM1M7BF04K</keyword>
     <keyword>KM1M7C</keyword>
-    <keyword>KM1M7CF0x</keyword>
-    <keyword>KM1M7CF03N</keyword>
-    <keyword>KM1M7CF03K</keyword>
-    <keyword>KM1M7CF04N</keyword>
-    <keyword>KM1M7CF04K</keyword>
-    <keyword>KM1M7CF05N</keyword>
-    <keyword>KM1M7CF05K</keyword>
-    <keyword>KM1M7CF06N</keyword>
-    <keyword>KM1M7CF06K</keyword>
-    <keyword>KM1M7CF1x</keyword>
-    <keyword>KM1M7CF13N</keyword>
-    <keyword>KM1M7CF13K</keyword>
-    <keyword>KM1M7CF14N</keyword>
-    <keyword>KM1M7CF14K</keyword>
-    <keyword>KM1M7CF15N</keyword>
-    <keyword>KM1M7CF15K</keyword>
-    <keyword>KM1M7CF16N</keyword>
-    <keyword>KM1M7CF16K</keyword>
   </keywords>
 
   <!-- devices section (mandatory for Device Family Packs) -->
@@ -97,10 +62,11 @@
     <family Dfamily="NuMicro M7 Family" Dvendor="Nuvoton:18">
       <subFamily DsubFamily="KM1M7A">
         <processor Dcore="Cortex-M7" DcoreVersion="r1p1" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="160000000"/>
-        <description>KM1M7 Series MCU is a 32-bit MCU with Arm Cortex M7, which have a good balance between high speed processing ability and low power consumption.
-High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
-Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
-They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        <description>
+The KM1M7A Series is a 32-bit micro controller with internal Flash memory.
+It is intended for development of the C programming language with object-oriented program and is easy to use.
+It has fast feedback processing required for control of power supply and motor.
+This LSI adopts the Arm Cortex-M7 to the 32-bit microcontroller part.
         </description>
 
         <!-- ****************  Keycode File  **************** -->
@@ -381,10 +347,11 @@ They can contribute to the power management system which needs high-efficiency, 
 
       <subFamily DsubFamily="KM1M7B">
         <processor Dcore="Cortex-M7" DcoreVersion="r1p1" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="160000000"/>
-        <description>KM1M7 Series MCU is a 32-bit MCU with Arm Cortex M7, which have a good balance between high speed processing ability and low power consumption.
-High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
-Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
-They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        <description>
+The KM1M7B Series is a 32-bit micro controller with internal Flash memory.
+It is intended for development of the C programming language with object-oriented program and is easy to use.
+It has fast feedback processing required for control of power supply and motor.
+This LSI adopts the Arm Cortex-M7 to the 32-bit microcontroller part.
         </description>
 
         <!-- ****************  Keycode File  **************** -->
@@ -672,14 +639,15 @@ They can contribute to the power management system which needs high-efficiency, 
 
       <subFamily DsubFamily="KM1M7C">
         <processor Dcore="Cortex-M7" DcoreVersion="r1p2" Dfpu="DP_FPU" Dmpu="MPU" Dendian="Little-endian" Dclock="160000000"/>
-        <description>KM1M7 Series MCU is a 32-bit MCU with Arm Cortex M7, which have a good balance between high speed processing ability and low power consumption.
-High speed/high-precision analog functions and assist functions are embedded, which can satisfy the request of motor control.
-Accessing EEPROM becomes more efficient by using RWW(Read While Write) flash.
-They can contribute to the power management system which needs high-efficiency, super low-power consumption and miniaturization.
+        <description>
+The KM1M7C Series is a 32-bit microcontroller with internal Flash memory.
+It is intended for development of the C programming language with object-oriented program and is easy to use.
+It has fast feedback processing required for control of power supply and motor.
+This LSI adopts the Arm Cortex-M7.
         </description>
 
         <!-- ****************  Keycode File  **************** -->
-        <debugvars configfile="Device/KM1M7CF/Option/Keyfile.dbgconf" version="1.0">
+        <debugvars configfile="Device/Basic/Option/Keyfile.dbgconf" version="1.0">
           __var KeyfileEnable = 0;
 
           __var Keycode0   = 0xFFFFFFFF;
@@ -1039,8 +1007,391 @@ They can contribute to the power management system which needs high-efficiency, 
           <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
-      </subFamily>
+        <!-- ****************  Device "KM1M7CF41K"  **************** -->
+        <device Dname = "KM1M7CF41K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF41.svd"/>
 
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF41N"  **************** -->
+        <device Dname = "KM1M7CF41N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF41.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF42K"  **************** -->
+        <device Dname = "KM1M7CF42K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF42.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF42N"  **************** -->
+        <device Dname = "KM1M7CF42N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF42.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF43K"  **************** -->
+        <device Dname = "KM1M7CF43K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF43.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF43N"  **************** -->
+        <device Dname = "KM1M7CF43N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF43.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF44K"  **************** -->
+        <device Dname = "KM1M7CF44K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF44.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF44N"  **************** -->
+        <device Dname = "KM1M7CF44N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF44.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF45K"  **************** -->
+        <device Dname = "KM1M7CF45K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF45.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF45N"  **************** -->
+        <device Dname = "KM1M7CF45N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF45.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF46K"  **************** -->
+        <device Dname = "KM1M7CF46K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF46.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF46N"  **************** -->
+        <device Dname = "KM1M7CF46N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF46.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF51K"  **************** -->
+        <device Dname = "KM1M7CF51K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF51.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF51N"  **************** -->
+        <device Dname = "KM1M7CF51N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF51.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF52K"  **************** -->
+        <device Dname = "KM1M7CF52K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF52.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF52N"  **************** -->
+        <device Dname = "KM1M7CF52N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF52.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF53K"  **************** -->
+        <device Dname = "KM1M7CF53K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF53.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF53N"  **************** -->
+        <device Dname = "KM1M7CF53N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF53.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF54K"  **************** -->
+        <device Dname = "KM1M7CF54K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF54.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF54N"  **************** -->
+        <device Dname = "KM1M7CF54N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF54.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF55K"  **************** -->
+        <device Dname = "KM1M7CF55K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF55.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF55N"  **************** -->
+        <device Dname = "KM1M7CF55N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF55.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF56K"  **************** -->
+        <device Dname = "KM1M7CF56K">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF56.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x40000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x40000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M7CF56N"  **************** -->
+        <device Dname = "KM1M7CF56N">
+          <compile header="Device/KM1M7CF/Include/KM1M7C.h"/>
+          <debug svd="SVD/KM1M7CF56.svd"/>
+
+          <memory id="IROM1" start="0x00800000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x00C04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IROM3" start="0x00E04000" size="0x04000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x10000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00000000" size="0x10000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M7C_I.FLM" start="0x00800000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D0.FLM" start="0x00C04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+          <algorithm name="Flash/KM1M7C_D1.FLM" start="0x00E04000" size="0x04000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
+        </device>
+
+      </subFamily>
     </family>
   </devices>
 
@@ -1051,6 +1402,7 @@ They can contribute to the power management system which needs high-efficiency, 
       <require Tcompiler="ARMCC"/>
     </condition>
 
+    <!-- conditions for family/series -->
     <condition id="NuMicro M7 Device(KM1M7AF)">
       <description>System Startup for Nuvoton M7 Series(KM1M7AF)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02][KMN]"/>
@@ -1063,10 +1415,19 @@ They can contribute to the power management system which needs high-efficiency, 
 
     <condition id="NuMicro M7 Device(KM1M7CF)">
       <description>System Startup for Nuvoton M7 Series(KM1M7CF)</description>
-      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456][KN]"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[0145][123456][KN]"/>
     </condition>
 
+    <condition id="NuMicro M7 Device(KM1M7CF0x_1x)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF0x_1x)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456][KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF4x_5x)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF4x_5x)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[45][123456][KN]"/>
+    </condition>
 
+    <!-- conditions for device -->
     <condition id="NuMicro M7 Device(KM1M7BF00)">
       <description>System Startup for Nuvoton M7 Series(KM1M7BF00)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF00[KMN]"/>
@@ -1084,11 +1445,93 @@ They can contribute to the power management system which needs high-efficiency, 
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF04[KMN]"/>
     </condition>
 
+    <condition id="NuMicro M7 Device(KM1M7CF03)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF03)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF03[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF04)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF04)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF04[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF05)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF05)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF05[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF06)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF06)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF06[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF13)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF13)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF13[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF14)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF14)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF14[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF15)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF15)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF15[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF16)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF16)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF16[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF41)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF41)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF41[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF42)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF42)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF42[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF43)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF43)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF43[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF44)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF44)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF44[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF45)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF45)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF45[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF46)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF46)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF46[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF51)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF51)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF51[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF52)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF52)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF52[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF53)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF53)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF53[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF54)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF54)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF54[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF55)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF55)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF55[KN]"/>
+    </condition>
+    <condition id="NuMicro M7 Device(KM1M7CF56)">
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF56)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF56[KN]"/>
+    </condition>
+
     <condition id="NuMicro M7 Device K">
       <description>System Startup for Nuvoton M7 Series(KM1M7) Device K</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02]K"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234]K"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456]K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[45][123456]K"/>
     </condition>
     <condition id="NuMicro M7 Device M">
       <description>System Startup for Nuvoton M7 Series(KM1M7) Device M</description>
@@ -1100,11 +1543,68 @@ They can contribute to the power management system which needs high-efficiency, 
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7AF[05][02]N"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7BF0[0234]N"/>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[01][3456]N"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M7CF[45][123456]N"/>
     </condition>
 
   </conditions>
 
  <components>
+   <component Cclass="Device" Cgroup="Basic Startup" Cversion="1.00" condition="NuMicro M7 Device(KM1M7CF)">
+     <!-- Cversion is necessary -->
+     <description>Basic Startup for Nuvoton M7 Series(KM1M7CF)</description>
+     <RTE_Components_h>
+       <!-- the following content goes into file 'RTE_Components.h' -->
+     </RTE_Components_h>
+     <files>
+       <!-- header path -->
+       <file category="include" name="Device/Basic/Include/" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF03.h"        condition="NuMicro M7 Device(KM1M7CF03)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF03_regdef.h" condition="NuMicro M7 Device(KM1M7CF03)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF04.h"        condition="NuMicro M7 Device(KM1M7CF04)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF04_regdef.h" condition="NuMicro M7 Device(KM1M7CF04)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF05.h"        condition="NuMicro M7 Device(KM1M7CF05)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF05_regdef.h" condition="NuMicro M7 Device(KM1M7CF05)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF06.h"        condition="NuMicro M7 Device(KM1M7CF06)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF06_regdef.h" condition="NuMicro M7 Device(KM1M7CF06)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF13.h"        condition="NuMicro M7 Device(KM1M7CF13)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF13_regdef.h" condition="NuMicro M7 Device(KM1M7CF13)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF14.h"        condition="NuMicro M7 Device(KM1M7CF14)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF14_regdef.h" condition="NuMicro M7 Device(KM1M7CF14)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF15.h"        condition="NuMicro M7 Device(KM1M7CF15)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF15_regdef.h" condition="NuMicro M7 Device(KM1M7CF15)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF16.h"        condition="NuMicro M7 Device(KM1M7CF16)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF16_regdef.h" condition="NuMicro M7 Device(KM1M7CF16)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF41.h"        condition="NuMicro M7 Device(KM1M7CF41)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF41_regdef.h" condition="NuMicro M7 Device(KM1M7CF41)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF42.h"        condition="NuMicro M7 Device(KM1M7CF42)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF42_regdef.h" condition="NuMicro M7 Device(KM1M7CF42)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF43.h"        condition="NuMicro M7 Device(KM1M7CF43)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF43_regdef.h" condition="NuMicro M7 Device(KM1M7CF43)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF44.h"        condition="NuMicro M7 Device(KM1M7CF44)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF44_regdef.h" condition="NuMicro M7 Device(KM1M7CF44)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF45.h"        condition="NuMicro M7 Device(KM1M7CF45)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF45_regdef.h" condition="NuMicro M7 Device(KM1M7CF45)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF46.h"        condition="NuMicro M7 Device(KM1M7CF46)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF46_regdef.h" condition="NuMicro M7 Device(KM1M7CF46)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF51.h"        condition="NuMicro M7 Device(KM1M7CF51)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF51_regdef.h" condition="NuMicro M7 Device(KM1M7CF51)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF52.h"        condition="NuMicro M7 Device(KM1M7CF52)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF52_regdef.h" condition="NuMicro M7 Device(KM1M7CF52)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF53.h"        condition="NuMicro M7 Device(KM1M7CF53)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF53_regdef.h" condition="NuMicro M7 Device(KM1M7CF53)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF54.h"        condition="NuMicro M7 Device(KM1M7CF54)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF54_regdef.h" condition="NuMicro M7 Device(KM1M7CF54)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF55.h"        condition="NuMicro M7 Device(KM1M7CF55)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF55_regdef.h" condition="NuMicro M7 Device(KM1M7CF55)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF56.h"        condition="NuMicro M7 Device(KM1M7CF56)" />
+       <file category="header"  name="Device/Basic/Include/KM1M7CF56_regdef.h" condition="NuMicro M7 Device(KM1M7CF56)" />
+       <!-- startup/system files -->
+       <file category="sourceAsm" name="Device/Basic/Source/ARM/startup_ARMCM7.s" attr="config"  version="1.00" condition="Compiler ARM"/>
+       <file category="source"    name="Device/Basic/Source/system_ARMCM7.c"      attr="config"  version="1.00" />
+       <!-- startup/StdDriver files -->
+       <!-- startup/scatter files -->
+     </files>
+   </component>
    <component Cclass="Device" Cgroup="Startup" Cversion="1.00" condition="NuMicro M7 Device(KM1M7AF)">
       <!-- Cversion is necessary -->
       <description>System Startup for Nuvoton M7 Series(KM1M7AF)</description>
@@ -1158,9 +1658,9 @@ They can contribute to the power management system which needs high-efficiency, 
         <!-- startup/scatter files -->
       </files>
     </component>
-   <component Cclass="Device" Cgroup="Startup" Cversion="1.00" condition="NuMicro M7 Device(KM1M7CF)">
+   <component Cclass="Device" Cgroup="Startup" Cversion="1.00" condition="NuMicro M7 Device(KM1M7CF0x_1x)">
       <!-- Cversion is necessary -->
-      <description>System Startup for Nuvoton M7 Series(KM1M7CF)</description>
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF0x_1x)</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
       </RTE_Components_h>
@@ -1184,6 +1684,33 @@ They can contribute to the power management system which needs high-efficiency, 
         <file category="linkerScript" name="Device/KM1M7CF/Source/ARM/KM1M7CFxxN.sct"   version="1.00" attr="config" condition="NuMicro M7 Device N"/>
       </files>
     </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.00" condition="NuMicro M7 Device(KM1M7CF4x_5x)">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton M7 Series(KM1M7CF4x_5x)</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/KM1M7CF5/StdDriver/inc/"/>
+        <file category="include" name="Device/KM1M7CF5/Include/"/>
+        <file category="header"  name="Device/KM1M7CF5/Include/KM1M7C.h"/>
+        <file category="header"  name="Device/KM1M7CF5/Include/NuMicro.h"/>
+        <!-- startup/system files -->
+        <file category="sourceAsm"  name="Device/KM1M7CF5/Source/ARM/startup_KM1M7C.s" attr="config" version="1.00" condition="Compiler ARM"/>
+        <file category="source"  name="Device/KM1M7CF5/Source/system_KM1M7C.c" attr="config" version="1.00"/>
+        <!-- startup/StdDriver files -->
+        <file category="source"  name="Device/KM1M7CF5/StdDriver/src/clk.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M7CF5/StdDriver/src/gpio.c" attr="config" version="1.00"/>
+        <file category="source"  name="Device/KM1M7CF5/StdDriver/src/uartb.c" attr="config" version="1.00"/>
+        <!-- startup/retarget files -->
+        <file category="sourceC" name="Device/KM1M7CF5/StdDriver/src/retarget.c" attr="config" version="1.00"/>
+        <!-- startup/scatter files -->
+        <file category="linkerScript" name="Device/KM1M7CF5/Source/ARM/KM1M7CFxxK.sct"   version="1.00" attr="config" condition="NuMicro M7 Device K"/>
+        <file category="linkerScript" name="Device/KM1M7CF5/Source/ARM/KM1M7CFxxN.sct"   version="1.00" attr="config" condition="NuMicro M7 Device N"/>
+      </files>
+    </component>
+
   </components>
 
 </package>

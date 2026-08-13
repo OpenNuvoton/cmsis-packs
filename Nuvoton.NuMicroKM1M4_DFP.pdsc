@@ -13,6 +13,15 @@
   -->
 
   <releases>
+    <release version="1.1.3" date="2026-04-16">
+     - Added KM1M4BF22N, KM1M4BF23N, KM1M4BF24N
+    </release>
+    <release version="1.1.2" date="2026-04-08">
+     - Updated SVD file and include file for KM1M4BF2x
+    </release>
+    <release version="1.1.1" date="2026-03-12">
+     - Added KM1M4BF22K, KM1M4BF23K, KM1M4BF24K
+    </release>
     <release version="1.1.0" date="2024-09-30">
      - Added KM1M4BF64G, KM1M4BF65G, KM1M4BF66G, KM1M4BF67G
      - Added basic startup components
@@ -169,6 +178,84 @@ This LSI adopts the Arm Cortex-M4F.
           <algorithm name="Flash/KM1M4B_D.FLM" start="0x10800000" size="0x02000" RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/> 
         </device>
 
+        <!-- ****************  Device "KM1M4BF22N"  **************** -->
+        <device Dname = "KM1M4BF22N">
+          <debug svd="SVD/KM1M4BF22.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x08000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M4BF22K"  **************** -->
+        <device Dname = "KM1M4BF22K">
+          <debug svd="SVD/KM1M4BF22.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x08000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x06000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x42000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x08000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M4BF23N"  **************** -->
+        <device Dname = "KM1M4BF23N">
+          <debug svd="SVD/KM1M4BF23.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x08000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M4BF23K"  **************** -->
+        <device Dname = "KM1M4BF23K">
+          <debug svd="SVD/KM1M4BF23.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x08000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x06000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x42000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x08000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M4BF24N"  **************** -->
+        <device Dname = "KM1M4BF24N">
+          <debug svd="SVD/KM1M4BF24.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x80000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x10000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x08000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x08000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x80000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x10000" RAMstart="0x20000000"  RAMsize="0x8000"  default="1"/> 
+        </device>
+
+        <!-- ****************  Device "KM1M4BF24K"  **************** -->
+        <device Dname = "KM1M4BF24K">
+          <debug svd="SVD/KM1M4BF24.svd"/>
+
+          <memory id="IROM1" start="0x00000000" size="0x42000" startup="1" default="1"/>
+          <memory id="IROM2" start="0x10800000" size="0x08000" startup="0" default="0"/>
+          <memory id="IRAM1" start="0x20000000" size="0x06000" init="0"    default="1"/>
+          <memory id="IRAM2" start="0x00800000" size="0x06000" init="0"    default="0"/>
+
+          <algorithm name="Flash/KM1M4B2_I.FLM" start="0x00000000" size="0x42000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+          <algorithm name="Flash/KM1M4B2_D.FLM" start="0x10800000" size="0x08000" RAMstart="0x20000000"  RAMsize="0x6000"  default="1"/> 
+        </device>
+
         <!-- ****************  Device "KM1M4BF54K"  **************** -->
         <device Dname = "KM1M4BF54K">
           <debug svd="SVD/KM1M4BF54.svd"/>
@@ -268,6 +355,10 @@ This LSI adopts the Arm Cortex-M4F.
       <description>System Startup for Nuvoton M4 Series(KM1M4Bx)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05]4[KG]"/>
     </condition>
+    <condition id="NuMicro M4 Device(KM1M4B2)">
+      <description>System Startup for Nuvoton M4 Series(KM1M4B2)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF2[234][NK]"/>
+    </condition>
     <condition id="NuMicro M4 Device(KM1M4B6)">
       <description>System Startup for Nuvoton M4 Series(KM1M4B6)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF6[4567][KG]"/>
@@ -277,6 +368,18 @@ This LSI adopts the Arm Cortex-M4F.
     <condition id="NuMicro M4 Device(KM1M4BF04)">
       <description>System Startup for Nuvoton M4 Series(KM1M4BF04)</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF04[KG]"/>
+    </condition>
+    <condition id="NuMicro M4 Device(KM1M4BF22)">
+      <description>System Startup for Nuvoton M4 Series(KM1M4BF22)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF22[NK]"/>
+    </condition>
+    <condition id="NuMicro M4 Device(KM1M4BF23)">
+      <description>System Startup for Nuvoton M4 Series(KM1M4BF23)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF23[NK]"/>
+    </condition>
+    <condition id="NuMicro M4 Device(KM1M4BF24)">
+      <description>System Startup for Nuvoton M4 Series(KM1M4BF24)</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF24[NK]"/>
     </condition>
     <condition id="NuMicro M4 Device(KM1M4BF54)">
       <description>System Startup for Nuvoton M4 Series(KM1M4BF54)</description>
@@ -300,15 +403,19 @@ This LSI adopts the Arm Cortex-M4F.
     </condition>
 
     <!-- conditions for ROM size -->
+    <condition id="NuMicro M4 Device N">
+      <description>System Startup for Nuvoton M4 Series(KM1M4) Device K</description>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF2[234]N"/>
+    </condition>
     <condition id="NuMicro M4 Device K">
       <description>System Startup for Nuvoton M4 Series(KM1M4) Device K</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[05]4K"/>
+      <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF2[234]K"/>
     </condition>
     <condition id="NuMicro M4 Device G">
       <description>System Startup for Nuvoton M4 Series(KM1M4) Device G</description>
       <accept  Dvendor="Nuvoton:18"  Dname="KM1M4BF[056][4567]G"/>
     </condition>
-
   </conditions>
 
   <components>
@@ -323,6 +430,12 @@ This LSI adopts the Arm Cortex-M4F.
         <file category="include" name="Device/Basic/Include/" />
         <file category="header"  name="Device/Basic/Include/KM1M4BF04.h"        condition="NuMicro M4 Device(KM1M4BF04)" />
         <file category="header"  name="Device/Basic/Include/KM1M4BF04_regdef.h" condition="NuMicro M4 Device(KM1M4BF04)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF22.h"        condition="NuMicro M4 Device(KM1M4BF22)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF22_regdef.h" condition="NuMicro M4 Device(KM1M4BF22)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF23.h"        condition="NuMicro M4 Device(KM1M4BF23)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF23_regdef.h" condition="NuMicro M4 Device(KM1M4BF23)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF24.h"        condition="NuMicro M4 Device(KM1M4BF24)" />
+        <file category="header"  name="Device/Basic/Include/KM1M4BF24_regdef.h" condition="NuMicro M4 Device(KM1M4BF24)" />
         <file category="header"  name="Device/Basic/Include/KM1M4BF54.h"        condition="NuMicro M4 Device(KM1M4BF54)" />
         <file category="header"  name="Device/Basic/Include/KM1M4BF54_regdef.h" condition="NuMicro M4 Device(KM1M4BF54)" />
         <file category="header"  name="Device/Basic/Include/KM1M4BF64.h"        condition="NuMicro M4 Device(KM1M4BF64)" />

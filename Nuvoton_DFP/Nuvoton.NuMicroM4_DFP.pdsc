@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M4 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.3" date="2026-08-03">
+      Add stddriver files.
+    </release>
     <release version="1.0.2" date="2026-04-14">
       Add SPROM Region.
     </release>
@@ -4724,6 +4727,1865 @@ The Cortex-M4F core within NuMicro NUC505 series can run up to 100 MHz and suppo
         <file category="source"  name="Device/MA35D1_RTP/Source/system_ma35d1_rtp.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/MA35D1_RTP/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <!-- *************************  StdDriver  ***************************** -->
+    <!-- M433 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>ACMP driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>BPWM driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>CAN driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CCAP" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>CCAP driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/ccap.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/ccap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>CLK driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>CRC driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>EADC driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>EBI driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>ECAP driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>EPWM driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>FMC driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>GPIO driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HSUSBD" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>HSUSBD driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/hsusbd.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/hsusbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>I2C driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>I2S driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>PDMA driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>QEI driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>QSPI driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>RTC driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SC driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SCUART driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SDH driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SPI driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SPIM driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/spim.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/spim.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>SYS driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>TIMER driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>TIMER_PWM driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>TRNG driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/trng.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/trng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>UART driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>USBD driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>WDT driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M433 Device">
+      <description>WWDT driver for Nuvoton M433 series</description>
+      <files>
+        <file category="header" name="Device/M433/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M433/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M451 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>ACMP driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>CAN driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>CLK driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>CRC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>DAC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>EADC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>EBI driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>FMC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>GPIO driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>I2C driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>PDMA driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>PWM driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>RTC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>SC driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>SCUART driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>SPI driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>SYS driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>TIMER driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TK" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>TK driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/tk.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/tk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>UART driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>USBD driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>WDT driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M451 Device">
+      <description>WWDT driver for Nuvoton M451 series</description>
+      <files>
+        <file category="header" name="Device/M451/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M451/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M460 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>ACMP driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BMC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>BMC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/bmc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/bmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>BPWM driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CANFD" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>CANFD driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/canfd.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/canfd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CCAP" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>CCAP driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/ccap.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/ccap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>CLK driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>CRC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>CRYPTO driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>DAC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>EADC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>EBI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>ECAP driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>EPWM driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EQEI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>EQEI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/eqei.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/eqei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>FMC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>GPIO driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HBI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>HBI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/hbi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/hbi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HSUSBD" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>HSUSBD driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/hsusbd.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/hsusbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>I2C driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>I2S driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KEYSTORE" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>KEYSTORE driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/keystore.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/keystore.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="KPI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>KPI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/kpi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/kpi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>PDMA driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>QSPI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RNG" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>RNG driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/rng.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/rng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>RTC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SC driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SCUART driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SDH driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SPI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SPIM driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/spim.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/spim.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>SYS driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>TIMER driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>TIMER_PWM driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>TRNG driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/trng.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/trng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>UART driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>USBD driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>USCI_I2C driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>USCI_SPI driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>USCI_UART driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>WDT driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M460 Device">
+      <description>WWDT driver for Nuvoton M460 series</description>
+      <files>
+        <file category="header" name="Device/M460/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M460/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M471M_R1_S -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>CLK driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>CRC driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>EADC driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>EBI driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>FMC driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>GPIO driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>I2C driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>PDMA driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>PWM driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>RTC driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>SC driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>SCUART driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>SPI driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>SYS driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>TIMER driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>UART driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>USBD driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>WDT driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M471M_R1_S Device">
+      <description>WWDT driver for Nuvoton M471M_R1_S series</description>
+      <files>
+        <file category="header" name="Device/M471M_R1_S/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M471M_R1_S/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M471 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>ACMP driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>BPWM driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CIR" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>CIR driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/cir.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/cir.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>CLK driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>CRC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>DAC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DFMC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>DFMC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/dfmc.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/dfmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>EADC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>EPWM driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>FMC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>GPIO driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>I2C driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>PDMA driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PRNG" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>PRNG driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/prng.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/prng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>RTC driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>SPI driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>SYS driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>TIMER driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>TIMER_PWM driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>UART driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>WDT driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M471 Device">
+      <description>WWDT driver for Nuvoton M471 series</description>
+      <files>
+        <file category="header" name="Device/M471/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M471/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M479 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>ACMP driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>CLK driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>CRC driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>CRYPTO driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>DAC driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>EADC driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>EBI driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>ECAP driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>EPWM driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>FMC driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>GPIO driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>I2C driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>I2S driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>PDMA driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>QEI driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>QSPI driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>RTC driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>SPI driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>SYS driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>TIMER driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>TIMER_PWM driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>UART driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>WDT driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M479 Device">
+      <description>WWDT driver for Nuvoton M479 series</description>
+      <files>
+        <file category="header" name="Device/M479/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M479/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M480 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>ACMP driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>BPWM driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>CAN driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CCAP" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>CCAP driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/ccap.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/ccap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>CLK driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>CRC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>CRYPTO driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="DAC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>DAC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/dac.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/dac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>EADC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>EBI driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ECAP" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>ECAP driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/ecap.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/ecap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EMAC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>EMAC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/emac.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/emac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>EPWM driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>FMC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>GPIO driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="HSUSBD" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>HSUSBD driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/hsusbd.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/hsusbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>I2C driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>I2S driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>PDMA driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QEI" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>QEI driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/qei.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/qei.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="QSPI" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>QSPI driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/qspi.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/qspi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>RTC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SC driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SCUART driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SDH" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SDH driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/sdh.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/sdh.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SPI driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SPIM driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/spim.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/spim.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>SYS driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>TIMER driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER_PWM" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>TIMER_PWM driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/timer_pwm.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/timer_pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TRNG" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>TRNG driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/trng.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/trng.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>UART driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>USBD driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_I2C" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>USCI_I2C driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/usci_i2c.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/usci_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_SPI" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>USCI_SPI driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/usci_spi.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/usci_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USCI_UART" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>USCI_UART driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/usci_uart.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/usci_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>WDT driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M480 Device">
+      <description>WWDT driver for Nuvoton M480 series</description>
+      <files>
+        <file category="header" name="Device/M480/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M480/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- M4521 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>CLK driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>CRC driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>EADC driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>EBI driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>FMC driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>GPIO driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>I2C driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>PDMA driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>PWM driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>RTC driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>SC driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>SCUART driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>SPI driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>SYS driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>TIMER driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>UART driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>USBD driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>WDT driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro M4521 Device">
+      <description>WWDT driver for Nuvoton M4521 series</description>
+      <files>
+        <file category="header" name="Device/M4521/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/M4521/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- NUC472 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ACMP" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>ACMP driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/acmp.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/acmp.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>ADC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAN" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>CAN driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/can.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/can.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CAP" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>CAP driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/cap.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/cap.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>CLK driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>CRC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRYPTO" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>CRYPTO driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/crypto.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/crypto.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EADC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>EADC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/eadc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/eadc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EBI" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>EBI driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/ebi.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/ebi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EMAC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>EMAC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/emac.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/emac.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="EPWM" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>EPWM driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/epwm.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/epwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>FMC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>GPIO driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>I2C driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>I2S driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>PDMA driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PS2" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>PS2 driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/ps2.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/ps2.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>PWM driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>RTC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SC" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>SC driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/sc.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/sc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SCUART" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>SCUART driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/scuart.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/scuart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SD" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>SD driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/sd.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/sd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>SPI driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>SYS driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>TIMER driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>UART driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>USBD driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>WDT driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro NUC472 Device">
+      <description>WWDT driver for Nuvoton NUC472 series</description>
+      <files>
+        <file category="header" name="Device/NUC472/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/NUC472/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- NUC505 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>ADC driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>CLK driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>GPIO driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>I2C driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2S" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>I2S driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/i2s.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/i2s.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PWM" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>PWM driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/pwm.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/pwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="RTC" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>RTC driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/rtc.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/rtc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SD" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>SD driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/sd.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/sd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>SPI driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPIM" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>SPIM driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/spim.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/spim.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>SYS driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>TIMER driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>UART driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="USBD" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>USBD driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/usbd.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/usbd.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>WDT driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M4NuMicro NUC505 Device">
+      <description>WWDT driver for Nuvoton NUC505 series</description>
+      <files>
+        <file category="header" name="Device/NUC505/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/NUC505/StdDriver/src/wwdt.c" />
       </files>
     </component>
   </components>
