@@ -15,6 +15,9 @@
   </licenseSets>
 
   <releases>
+    <release version="3.1.5" date="2026-09-29">
+      - Add vela.ini.
+    </release>
     <release version="3.1.4-rc.5" date="2026-07-27">
       - Add DTCM and SPIM region.
     </release>
@@ -178,6 +181,10 @@
         <algorithm name="Flash/M55M1_LD_8.FLM"  start="0x0F100000" size="0x00002000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
         <algorithm name="Flash/M55M1_NS_2M.FLM" start="0x10100000" size="0x00200000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
         <algorithm name="Flash/M55M1_SPIM.FLM" start="0x82000000" size="0x02000000" RAMstart="0x20000000"  RAMsize="0x00008000"  default="1"/>
+        <feature type="NPU" n="Ethos-U55" m="256MACs"/>
+        <environment name="VELA">
+          <file name="Device/scripts/vela/default_vela.ini" type="ini"/>
+        </environment>
         
         <!-- *************************  Device 'M55M1R2LJAE'  ***************************** -->
         <device Dname="M55M1R2LJAE">
