@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.6" date="2026-10-14">
+      Update CM2003 part no.
+    </release>
     <release version="1.0.5" date="2026-08-04">
       Add stddriver files.
     </release>
@@ -118,6 +121,32 @@
           <memory     id="IROM3"    start="0x00200000"  size="0x400"      startup="0"   default="0"/>		  
           <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
           <algorithm  name  ="Flash/CM2003_AP_128.FLM"        start="0x00000000"  size="0x20000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
+        <!-- *************************  Device 'CM2003DL8AE'  ***************************** -->
+        <device Dname="CM2003DL8AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <algorithm  name  ="Flash/CM2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
+          <feature type="QFP"       n="48"/>
+        </device>
+
+        <!-- *************************  Device 'CM2003DJ3AE'  ***************************** -->
+        <device Dname="CM2003DJ3AE">
+          <debug      svd   ="SVD/Nuvoton/CM2003.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x400"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/CM2003_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/CM2003_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <algorithm  name  ="Flash/CM2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <feature type="QFN"       n="33"/>
@@ -304,7 +333,7 @@
 
     <condition id="M23NuMicro CM2003 Device">
       <description>Nuvoton M23NuMicro CM2003 Series devices</description>
-      <accept Dvendor="Nuvoton:18"  Dname="CM2003[CEG][FNLJ][238]AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="CM2003[CDEG][FNLJ][238]AE"/>
     </condition>
     <condition id="M23NuMicro CM2052 Device">
       <description>Nuvoton M23NuMicro CM2052 Series devices</description>

@@ -5,6 +5,9 @@
   <name>NuMicroM33_DFP</name>
   <description>Nuvoton ARM Cortex-M33 NuMicro Family Device Support</description>
   <releases>
+    <release version="1.0.6" date="2026-09-29">
+      Add M3351 part no.
+    </release>
     <release version="1.0.5" date="2026-08-05">
       Add debug sequences.
     </release>
@@ -519,6 +522,46 @@
           <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
           <algorithm name="Flash/M3351_NS_1M.FLM" start="0x10000000" size="0x100000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
         </device>
+        <device Dname="M3351ZG7AE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0xC000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0xC000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351LG7AE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0xC000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0xC000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351YG7AE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0xC000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0xC000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
+        <device Dname="M3351SG7AE">
+          <memory id="IROM1" start="0x00000000" size="0x40000" startup="1" default="1" />
+          <memory id="IROM2" start="0x0F100000" size="0x4000" startup="0" default="0" />
+          <memory id="IROM3" start="0x10000000" size="0x40000" startup="0" default="0" />
+          <memory id="IRAM1" start="0x20000000" size="0xC000" init="0" default="1" />
+          <memory id="IRAM2" start="0x30000000" size="0xC000" init="0" default="0" />
+          <algorithm name="Flash/M3351_AP_256.FLM" start="0x00000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_LD_16.FLM" start="0x0F100000" size="0x4000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+          <algorithm name="Flash/M3351_NS_256.FLM" start="0x10000000" size="0x40000" RAMstart="0x20000000" RAMsize="0x4000" default="1" />
+        </device>
       </subFamily>
     </family>
   </devices>
@@ -533,6 +576,7 @@
     <condition id="M33NuMicro M3351 Device">
       <description>Nuvoton M33NuMicro M3351 Series devices</description>
       <accept Dvendor="Nuvoton:18" Dname="M3351[KLSYV][IJ]CAE"/>
+      <accept Dvendor="Nuvoton:18" Dname="M3351[ZLSY]G7AE"/>
     </condition>
   </conditions>
   <components>

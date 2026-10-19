@@ -6,6 +6,9 @@
   <description>Nuvoton ARM Cortex-M23 NuMicro Family Device Support</description>
 
   <releases>
+    <release version="1.0.9" date="2026-10-02">
+      Add NUC1264 series.
+    </release>
     <release version="1.0.8" date="2026-08-03">
       1. Remove KM1M2 series.
       2. Add stddriver files.
@@ -426,6 +429,38 @@
         </device>
       </subFamily>
 
+      <!-- *************************  Subfamily 'NUC1264'  ***************************** -->
+      <subFamily DsubFamily="NUC1264">
+        <processor  Dcore="Cortex-M23"  Dclock="40000000"/>
+        <compile    header="Device/NUC1264/Include/nuc1264.h"/>
+        <description>The NuMicro NUC1264 series microcontroller based on the Arm Cortex-M23 core operates at up to 40 MHz.</description>
+		<!-- *************************  Device 'NUC1264ZD2AE'  ***************************** -->
+        <device Dname="NUC1264ZD2AE">
+          <debug      svd   ="SVD/Nuvoton/NUC1264.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/NUC1264_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/NUC1264_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/NUC1264_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+
+        <!-- *************************  Device 'NDR5ZD2AE'  ***************************** -->
+        <device Dname="NDR5ZD2AE">
+          <debug      svd   ="SVD/Nuvoton/NUC1264.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x00100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x00200000"  size="0x800"     startup="0"   default="0"/>
+		  <memory     id="IRAM1"    start="0x20000000"  size="0x3000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/NUC1264_AP_64.FLM"        start="0x00000000"  size="0x10000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/NUC1264_LD_4.FLM"        start="0x00100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <algorithm  name  ="Flash/NUC1264_SP_2.FLM"        start="0x00200000"  size="0x800"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/>
+          <feature type="QFN"       n="33"/>
+        </device>
+      </subFamily>
+
       <!-- *************************  Subfamily 'M2003'  ***************************** -->
       <subFamily DsubFamily="M2003">
         <processor  Dcore="Cortex-M23"  Dclock="24000000"/>
@@ -494,6 +529,7 @@
           <algorithm  name  ="Flash/M2003_SP_1.FLM"        start="0x00200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x1000"  default="1"/>
           <feature type="QFP"       n="48"/>
         </device>
+
         <!-- *************************  Device 'M2003RG6AE'  ***************************** -->
         <device Dname="M2003RG6AE">
           <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
@@ -587,7 +623,7 @@
 
         <!-- *************************  Device 'M2003VJ7AE'  ***************************** -->
         <device Dname="M2003VJ7AE">
-          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
@@ -598,26 +634,11 @@
           <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP"       n="100"/>
-        </device>
-
-        <!-- *************************  Device 'M2003SJ7AE'  ***************************** -->
-        <device Dname="M2003SJ7AE">
-          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/M2003_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"       n="64"/>
         </device>
 
         <!-- *************************  Device 'M2003VI7AE'  ***************************** -->
         <device Dname="M2003VI7AE">
-          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
@@ -630,9 +651,54 @@
           <feature type="QFP"       n="100"/>
         </device>
 
-        <!-- *************************  Device 'M2003SI7AE'  ***************************** -->
-        <device Dname="M2003SI7AE">
-          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
+        <!-- *************************  Device 'M2003A1J7AE'  ***************************** -->
+        <device Dname="M2003A1J7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP"       n="80"/>
+        </device>
+
+        <!-- *************************  Device 'M2003A1I7AE'  ***************************** -->
+        <device Dname="M2003A1I7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP"       n="80"/>
+        </device>
+
+        <!-- *************************  Device 'M2003RJ7AE'  ***************************** -->
+        <device Dname="M2003RJ7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
+          <memory     id="IROM1"    start="0x00000000"  size="0x100000"     startup="1"   default="1"/>
+          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
+          <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
+          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
+          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+          <algorithm  name  ="Flash/M2003_AP_1M.FLM"        start="0x00000000"  size="0x100000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
+          <feature type="QFP"       n="64"/>
+        </device>
+
+        <!-- *************************  Device 'M2003RI7AE'  ***************************** -->
+        <device Dname="M2003RI7AE">
+          <debug      svd   ="SVD/Nuvoton/M2003J.svd"/>
           <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
           <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
           <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
@@ -643,21 +709,6 @@
           <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
           <feature type="QFP"       n="64"/>
-        </device>
-
-        <!-- *************************  Device 'M2003LI7AE'  ***************************** -->
-        <device Dname="M2003LI7AE">
-          <debug      svd   ="SVD/Nuvoton/M2003.svd"/>
-          <memory     id="IROM1"    start="0x00000000"  size="0x80000"     startup="1"   default="1"/>
-          <memory     id="IROM2"    start="0x0F100000"  size="0x1000"     startup="0"   default="0"/>
-          <memory     id="IROM3"    start="0x0F200000"  size="0x400"     startup="0"   default="0"/>
-          <memory     id="IROM4"    start="0x0F400000"  size="0x2000"      startup="0"   default="0"/>
-          <memory     id="IRAM1"    start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
-          <algorithm  name  ="Flash/M2003_AP_512.FLM"        start="0x00000000"  size="0x80000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_LD_4.FLM"        start="0x0F100000"  size="0x1000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_SP_1.FLM"        start="0x0F200000"  size="0x400"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <algorithm  name  ="Flash/M2003J_DATA_8.FLM"      start="0x0F400000"  size="0x2000"  RAMstart="0x20000000"  RAMsize="0x4000"  default="1"/>
-          <feature type="QFP"       n="48"/>
         </device>
       </subFamily>
 
@@ -3697,6 +3748,7 @@
     <condition id="M23NuMicro M2003 Device">
       <description>Nuvoton M23NuMicro M2003 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="M2003[FXETLRSV][CDEGIJ][1467]AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="M2003A1[IJ]7AE"/>
       <accept Dvendor="Nuvoton:18"  Dname="M2003R1G6AE"/>
     </condition>
     <condition id="M23NuMicro M2351 Device">
@@ -3737,6 +3789,11 @@
       <description>Nuvoton M23NuMicro NUC1263 Series devices</description>
       <accept Dvendor="Nuvoton:18"  Dname="NUC1263[NLSZ]D4[AC]E"/>
       <accept Dvendor="Nuvoton:18"  Dname="NSPD5ZD4AE"/>
+    </condition>
+    <condition id="M23NuMicro NUC1264 Device">
+      <description>Nuvoton M23NuMicro NUC1264 Series devices</description>
+      <accept Dvendor="Nuvoton:18"  Dname="NUC1264ZD2AE"/>
+      <accept Dvendor="Nuvoton:18"  Dname="NDR5ZD2AE"/>
     </condition>
   </conditions>
 
@@ -3994,6 +4051,26 @@
         <file category="source"  name="Device/NUC1263/Source/system_NUC1263.c" attr="config" version="0.00.001"/>
         <!-- retarget files -->
         <file category="sourceC" name="Device/NUC1263/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for Nuvoton NUC1264 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+      <files>
+        <!-- header path -->
+        <file category="include" name="Device/NUC1264/StdDriver/inc/"/>
+        <file category="include" name="Device/NUC1264/Include/"/>
+        <file category="header"  name="Device/NUC1264/Include/nuc1264.h"/>
+        <file category="header"  name="Device/NUC1264/Include/NuMicro.h"/>
+        <file category="header"  name="Device/NUC1264/Include/system_nuc1264.h"/>
+        <!-- startup/system files -->
+        <file category="sourceC"  name="Device/NUC1264/Source/ARM/startup_nuc1264.c" attr="config" version="0.00.001"/>
+        <file category="sourceC"  name="Device/NUC1264/Source/system_nuc1264.c" attr="config" version="0.00.001"/>
+        <!-- retarget files -->
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/retarget.c" attr="config" version="0.00.001"/>
       </files>
     </component>
     <!-- *************************  StdDriver  ***************************** -->
@@ -6092,6 +6169,126 @@
       <files>
         <file category="header" name="Device/NUC1263/StdDriver/inc/wwdt.h" />
         <file category="sourceC" name="Device/NUC1263/StdDriver/src/wwdt.c" />
+      </files>
+    </component>
+    <!-- NUC1264 -->
+    <component Cclass="Device" Cgroup="StdDriver" Csub="ADC" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>ADC driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/adc.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="BPWM" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>BPWM driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/bpwm.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/bpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CLK" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>CLK driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/clk.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/clk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="CRC" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>CRC driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/crc.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/crc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="FMC" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>FMC driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/fmc.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/fmc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="GPIO" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>GPIO driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/gpio.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I2C" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>I2C driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/i2c.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3C" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>I3C driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/i3c.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/i3c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="I3CS" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>I3CS driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/i3cs.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/i3cs.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="LLSI" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>LLSI driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/llsi.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/llsi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="PDMA" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>PDMA driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/pdma.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/pdma.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SPI" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>SPI driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/spi.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="SYS" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>SYS driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/sys.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/sys.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="TIMER" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>TIMER driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/timer.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="UART" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>UART driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/uart.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WDT" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>WDT driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/wdt.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/wdt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="StdDriver" Csub="WWDT" Cversion="0.00.001" condition="M23NuMicro NUC1264 Device">
+      <description>WWDT driver for Nuvoton NUC1264 series</description>
+      <files>
+        <file category="header" name="Device/NUC1264/StdDriver/inc/wwdt.h" />
+        <file category="sourceC" name="Device/NUC1264/StdDriver/src/wwdt.c" />
       </files>
     </component>
   </components>
