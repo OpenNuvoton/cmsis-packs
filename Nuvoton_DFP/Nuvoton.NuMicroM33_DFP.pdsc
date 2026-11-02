@@ -5,6 +5,9 @@
   <name>NuMicroM33_DFP</name>
   <description>Nuvoton ARM Cortex-M33 NuMicro Family Device Support</description>
   <releases>
+    <release version="1.0.7" date="2026-11-02">
+      Add debug port setup sequence.
+    </release>
     <release version="1.0.6" date="2026-09-29">
       Add M3351 part no.
     </release>
@@ -325,10 +328,36 @@
       </subFamily>
       <subFamily DsubFamily="M3351">
         <processor  Dcore="Cortex-M33" Dfpu="SP_FPU" Ddsp="DSP" Dtz="TZ" Dendian="Configurable" Dclock="144000000"/>
+        <debugconfig dormant="true"/>
         <compile header="Library/Device/Nuvoton/M3351/Include/M3351.h" />
         <description>NuMicro M3351 series Cortex-M33 microcontroller.</description>
         <debug svd="SVD/Nuvoton/M3351.svd" />
         <sequences>
+          <sequence name="DebugPortSetup">
+            <block>
+              // Ensure current debug interface is in reset state
+              DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+
+              // Select Dormant State (from JTAG)
+              DAP_SWJ_Sequence(31, 0x33BBBBBA);
+
+              // At least 8 cycles SWDIO HIGH
+              DAP_SWJ_Sequence(8, 0xFF);
+
+              // Alert Sequence Bits  0.. 63
+              DAP_SWJ_Sequence(64, 0x86852D956209F392);
+
+              // Alert Sequence Bits 64..127
+              DAP_SWJ_Sequence(64, 0x19BC0EA2E3DDAFE9);
+
+              // 4 cycles SWDIO LOW + 8-Bit SWD Activation Code (0x1A)
+              DAP_SWJ_Sequence(12, 0x1A0);
+
+              // Enter SWD Line Reset State
+              DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);  // > 50 cycles SWDIO High
+              DAP_SWJ_Sequence(3,  0x00);                // At least 2 idle cycles (SWDIO Low)
+            </block>
+          </sequence>
           <sequence name="DebugPortStart">
             <block>
               __var nReset = 0x80;
